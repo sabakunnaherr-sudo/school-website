@@ -1,0 +1,4 @@
+78User-agent: *
+Allow: /
+
+Sitemap: https://ispahaniidealschool.com/sitemap.xml
