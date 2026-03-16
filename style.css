@@ -160,12 +160,18 @@ section,
 }
 
 .logo img {
-  background: #ffffff;
-  border-radius: 999px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.78)) drop-shadow(0 0 14px rgba(255, 255, 255, 0.34));
   height: 56px;
-  padding: 3px;
+  padding: 0;
+  transition: filter 0.25s ease;
   width: 56px;
+}
+
+.logo:hover img {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.86)) drop-shadow(0 0 18px rgba(255, 255, 255, 0.42));
 }
 
 .logo-title {
@@ -519,6 +525,13 @@ button:hover,
   font-size: 0.86rem;
   font-weight: 700;
   margin-bottom: 0.48rem;
+}
+
+.teacher-degree {
+  color: #5e5e5e;
+  font-size: 0.83rem;
+  font-weight: 600;
+  margin-bottom: 0.32rem;
 }
 
 .cta-banner {
