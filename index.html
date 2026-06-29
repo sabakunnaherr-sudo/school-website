@@ -69,9 +69,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.9/dist/lenis.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="home-page">
@@ -105,127 +107,294 @@
     </header>
 
     <main>
-      <!-- Hero Section -->
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-content">
-            <p class="kicker">Brahmanbaria Ispahani Ideal School</p>
-            <h1>Welcome to Brahmanbaria Ispahani Ideal School</h1>
-            <p>
-              A supportive, future-ready learning community where students thrive through strong academics,
-              leadership development, and creative opportunities.
+      <!-- Hero Section & Integrated Trust Foundation -->
+      <!-- Hero Section: Living Constellation Interactive Navigation -->
+      <section class="hero constellation-hero">
+        <!-- Slow animated mesh-gradient background & subtle particles -->
+        <div class="animated-mesh-background" aria-hidden="true"></div>
+        <div class="constellation-particles" aria-hidden="true">
+          <span class="c-particle p1"></span>
+          <span class="c-particle p2"></span>
+          <span class="c-particle p3"></span>
+          <span class="c-particle p4"></span>
+          <span class="c-particle p5"></span>
+        </div>
+
+        <div class="container constellation-wrapper">
+          <div class="constellation-header">
+            <p class="kicker heritage-kicker">ESTABLISHED 2012 • BRAHMANBARIA</p>
+            <h1 class="hero-title constellation-title">
+              Where Knowledge Flows
+            </h1>
+            <p class="hero-desc constellation-desc">
+              Explore our continuous currents of learning through our living constellation navigation. Each floating pathway connects you to the heart of our institution.
             </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="admissions.html">Apply Now</a>
-              <a class="btn btn-light" href="#programs">Explore Programs</a>
+          </div>
+
+          <!-- Bounded Arena preventing overlap while allowing organic GSAP drift -->
+          <div class="constellation-arena" role="navigation" aria-label="Living Constellation Navigation">
+            
+            <!-- Bubble 1: Admissions -->
+            <div class="constellation-zone">
+              <a class="constellation-bubble" href="admissions.html" aria-label="Navigate to Admissions">
+                <div class="bubble-ambient-light"></div>
+                <div class="bubble-icon-wrapper">✦</div>
+                <div class="bubble-content">
+                  <span class="bubble-title">Admissions</span>
+                  <span class="bubble-subtitle">Begin Application</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Bubble 2: Academics -->
+            <div class="constellation-zone">
+              <a class="constellation-bubble" href="#programs" aria-label="Navigate to Academics">
+                <div class="bubble-ambient-light"></div>
+                <div class="bubble-icon-wrapper">📚</div>
+                <div class="bubble-content">
+                  <span class="bubble-title">Academics</span>
+                  <span class="bubble-subtitle">Explore Disciplines</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Bubble 3: About -->
+            <div class="constellation-zone">
+              <a class="constellation-bubble" href="#about" aria-label="Navigate to About Philosophy">
+                <div class="bubble-ambient-light"></div>
+                <div class="bubble-icon-wrapper">🏛️</div>
+                <div class="bubble-content">
+                  <span class="bubble-title">About</span>
+                  <span class="bubble-subtitle">Our Philosophy</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Bubble 4: Gallery -->
+            <div class="constellation-zone">
+              <a class="constellation-bubble" href="#gallery" aria-label="Navigate to Campus Gallery">
+                <div class="bubble-ambient-light"></div>
+                <div class="bubble-icon-wrapper">🖼️</div>
+                <div class="bubble-content">
+                  <span class="bubble-title">Gallery</span>
+                  <span class="bubble-subtitle">Life Windows</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Bubble 5: Teachers -->
+            <div class="constellation-zone">
+              <a class="constellation-bubble" href="teachers.html" aria-label="Navigate to Teachers Faculty">
+                <div class="bubble-ambient-light"></div>
+                <div class="bubble-icon-wrapper">👨‍🏫</div>
+                <div class="bubble-content">
+                  <span class="bubble-title">Teachers</span>
+                  <span class="bubble-subtitle">Expert Faculty</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Bubble 6: Contact -->
+            <div class="constellation-zone">
+              <a class="constellation-bubble" href="contact.html" aria-label="Navigate to Contact Page">
+                <div class="bubble-ambient-light"></div>
+                <div class="bubble-icon-wrapper">✉️</div>
+                <div class="bubble-content">
+                  <span class="bubble-title">Contact</span>
+                  <span class="bubble-subtitle">Get in Touch</span>
+                </div>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Trust Strip Preserved Below Constellation Arena -->
+          <div class="hero-trust-strip constellation-trust">
+            <div class="trust-item">
+              <span class="trust-num" data-count="14" data-suffix="+">14+</span>
+              <span class="trust-lbl">Years of Heritage</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <span class="trust-num" data-count="2" data-suffix="">2</span>
+              <span class="trust-lbl">Brahmanbaria Campuses</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <span class="trust-num" data-count="100" data-suffix="%">100%</span>
+              <span class="trust-lbl">Success Dedication</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <span class="trust-num" data-count="20" data-suffix="+">20+</span>
+              <span class="trust-lbl">Expert Faculty</span>
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- About Preview -->
-      <section class="section" id="about">
-        <div class="container split-layout">
-          <div>
-            <p class="kicker">About Our School</p>
-            <h2>Excellence in Education Since 2012</h2>
-            <p>
-              Brahmanbaria Ispahani Ideal School provides a balanced education model that combines academic strength, personal
-              values, and practical life skills. We guide students to become confident learners and responsible
-              citizens in a changing world.
-            </p>
-            <p>
-              Our campus fosters curiosity, teamwork, and innovation through small class sizes, expert faculty,
-              and modern facilities.
-            </p>
-            <a class="btn btn-primary" href="about.html">Learn More</a>
-          </div>
-          <div>
-            <img src="images/ok.JPG" alt="Brahmanbaria Ispahani Ideal School campus building" />
-          </div>
+        
+        <!-- Flowing Current Connector -->
+        <div class="flowing-current-connector" aria-hidden="true">
+          <svg viewBox="0 0 100 120" preserveAspectRatio="none">
+            <path d="M50,0 C50,60 50,60 50,120" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" fill="none" opacity="0.3" />
+          </svg>
         </div>
       </section>
 
-      <!-- Programs -->
-      <section class="section bg-soft" id="programs">
+      <!-- The Currents of Learning (Philosophy) -->
+      <section class="section pillars-section" id="about">
+        <div class="container split-layout">
+          <div data-aos="fade-right">
+            <p class="kicker heritage-kicker">THE CURRENTS OF LEARNING</p>
+            <h2>Knowledge Flows: From Curiosity to Excellence</h2>
+            <p class="editorial-text">
+              We reject rigid, fragmented education. At Brahmanbaria Ispahani Ideal School, learning is an invisible, continuous current that gently carries a student from wonder to wisdom.
+            </p>
+            <div class="pillars-accordion">
+              <div class="pillar-item active">
+                <div class="pillar-header">
+                  <span class="pillar-num">I</span>
+                  <h4>Sparking Curiosity</h4>
+                </div>
+                <p>Awakening an unquenchable wonder for scientific inquiry, literature, and mathematics.</p>
+              </div>
+              <div class="pillar-item">
+                <div class="pillar-header">
+                  <span class="pillar-num">II</span>
+                  <h4>Building Character</h4>
+                </div>
+                <p>Nurturing moral courage, empathy, discipline, and profound respect for our shared heritage.</p>
+              </div>
+              <div class="pillar-item">
+                <div class="pillar-header">
+                  <span class="pillar-num">III</span>
+                  <h4>Achieving Excellence</h4>
+                </div>
+                <p>Culminating in distinguished academic mastery and the confidence to shape the future.</p>
+              </div>
+            </div>
+            <a class="btn btn-primary" href="about.html" style="margin-top: 1.8rem;"><span>Read Our Full Story</span></a>
+          </div>
+          <div class="about-image-wrapper museum-frame" data-aos="fade-left" data-aos-delay="150">
+            <img src="images/ok.JPG" alt="Students and Architecture at Brahmanbaria Ispahani Ideal School" loading="lazy" />
+            <div class="museum-caption">
+              <span class="caption-dot"></span>
+              <span>BIJESWAR BRANCH ARCHIVE</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Flowing Current Connector -->
+        <div class="flowing-current-connector" aria-hidden="true">
+          <svg viewBox="0 0 100 120" preserveAspectRatio="none">
+            <path d="M50,0 C50,60 50,60 50,120" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" fill="none" opacity="0.3" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- Disciplines of Inquiry -->
+      <section class="section programs-section" id="programs">
         <div class="container">
           <div class="section-heading">
-            <p class="kicker">Programs</p>
-            <h2>Academic and Co-Curricular Pathways</h2>
-            <p>We offer a broad and engaging curriculum to prepare students for higher education and beyond.</p>
+            <p class="kicker heritage-kicker">DISCIPLINES OF INQUIRY</p>
+            <h2>Architecting Tomorrow's Leaders</h2>
+            <p>Our curriculum blends rigorous analytical sciences with vibrant humanistic arts.</p>
           </div>
           <div class="card-grid">
-            <article class="card">
-              <div class="icon-badge">S</div>
-              <h3>Science</h3>
-              <p>Hands-on laboratories and research-focused learning in physics, chemistry, and biology.</p>
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="0">
+              <div class="card-top-bar">
+                <span class="discipline-tag">Empirical Science</span>
+                <div class="icon-badge">S</div>
+              </div>
+              <h3>Science &amp; Research</h3>
+              <p>Advanced laboratories and hands-on investigation focusing on physics, chemistry, and biological discovery.</p>
             </article>
-            <article class="card">
-              <div class="icon-badge">A</div>
-              <h3>Arts</h3>
-              <p>Visual arts, music, and performance programs to build creativity and expressive confidence.</p>
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-top-bar">
+                <span class="discipline-tag">Human Expression</span>
+                <div class="icon-badge">A</div>
+              </div>
+              <h3>Arts &amp; Humanities</h3>
+              <p>Literature, eloquent discourse, and visual arts designed to nurture creative leadership and emotional depth.</p>
             </article>
-            <article class="card">
-              <div class="icon-badge">SP</div>
-              <h3>Sports</h3>
-              <p>Structured athletics and fitness activities promoting teamwork, discipline, and resilience.</p>
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-top-bar">
+                <span class="discipline-tag">Physical Vitality</span>
+                <div class="icon-badge">SP</div>
+              </div>
+              <h3>Athletics &amp; Resilience</h3>
+              <p>Structured athletics and endurance conditioning promoting teamwork, unyielding discipline, and physical health.</p>
             </article>
-            <article class="card">
-              <div class="icon-badge">T</div>
-              <h3>Technology</h3>
-              <p>Future-ready digital literacy, coding foundations, and STEM innovation projects.</p>
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-top-bar">
+                <span class="discipline-tag">Future Innovation</span>
+                <div class="icon-badge">T</div>
+              </div>
+              <h3>Technology &amp; STEM</h3>
+              <p>Digital intelligence, computational thinking, and modern software applications for tomorrow's world.</p>
             </article>
           </div>
         </div>
+        
+        <!-- Flowing Current Connector -->
+        <div class="flowing-current-connector" aria-hidden="true">
+          <svg viewBox="0 0 100 120" preserveAspectRatio="none">
+            <path d="M50,0 C50,60 50,60 50,120" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" fill="none" opacity="0.3" />
+          </svg>
+        </div>
       </section>
 
-
-      <!-- Gallery -->
-      <section class="section bg-soft" id="gallery">
+      <!-- Chronicles of Campus Life (Museum Artwork Gallery) -->
+      <section class="section gallery-section" id="gallery">
         <div class="container">
           <div class="section-heading">
-            <p class="kicker">Gallery</p>
-            <h2>Life at Brahmanbaria Ispahani Ideal School</h2>
-            <p>A quick look at classrooms, events, and campus life.</p>
+            <p class="kicker heritage-kicker">CHRONICLES OF CAMPUS LIFE</p>
+            <h2>Living Campus Mosaic</h2>
+            <p>An authentic window into daily discovery, cultural vibrancy, and academic companionship.</p>
           </div>
           <div class="gallery-grid">
-           
-            
-            <figure class="gallery-item">
-              <img src="images/culture_1.JPG" alt="School cultural event" />
+            <figure class="gallery-item interactive-gallery-item museum-frame" data-aos="zoom-in-up" data-aos-delay="0" data-caption="School Cultural Celebration">
+              <img src="images/culture_1.JPG" alt="School Cultural Celebration" loading="lazy" />
+              <div class="gallery-overlay"><span>Inspect Photo</span></div>
             </figure>
-            <figure class="gallery-item">
-              <img src="images/play.JPG" alt="Students using technology in class" loading="lazy" />
+            <figure class="gallery-item interactive-gallery-item museum-frame" data-aos="zoom-in-up" data-aos-delay="100" data-caption="Interactive Technology Lab">
+              <img src="images/play.JPG" alt="Interactive Technology Lab" loading="lazy" />
+              <div class="gallery-overlay"><span>Inspect Photo</span></div>
             </figure>
-            <figure class="gallery-item">
-              <img src="images/all_2.JPG" alt="Students in group activity" />
+            <figure class="gallery-item interactive-gallery-item museum-frame" data-aos="zoom-in-up" data-aos-delay="200" data-caption="Collaborative Student Workshop">
+              <img src="images/all_2.JPG" alt="Collaborative Student Workshop" loading="lazy" />
+              <div class="gallery-overlay"><span>Inspect Photo</span></div>
             </figure>
-            <figure class="gallery-item">
-              <img src="images/all_3.JPG" alt="Students during campus program" />
+            <figure class="gallery-item interactive-gallery-item museum-frame" data-aos="zoom-in-up" data-aos-delay="300" data-caption="Academic Campus Assembly">
+              <img src="images/all_3.JPG" alt="Academic Campus Assembly" loading="lazy" />
+              <div class="gallery-overlay"><span>Inspect Photo</span></div>
             </figure>
           </div>
-          <p style="margin-top: 1.2rem">
-            <a class="btn btn-light" href="gallery.html">View Full Gallery</a>
-          </p>
+          <div style="margin-top: 2.8rem; text-align: center;">
+            <a class="btn btn-light" href="gallery.html"><span>View Complete Archives</span></a>
+          </div>
         </div>
       </section>
 
-      <!-- Call to Action -->
-      <section class="section">
+      <!-- The Next Chapter / Admission CTA -->
+      <section class="section horizon-section">
         <div class="container">
-          <div class="cta-banner">
-            <div>
-              <h2>Apply for Admission</h2>
-              <p>Begin your child&rsquo;s learning journey at Brahmanbaria Ispahani Ideal School.</p>
+          <div class="cta-banner horizon-banner" data-aos="fade-up">
+            <div class="horizon-content">
+              <p class="kicker heritage-kicker" style="color: var(--accent-gold);">THE NEXT CHAPTER</p>
+              <h2>Where Tomorrow Begins</h2>
+              <p>Enroll your child in Brahmanbaria Ispahani Ideal School and secure their place in an unforgettable learning community.</p>
             </div>
-            <a class="btn btn-light" href="admissions.html">Start Application</a>
+            <div class="horizon-actions">
+              <a class="btn btn-primary" href="admissions.html"><span>Apply for Admission</span></a>
+              <a class="btn btn-light" href="contact.html"><span>Contact Admissions</span></a>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer" id="contact">
+    <footer class="site-footer" id="contact" data-aos="fade-up">
       <div class="container footer-grid">
         <div>
           <h3 class="footer-title">Brahmanbaria Ispahani Ideal School</h3>
@@ -264,6 +433,18 @@
       </div>
     </footer>
 
+    <!-- Gallery Lightbox Modal -->
+    <dialog id="gallery-lightbox" class="lightbox-modal" aria-label="Image preview">
+      <div class="lightbox-content">
+        <button class="lightbox-close" aria-label="Close preview">&times;</button>
+        <img id="lightbox-img" src="" alt="Gallery preview" />
+        <p id="lightbox-caption"></p>
+      </div>
+    </dialog>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
