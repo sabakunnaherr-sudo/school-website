@@ -401,7 +401,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 once: true
               },
               onUpdate: () => {
-                el.textContent = Math.round(counter.val) + suffix;
+                let text = Math.round(counter.val) + suffix;
+                if (document.documentElement.lang === "bn") {
+                  const bnDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+                  text = text.replace(/[0-9]/g, (w) => bnDigits[+w]);
+                }
+                el.textContent = text;
+              },
+              onComplete: () => {
+                if (el.hasAttribute("data-i18n") && i18nCache[document.documentElement.lang]) {
+                  const val = getNestedValue(i18nCache[document.documentElement.lang], el.getAttribute("data-i18n"));
+                  if (val) el.textContent = val;
+                }
               }
             });
           });
@@ -492,19 +503,34 @@ async function loadLanguage(lang) {
   }
 }
 
-function translatePage(translations) {
+function getNestedValue(obj, path) {
+  if (!obj) return null;
+  const keys = path.split(".");
+  let val = obj;
+  for (const k of keys) {
+    if (val && val[k] !== undefined) val = val[k];
+    else return null;
+  }
+  return typeof val === "string" ? val : null;
+}
+
+function translatePage(translations, fallbackTranslations) {
   if (!translations) return;
   
+  const resolveVal = (keyPath) => {
+    let val = getNestedValue(translations, keyPath);
+    if (val === null) {
+      console.warn(`[i18n] Missing translation key: "${keyPath}". Falling back to English.`);
+      val = getNestedValue(fallbackTranslations, keyPath);
+    }
+    return val;
+  };
+
   // Translate text elements
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const keyPath = el.getAttribute("data-i18n");
-    const keys = keyPath.split(".");
-    let val = translations;
-    for (const k of keys) {
-      if (val && val[k] !== undefined) val = val[k];
-      else { val = null; break; }
-    }
-    if (val !== null && typeof val === "string") {
+    const val = resolveVal(keyPath);
+    if (val !== null) {
       const spanChild = el.querySelector("span:not(.icon)");
       if (spanChild) spanChild.textContent = val;
       else el.textContent = val;
@@ -514,14 +540,27 @@ function translatePage(translations) {
   // Translate placeholders
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
     const keyPath = el.getAttribute("data-i18n-placeholder");
-    const keys = keyPath.split(".");
-    let val = translations;
-    for (const k of keys) {
-      if (val && val[k] !== undefined) val = val[k];
-      else { val = null; break; }
-    }
-    if (val !== null && typeof val === "string") {
+    const val = resolveVal(keyPath);
+    if (val !== null) {
       el.setAttribute("placeholder", val);
+    }
+  });
+
+  // Translate titles
+  document.querySelectorAll("[data-i18n-title]").forEach((el) => {
+    const keyPath = el.getAttribute("data-i18n-title");
+    const val = resolveVal(keyPath);
+    if (val !== null) {
+      el.setAttribute("title", val);
+    }
+  });
+
+  // Translate alt text
+  document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+    const keyPath = el.getAttribute("data-i18n-alt");
+    const val = resolveVal(keyPath);
+    if (val !== null) {
+      el.setAttribute("alt", val);
     }
   });
 }
@@ -545,17 +584,18 @@ async function switchLanguage(lang) {
   });
 
   const translations = await loadLanguage(lang);
+  const fallbackTranslations = lang === "en" ? translations : await loadLanguage("en");
   if (!translations) return;
 
   // Premium GSAP fade transition
-  const translatableElements = document.querySelectorAll("[data-i18n], [data-i18n-placeholder]");
+  const translatableElements = document.querySelectorAll("[data-i18n], [data-i18n-placeholder], [data-i18n-title], [data-i18n-alt]");
   if (typeof gsap !== "undefined" && translatableElements.length > 0) {
     gsap.to(translatableElements, {
       opacity: 0.15,
       duration: 0.14,
       ease: "power2.inOut",
       onComplete: () => {
-        translatePage(translations);
+        translatePage(translations, fallbackTranslations);
         gsap.to(translatableElements, {
           opacity: 1,
           duration: 0.18,
@@ -564,7 +604,7 @@ async function switchLanguage(lang) {
       }
     });
   } else {
-    translatePage(translations);
+    translatePage(translations, fallbackTranslations);
   }
 }
 
