@@ -13,20 +13,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Explore photos of student life, classrooms, sports, and events at Brahmanbaria Ispahani Ideal School."
+      content="Explore our visual masterpiece gallery showcasing student happiness, academic discovery, science fairs, sports, teachers, and campus celebrations at Brahmanbaria Ispahani Ideal School."
     />
     <meta
       name="keywords"
-      content="Ispahani school gallery, campus photos, school events, Brahmanbaria school activities"
+      content="Ispahani school gallery, campus life photos, student achievements, science fair, sports championship, Brahmanbaria school"
     />
-    <title>Brahmanbaria Ispahani Ideal School | Gallery</title>
+    <title>Brahmanbaria Ispahani Ideal School | Signature Gallery</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Brahmanbaria Ispahani Ideal School" />
-    <meta property="og:title" content="Brahmanbaria Ispahani Ideal School | Gallery" />
+    <meta property="og:title" content="Brahmanbaria Ispahani Ideal School | Signature Gallery" />
     <meta
       property="og:description"
-      content="Explore photos of student life, classrooms, sports, and events at Brahmanbaria Ispahani Ideal School."
+      content="Explore our visual masterpiece gallery showcasing student happiness, academic discovery, science fairs, sports, and celebrations."
     />
     <meta property="og:url" content="https://ispahaniidealschool.com/gallery.html" />
     <meta property="og:image" content="https://ispahaniidealschool.com/images/log.png" />
@@ -41,27 +41,13 @@
             "url": "https://ispahaniidealschool.com/",
             "logo": "https://ispahaniidealschool.com/images/log.png",
             "telephone": "+8801911652338",
-            "email": "info@ispahaniidealschool.edu",
-            "address": [
-              {
-                "@type": "PostalAddress",
-                "streetAddress": "College para",
-                "addressLocality": "Brahmanbaria",
-                "addressCountry": "BD"
-              },
-              {
-                "@type": "PostalAddress",
-                "streetAddress": "Bijeswar, Ulchapara",
-                "addressLocality": "Brahmanbaria",
-                "addressCountry": "BD"
-              }
-            ]
+            "email": "info@ispahaniidealschool.edu"
           },
           {
-            "@type": "WebPage",
-            "name": "Brahmanbaria Ispahani Ideal School | Gallery",
+            "@type": "ImageGallery",
+            "name": "Brahmanbaria Ispahani Ideal School | Signature Gallery",
             "url": "https://ispahaniidealschool.com/gallery.html",
-            "description": "Explore photos of student life, classrooms, sports, and events at Brahmanbaria Ispahani Ideal School."
+            "description": "Visual masterpiece gallery showcasing student life, academics, sports, and campus events."
           }
         ]
       }
@@ -69,120 +55,666 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.9/dist/lenis.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ==========================================================================
+         SIGNATURE GALLERY MASTERPIECE STYLES
+         ========================================================================== */
+
+      /* Atmosphere Background */
+      .gallery-atmosphere {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
+      .atmosphere-blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(140px);
+        opacity: 0.14;
+        background: #F59E0B;
+        animation: floatBlob 28s infinite alternate ease-in-out;
+      }
+      .blob-1 {
+        top: 15%;
+        left: 10%;
+        width: 450px;
+        height: 450px;
+      }
+      .blob-2 {
+        bottom: 10%;
+        right: 10%;
+        width: 550px;
+        height: 550px;
+        animation-delay: -14s;
+        background: #D97706;
+      }
+      @keyframes floatBlob {
+        0% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(60px, -40px) scale(1.1); }
+        100% { transform: translate(-40px, 50px) scale(0.95); }
+      }
+
+      /* Filter Bar */
+      .gallery-filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+        margin: 0 auto 3.5rem;
+        position: relative;
+        z-index: 2;
+      }
+      .filter-btn {
+        padding: 0.7rem 1.6rem;
+        background: rgba(16, 25, 45, 0.65);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--border-museum);
+        border-radius: 999px;
+        color: var(--text-warm-silver);
+        font-family: "Outfit", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .filter-btn:hover {
+        background: rgba(245, 158, 11, 0.15);
+        color: var(--text-parchment);
+        border-color: rgba(245, 158, 11, 0.4);
+        transform: translateY(-2px);
+      }
+      .filter-btn.active {
+        background: var(--accent-heritage-gold);
+        color: #09101E;
+        border-color: var(--accent-heritage-gold);
+        box-shadow: 0 0 22px rgba(245, 158, 11, 0.45);
+        transform: translateY(-2px);
+      }
+
+      /* Masonry Gallery Grid */
+      .gallery-masonry {
+        column-count: 4;
+        column-gap: 1.8rem;
+        position: relative;
+        z-index: 2;
+        padding-bottom: 4rem;
+      }
+      @media (max-width: 1100px) {
+        .gallery-masonry {
+          column-count: 2;
+          column-gap: 1.5rem;
+        }
+      }
+      @media (max-width: 640px) {
+        .gallery-masonry {
+          column-count: 1;
+        }
+      }
+
+      /* Image Card */
+      .gallery-card {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 1.8rem;
+        break-inside: avoid;
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        background: rgba(16, 25, 45, 0.8);
+        border: 1px solid rgba(245, 158, 11, 0.25);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.55), 0 0 20px rgba(245, 158, 11, 0.08);
+        cursor: pointer;
+        transform: translateY(0);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+        will-change: transform, box-shadow;
+      }
+      .gallery-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(245, 158, 11, 0.6);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.75), 0 0 35px rgba(245, 158, 11, 0.28);
+      }
+      .gallery-card-img-wrap {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        background: #09101E;
+      }
+      .gallery-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+        filter: saturate(1) contrast(1);
+      }
+      .gallery-card:hover img {
+        transform: scale(1.05);
+        filter: saturate(1.18) contrast(1.05);
+      }
+
+      /* Glass Overlay */
+      .gallery-card-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(9, 16, 30, 0.95) 0%, rgba(9, 16, 30, 0.35) 45%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.35s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.6rem;
+        pointer-events: none;
+      }
+      .gallery-card:hover .gallery-card-overlay {
+        opacity: 1;
+      }
+      .overlay-badge {
+        align-self: flex-start;
+        padding: 0.35rem 0.9rem;
+        background: rgba(245, 158, 11, 0.9);
+        color: #09101E;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.72rem;
+        font-weight: 700;
+        border-radius: 999px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      }
+      .overlay-caption {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: #F3F4F6;
+        line-height: 1.4;
+        margin-bottom: 0.3rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+      }
+      .overlay-expand {
+        position: absolute;
+        bottom: 1.4rem;
+        right: 1.4rem;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #F3F4F6;
+        transition: transform 0.3s ease, background 0.3s ease;
+      }
+      .gallery-card:hover .overlay-expand {
+        transform: scale(1.08);
+        background: var(--accent-heritage-gold);
+        color: #09101E;
+        border-color: var(--accent-heritage-gold);
+      }
+
+      /* ==========================================================================
+         LIGHTBOX FULLSCREEN VIEWER
+         ========================================================================== */
+      .gallery-lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      .gallery-lightbox.open {
+        display: flex;
+        opacity: 1;
+      }
+      .lightbox-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(9, 16, 30, 0.94);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        z-index: -1;
+      }
+      .lightbox-header {
+        padding: 1.5rem 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 2;
+      }
+      .lightbox-meta {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+      }
+      .lightbox-counter {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.9rem;
+        color: var(--text-warm-silver);
+        background: rgba(255, 255, 255, 0.08);
+        padding: 0.35rem 0.9rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .lightbox-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: rgba(16, 25, 45, 0.7);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        color: #F3F4F6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .lightbox-btn:hover {
+        background: var(--accent-heritage-gold);
+        color: #09101E;
+        border-color: var(--accent-heritage-gold);
+        transform: scale(1.08);
+        box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+      }
+      .lightbox-stage {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+      }
+      .lightbox-image-wrap {
+        max-width: 82vw;
+        max-height: 75vh;
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .lightbox-image-wrap img {
+        max-width: 100%;
+        max-height: 75vh;
+        border-radius: 16px;
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), 0 0 35px rgba(245, 158, 11, 0.2);
+        border: 1px solid rgba(245, 158, 11, 0.4);
+        object-fit: contain;
+      }
+      .lightbox-footer {
+        padding: 1.8rem 2.5rem;
+        text-align: center;
+        z-index: 2;
+        background: linear-gradient(to top, rgba(9, 16, 30, 0.9) 0%, transparent 100%);
+      }
+      .lightbox-caption {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.25rem;
+        color: var(--text-parchment);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      @media (max-width: 640px) {
+        .lightbox-header, .lightbox-footer { padding: 1rem 1.2rem; }
+        .lightbox-stage { padding: 0 0.5rem; }
+        .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; }
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
+      }
+    </style>
   </head>
-  <body>
+  <body class="home-page gallery-page">
+    <!-- Atmosphere Blob Lights -->
+    <div class="gallery-atmosphere">
+      <div class="atmosphere-blob blob-1"></div>
+      <div class="atmosphere-blob blob-2"></div>
+    </div>
+
+    <!-- Sticky Premium Glass Navbar -->
     <header class="site-header">
       <div class="container nav-wrapper">
         <a class="logo" href="index.html">
           <img src="images/log.png" alt="Brahmanbaria Ispahani Ideal School logo" />
-          <div>
+          <div class="logo-text">
             <span class="logo-title">Brahmanbaria Ispahani Ideal School</span>
             <span class="logo-subtitle">Inspiring Future Leaders</span>
           </div>
         </a>
+
         <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
           <span class="nav-toggle-bar"></span>
         </button>
+        
         <nav class="site-nav" id="primary-menu">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="academics.html">Academics</a></li>
-            <li><a href="teachers.html">Teachers</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="admissions.html">Admissions</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+            <li><a href="academics.html" class="nav-link" data-i18n="nav.academics">Academics</a></li>
+            <li><a href="teachers.html" class="nav-link" data-i18n="nav.teachers">Teachers</a></li>
+            <li><a href="gallery.html" class="nav-link active" data-i18n="nav.gallery">Gallery</a></li>
+            <li><a href="admissions.html" class="nav-link" data-i18n="nav.admissions">Admissions</a></li>
+            <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </nav>
+
+        <!-- RIGHT: Language Switcher & Apply Now Button -->
+        <div class="nav-right">
+          <div class="lang-switcher-wrap">
+            <button class="lang-switcher-btn" id="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+              <span>🌐</span> <span id="current-lang-label">English</span> <span style="font-size: 0.7rem;">▼</span>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown" role="menu">
+              <button class="lang-option active" data-lang="en" role="menuitem">English</button>
+              <button class="lang-option" data-lang="bn" role="menuitem">বাংলা</button>
+            </div>
+          </div>
+          <a class="btn btn-primary nav-apply-btn" href="admissions.html"><span data-i18n="nav.apply">Apply Now</span></a>
+        </div>
       </div>
     </header>
 
-    <main>
-      <!-- Page Hero -->
-      <section class="page-hero">
-        <div class="container">
-          <h1>School Gallery</h1>
-          <p>
-            Explore highlights from classrooms, academic activities, sports, and student events across the Brahmanbaria Ispahani Ideal School
-            campus.
+    <main style="position: relative; z-index: 1;">
+      <!-- 1. Masterpiece Hero Section -->
+      <section class="section text-center" style="padding: clamp(4rem, 6vw, 6rem) 0 2rem;">
+        <div class="container" style="max-width: 800px; margin: 0 auto;">
+          <div data-aos="fade-down">
+            <span class="heritage-kicker">MEMORIES & ACHIEVEMENTS</span>
+          </div>
+          <h1 style="font-size: clamp(2.8rem, 5vw, 4.5rem); margin-bottom: 1.2rem; line-height: 1.08;" data-aos="fade-up" data-aos-delay="100">
+            Life at Ispahani Ideal School
+          </h1>
+          <p style="font-size: clamp(1.1rem, 1.4vw, 1.25rem); color: var(--text-warm-silver); line-height: 1.7;" data-aos="fade-up" data-aos-delay="200">
+            Explore moments of joy, academic discovery, scientific innovation, cultural celebrations, and teamwork that make our campus truly alive.
           </p>
-          <p class="breadcrumb">Home / Gallery</p>
         </div>
       </section>
 
-      <!-- Main Gallery Grid -->
-      <section class="section">
+      <!-- 2. Interactive Filter Bar -->
+      <section class="section" style="padding: 1rem 0 2rem;">
         <div class="container">
-          <div class="section-heading">
-            <p class="kicker">Photo Collection</p>
-            <h2>Moments from Campus Life</h2>
-            <p>Our gallery captures learning, creativity, teamwork, and community engagement.</p>
-          </div>
-          <div class="gallery-tags" aria-label="Gallery categories">
-            <span class="gallery-tag active">All</span>
-            <span class="gallery-tag">Academics</span>
-            <span class="gallery-tag">Sports</span>
-            <span class="gallery-tag">Culture</span>
-            <span class="gallery-tag">Campus</span>
-          </div>
-          <div class="gallery-grid gallery-grid-mosaic">
-            <figure class="gallery-item wide">
-              <img src="images/all_3.JPG" alt="Students discussing in a classroom" />
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/lib.JPG" alt="Students reading in the school library" />
-            </figure>
-            <figure class="gallery-item tall">
-              <img src="images/c.JPG" alt="Students participating in athletics" />
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/cul_1.dat.JPG" alt="Science experiment demonstration" />
-            </figure>
-            <figure class="gallery-item wide">
-              <img src="images/cul_2.dat.JPG" alt="Cultural performance on stage" />
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/cul_3.dat.JPG" alt="Students working in technology lab" />
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/all_2.JPG" alt="Morning assembly at school" />
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/play.JPG" alt="Art class student project display" />
-            </figure>
-            <figure class="gallery-item wide">
-              <img src="images/feb_1.JPG" alt="Debate club competition moment" />
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/cul_4.dat.JPG" alt="Field trip group photo" />
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/cul_5.dat.JPG" alt="Robotics workshop in progress" />
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/cul_6.jpg" alt="Students celebrating award ceremony" />
-            </figure>
+          <div class="gallery-filter-bar" role="tablist" aria-label="Filter gallery categories" data-aos="fade-up" data-aos-delay="250">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true"><span>All Memories</span></button>
+            <button class="filter-btn" data-filter="science" role="tab" aria-selected="false"><span>Science Fair</span></button>
+            <button class="filter-btn" data-filter="sports" role="tab" aria-selected="false"><span>Sports</span></button>
+            <button class="filter-btn" data-filter="campus" role="tab" aria-selected="false"><span>Campus Life</span></button>
+            <button class="filter-btn" data-filter="academics" role="tab" aria-selected="false"><span>Classrooms</span></button>
+            <button class="filter-btn" data-filter="celebrations" role="tab" aria-selected="false"><span>Celebrations</span></button>
+            <button class="filter-btn" data-filter="teachers" role="tab" aria-selected="false"><span>Teachers</span></button>
           </div>
         </div>
       </section>
 
-      <!-- Extra CTA -->
-      <section class="section bg-soft">
+      <!-- 3. Dynamic Masonry Gallery -->
+      <section class="section" style="padding: 0 0 5rem;">
         <div class="container">
-          <div class="cta-banner">
-            <div>
-              <h2>Want to Visit Our Campus?</h2>
-              <p>Schedule a guided campus tour and experience Brahmanbaria Ispahani Ideal School in person.</p>
+          <div class="gallery-masonry" id="gallery-masonry">
+            
+            <!-- Card 1: Science Fair -->
+            <div class="gallery-card" data-category="science" data-title="Science Fair" data-caption="Students demonstrating robotics and physics prototypes during the Annual Tech Fair.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/cul_1.dat.JPG" alt="Science experiment demonstration" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Science Fair</span>
+                <p class="overlay-caption">Innovative student tech projects</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
             </div>
-            <a class="btn btn-light" href="contact.html">Book a Visit</a>
+
+            <!-- Card 2: Sports -->
+            <div class="gallery-card" data-category="sports" data-title="Sports Championship" data-caption="High-energy sprint competition at our Annual Inter-House Sports Meet.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/c.JPG" alt="Students participating in athletics" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Sports</span>
+                <p class="overlay-caption">Annual Inter-House Athletics</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
+            </div>
+
+            <!-- Card 3: Classrooms -->
+            <div class="gallery-card" data-category="academics" data-title="Interactive Classroom" data-caption="Collaborative group debate and problem-solving in our multimedia secondary classroom.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/all_3.JPG" alt="Students discussing in a classroom" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Classroom</span>
+                <p class="overlay-caption">Collaborative secondary learning</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
+            </div>
+
+            <!-- Card 4: Celebrations -->
+            <div class="gallery-card" data-category="celebrations" data-title="Cultural Fest" data-caption="Colorful musical and dramatic stage performance celebrating traditional heritage.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/cul_2.dat.JPG" alt="Cultural performance on stage" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Cultural Program</span>
+                <p class="overlay-caption">Spring Heritage Festival stage</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
+            </div>
+
+            <!-- Card 5: Campus Life -->
+            <div class="gallery-card" data-category="campus" data-title="Campus Life" data-caption="Welcoming entrance and secure administration building bathed in morning sunlight.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/ok.JPG" alt="Welcoming campus administration view" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Campus</span>
+                <p class="overlay-caption">Main campus administrative quad</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
+            </div>
+
+            <!-- Card 6: Classrooms / Library -->
+            <div class="gallery-card" data-category="academics" data-title="Central Library" data-caption="Focused academic reading and research inside our fully stocked central library.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/lib.JPG" alt="Students reading in the library" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Classroom</span>
+                <p class="overlay-caption">Quiet study in the central library</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
+            </div>
+
+            <!-- Card 7: Science Fair -->
+            <div class="gallery-card" data-category="science" data-title="Computer Lab" data-caption="Hands-on coding and software mastery session in our high-tech computing lab.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/cul_3.dat.JPG" alt="Students working in technology lab" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Science Fair</span>
+                <p class="overlay-caption">Advanced coding and IT session</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
+            </div>
+
+            <!-- Card 8: Campus Life -->
+            <div class="gallery-card" data-category="campus" data-title="Morning Assembly" data-caption="Disciplined morning assembly fostering unity, national values, and leadership.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/all_2.JPG" alt="Morning assembly at school" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Campus</span>
+                <p class="overlay-caption">Daily assembly & student leadership</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
+            </div>
+
+            <!-- Card 9: Classrooms -->
+            <div class="gallery-card" data-category="academics" data-title="Creative Arts" data-caption="Young early-years scholars expressing creativity through painting and craft.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/play.JPG" alt="Art class student project display" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Classroom</span>
+                <p class="overlay-caption">Early-years creative arts workshop</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
+            </div>
+
+            <!-- Card 10: Celebrations -->
+            <div class="gallery-card" data-category="celebrations" data-title="Language Day" data-caption="Honoring national traditions with floral tributes and speech competitions.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/feb_1.JPG" alt="Debate club competition moment" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Celebrations</span>
+                <p class="overlay-caption">International Mother Language Day</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
+            </div>
+
+            <!-- Card 11: Campus / Events -->
+            <div class="gallery-card" data-category="campus" data-title="Annual Picnic" data-caption="Joyful outdoor learning and bonding during our annual educational excursion.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/cul_4.dat.JPG" alt="Field trip group photo" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Annual Picnic</span>
+                <p class="overlay-caption">Educational field trip adventure</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
+            </div>
+
+            <!-- Card 12: Science -->
+            <div class="gallery-card" data-category="science" data-title="Robotics Lab" data-caption="Senior science enthusiasts assembling automated circuit boards and sensors.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/cul_5.dat.JPG" alt="Robotics workshop in progress" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Science Fair</span>
+                <p class="overlay-caption">Robotics and electronics lab</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
+            </div>
+
+            <!-- Card 13: Celebrations -->
+            <div class="gallery-card" data-category="celebrations" data-title="Award Ceremony" data-caption="Celebrating academic excellence and merit scholarships with proud parents.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/cul_6.jpg" alt="Students celebrating award ceremony" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Celebrations</span>
+                <p class="overlay-caption">Annual Merit Convocation</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
+            </div>
+
+            <!-- Card 14: Celebrations -->
+            <div class="gallery-card" data-category="celebrations" data-title="Folk Heritage" data-caption="Enchanting folk music and dance presentation highlighting Bangladesh culture.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/culture_1.JPG" alt="Folk heritage performance" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Cultural Program</span>
+                <p class="overlay-caption">Folk heritage dance presentation</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
+            </div>
+
+            <!-- Card 15: Teachers -->
+            <div class="gallery-card" data-category="teachers" data-title="Dedicated Mentors" data-caption="Our experienced faculty providing one-on-one mentorship and academic guidance.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/all_1.JPG" alt="Faculty mentoring students" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Teachers</span>
+                <p class="overlay-caption">Compassionate faculty mentorship</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
+            </div>
+
+            <!-- Card 16: Campus Life -->
+            <div class="gallery-card" data-category="campus" data-title="Twilight Campus" data-caption="The serene Brahmanbaria Ispahani Ideal School campus at dusk.">
+              <div class="gallery-card-img-wrap">
+                <img src="images/school.JPG" alt="Main building twilight" loading="lazy" />
+              </div>
+              <div class="gallery-card-overlay">
+                <span class="overlay-badge">Campus</span>
+                <p class="overlay-caption">Serene campus environment</p>
+                <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Final Campus Visit CTA -->
+      <section class="section" style="padding: 1rem 0 6rem;">
+        <div class="container">
+          <div style="padding: clamp(3rem, 5vw, 4.5rem); text-align: center; background: linear-gradient(135deg, rgba(23, 35, 62, 0.85) 0%, rgba(16, 25, 45, 0.98) 100%); border: 1px solid var(--border-museum); border-radius: 24px; position: relative; overflow: hidden;" data-aos="fade-up">
+            <span class="heritage-kicker">BECOME A PART OF OUR STORY</span>
+            <h2 style="font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 1rem; color: var(--text-parchment);">Experience Our Vibrant Campus</h2>
+            <p style="font-size: 1.15rem; color: var(--text-warm-silver); max-width: 620px; margin: 0 auto 2.5rem; line-height: 1.7;">
+              We welcome prospective families to tour our secure classrooms, modern labs, and expansive grounds in person.
+            </p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+              <a class="btn btn-primary" href="admissions.html"><span>Apply Online</span></a>
+              <a class="btn btn-light" href="contact.html"><span>Book a Campus Tour</span></a>
+            </div>
           </div>
         </div>
       </section>
     </main>
+
+    <!-- Fullscreen Lightbox Modal -->
+    <div id="gallery-lightbox" class="gallery-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Fullscreen image viewer">
+      <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+      
+      <header class="lightbox-header">
+        <div class="lightbox-meta">
+          <span id="lightbox-category" class="heritage-kicker" style="margin-bottom: 0;">SCIENCE FAIR</span>
+          <span id="lightbox-counter" class="lightbox-counter">1 / 16</span>
+        </div>
+        <button id="lightbox-close" class="lightbox-btn close-btn" aria-label="Close lightbox">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </header>
+
+      <div class="lightbox-stage" id="lightbox-stage">
+        <button id="lightbox-prev" class="lightbox-btn nav-btn prev-btn" aria-label="Previous image">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        
+        <div class="lightbox-image-wrap">
+          <img id="lightbox-img" src="" alt="" />
+        </div>
+
+        <button id="lightbox-next" class="lightbox-btn nav-btn next-btn" aria-label="Next image">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <footer class="lightbox-footer">
+        <p id="lightbox-caption" class="lightbox-caption">Science experiment demonstration during our annual science and tech expo.</p>
+      </footer>
+    </div>
 
     <footer class="site-footer">
       <div class="container footer-grid">
@@ -206,7 +738,7 @@
           <ul class="footer-links">
             <li><a href="about.html">About Us</a></li>
             <li><a href="academics.html">Academics</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="teachers.html">Teachers</a></li>
             <li><a href="admissions.html">Admissions</a></li>
           </ul>
           <div class="social-links" aria-label="Social media links">
@@ -221,6 +753,237 @@
       </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
+    <script>
+      /* ==========================================================================
+         SIGNATURE GALLERY MASTERPIECE INTERACTIONS & GSAP ANIMATIONS
+         ========================================================================== */
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = Array.from(document.querySelectorAll(".gallery-card"));
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const masonryContainer = document.getElementById("gallery-masonry");
+
+        // 1. Initial GSAP Reveal Animation (Fades in, moves up 30px, scale from 0.96, duration 0.7s, stagger 0.08s)
+        gsap.fromTo(
+          cards,
+          { opacity: 0, y: 30, scale: 0.96 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.7,
+            stagger: 0.08,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: masonryContainer,
+              start: "top 85%",
+              once: true
+            }
+          }
+        );
+
+        // 2. Interactive Category Filtering with Smooth Animations
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const filterValue = btn.getAttribute("data-filter");
+
+            // Update active state
+            filterBtns.forEach((b) => {
+              b.classList.remove("active");
+              b.setAttribute("aria-selected", "false");
+            });
+            btn.classList.add("active");
+            btn.setAttribute("aria-selected", "true");
+
+            // Animate card rearrangement
+            cards.forEach((card) => {
+              const cardCat = card.getAttribute("data-category");
+              const isVisible = filterValue === "all" || cardCat === filterValue;
+
+              if (isVisible) {
+                card.style.display = "inline-block";
+                gsap.to(card, {
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  duration: 0.45,
+                  ease: "power2.out",
+                  overwrite: true
+                });
+              } else {
+                gsap.to(card, {
+                  opacity: 0,
+                  scale: 0.88,
+                  y: 15,
+                  duration: 0.35,
+                  ease: "power2.in",
+                  overwrite: true,
+                  onComplete: () => {
+                    card.style.display = "none";
+                  }
+                });
+              }
+            });
+          });
+        });
+
+        // 3. Luxurious 3D Magnetic Mouse Parallax Interaction (Max 6px smooth movement)
+        if (window.innerWidth > 1024 && masonryContainer) {
+          masonryContainer.addEventListener("mousemove", (e) => {
+            const rect = masonryContainer.getBoundingClientRect();
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            cards.forEach((card) => {
+              if (card.style.display === "none") return;
+              const cardRect = card.getBoundingClientRect();
+              const cardCenterX = cardRect.left + cardRect.width / 2;
+              const cardCenterY = cardRect.top + cardRect.height / 2;
+
+              const distX = mouseX - cardCenterX;
+              const distY = mouseY - cardCenterY;
+              const distance = Math.sqrt(distX * distX + distY * distY);
+
+              // React slightly if within 400px radius
+              if (distance < 400) {
+                const moveX = (distX / 400) * 6; // max 6px
+                const moveY = (distY / 400) * 6;
+                gsap.to(card, {
+                  x: moveX,
+                  y: moveY,
+                  duration: 0.6,
+                  ease: "power2.out",
+                  overwrite: "auto"
+                });
+              } else {
+                gsap.to(card, {
+                  x: 0,
+                  y: 0,
+                  duration: 0.8,
+                  ease: "power2.out",
+                  overwrite: "auto"
+                });
+              }
+            });
+          });
+
+          masonryContainer.addEventListener("mouseleave", () => {
+            cards.forEach((card) => {
+              gsap.to(card, { x: 0, y: 0, duration: 0.8, ease: "power2.out" });
+            });
+          });
+        }
+
+        // 4. Fullscreen Lightbox Viewer Logic
+        const lightbox = document.getElementById("gallery-lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const lightboxCategory = document.getElementById("lightbox-category");
+        const lightboxCounter = document.getElementById("lightbox-counter");
+        const lightboxCaption = document.getElementById("lightbox-caption");
+        const closeBtn = document.getElementById("lightbox-close");
+        const prevBtn = document.getElementById("lightbox-prev");
+        const nextBtn = document.getElementById("lightbox-next");
+        const backdrop = document.getElementById("lightbox-backdrop");
+
+        let currentIndex = 0;
+        let visibleCards = [];
+
+        const updateVisibleCards = () => {
+          visibleCards = cards.filter((card) => card.style.display !== "none" && card.style.opacity !== "0");
+        };
+
+        const openLightbox = (index) => {
+          updateVisibleCards();
+          if (index < 0 || index >= visibleCards.length) return;
+          currentIndex = index;
+          const targetCard = visibleCards[currentIndex];
+
+          const imgSrc = targetCard.querySelector("img").getAttribute("src");
+          const titleText = targetCard.getAttribute("data-title");
+          const captionText = targetCard.getAttribute("data-caption");
+
+          lightboxImg.src = imgSrc;
+          lightboxCategory.textContent = titleText;
+          lightboxCaption.textContent = captionText;
+          lightboxCounter.textContent = `${currentIndex + 1} / ${visibleCards.length}`;
+
+          lightbox.classList.add("open");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+
+          // Animate entrance
+          gsap.fromTo(
+            lightboxImg,
+            { scale: 0.88, opacity: 0 },
+            { scale: 1, opacity: 1, duration: 0.45, ease: "power3.out" }
+          );
+        };
+
+        const closeLightbox = () => {
+          gsap.to(lightboxImg, {
+            scale: 0.9,
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.inOut",
+            onComplete: () => {
+              lightbox.classList.remove("open");
+              lightbox.setAttribute("aria-hidden", "true");
+              document.body.style.overflow = "";
+            }
+          });
+        };
+
+        const showPrev = () => {
+          updateVisibleCards();
+          currentIndex = (currentIndex - 1 + visibleCards.length) % visibleCards.length;
+          openLightbox(currentIndex);
+        };
+
+        const showNext = () => {
+          updateVisibleCards();
+          currentIndex = (currentIndex + 1) % visibleCards.length;
+          openLightbox(currentIndex);
+        };
+
+        cards.forEach((card) => {
+          card.addEventListener("click", () => {
+            updateVisibleCards();
+            const index = visibleCards.indexOf(card);
+            if (index !== -1) openLightbox(index);
+          });
+        });
+
+        closeBtn.addEventListener("click", closeLightbox);
+        backdrop.addEventListener("click", closeLightbox);
+        prevBtn.addEventListener("click", (e) => { e.stopPropagation(); showPrev(); });
+        nextBtn.addEventListener("click", (e) => { e.stopPropagation(); showNext(); });
+
+        // Keyboard Navigation (ESC, Left, Right)
+        document.addEventListener("keydown", (e) => {
+          if (!lightbox.classList.contains("open")) return;
+          if (e.key === "Escape") closeLightbox();
+          if (e.key === "ArrowLeft") showPrev();
+          if (e.key === "ArrowRight") showNext();
+        });
+
+        // Touch Swipe support on mobile
+        let touchStartX = 0;
+        lightbox.addEventListener("touchstart", (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        lightbox.addEventListener("touchend", (e) => {
+          const touchEndX = e.changedTouches[0].screenX;
+          const diff = touchStartX - touchEndX;
+          if (Math.abs(diff) > 50) {
+            if (diff > 0) showNext();
+            else showPrev();
+          }
+        }, { passive: true });
+      });
+    </script>
   </body>
 </html>

@@ -13,11 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Review the Brahmanbaria Ispahani Ideal School admission process, requirements, and application details."
+      content="Review the Brahmanbaria Ispahani Ideal School admission process, eligibility criteria, required documents, and application details."
     />
     <meta
       name="keywords"
-      content="Ispahani school admission, admission process, admission requirements, Brahmanbaria school"
+      content="Ispahani school admission, admission process, admission requirements, Brahmanbaria school, eligibility"
     />
     <title>Brahmanbaria Ispahani Ideal School | Admissions</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -26,7 +26,7 @@
     <meta property="og:title" content="Brahmanbaria Ispahani Ideal School | Admissions" />
     <meta
       property="og:description"
-      content="Review the Brahmanbaria Ispahani Ideal School admission process, requirements, and application details."
+      content="Review the Brahmanbaria Ispahani Ideal School admission process, eligibility criteria, required documents, and application details."
     />
     <meta property="og:url" content="https://ispahaniidealschool.com/admissions.html" />
     <meta property="og:image" content="https://ispahaniidealschool.com/images/log.png" />
@@ -61,7 +61,7 @@
             "@type": "WebPage",
             "name": "Brahmanbaria Ispahani Ideal School | Admissions",
             "url": "https://ispahaniidealschool.com/admissions.html",
-            "description": "Review the Brahmanbaria Ispahani Ideal School admission process, requirements, and application details."
+            "description": "Review the Brahmanbaria Ispahani Ideal School admission process, eligibility criteria, required documents, and application details."
           }
         ]
       }
@@ -69,110 +69,600 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.9/dist/lenis.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Premium Apple/Linear/Stripe soft-edge image fade (20px rectangular blend) */
+      .about-hero-image {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .about-hero-image img {
+        border-radius: 20px;
+        width: 100%;
+        height: auto;
+        display: block;
+        -webkit-mask-image: linear-gradient(to right, transparent 0px, black 20px, black calc(100% - 20px), transparent 100%), linear-gradient(to bottom, transparent 0px, black 20px, black calc(100% - 20px), transparent 100%);
+        -webkit-mask-composite: destination-in;
+        mask-image: linear-gradient(to right, transparent 0px, black 20px, black calc(100% - 20px), transparent 100%), linear-gradient(to bottom, transparent 0px, black 20px, black calc(100% - 20px), transparent 100%);
+        mask-composite: intersect;
+      }
+      .museum-caption {
+        position: absolute;
+        bottom: 1.2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        padding: 0.45rem 1.3rem;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        color: #F3F4F6;
+        letter-spacing: 0.08em;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        white-space: nowrap;
+      }
+      .caption-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #F59E0B;
+        box-shadow: 0 0 8px #F59E0B;
+      }
+
+      /* Process step connecting indicator */
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        position: relative;
+      }
+      @media (max-width: 1024px) {
+        .process-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 640px) {
+        .process-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .process-step-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      @media (min-width: 1025px) {
+        .process-step-card:not(:last-child)::after {
+          content: "";
+          position: absolute;
+          top: 3.2rem;
+          right: -1.2rem;
+          width: 0.8rem;
+          height: 2px;
+          background: linear-gradient(90deg, var(--accent-heritage-gold, #F59E0B), rgba(245, 158, 11, 0.2));
+          z-index: 1;
+        }
+      }
+      .process-step-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.85rem;
+        color: var(--accent-heritage-gold, #F59E0B);
+        font-weight: 700;
+        margin-bottom: 0.6rem;
+        display: block;
+        letter-spacing: 0.08em;
+      }
+
+      /* Eligibility 2-Column Split Layout */
+      .eligibility-split {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 3.5rem;
+        align-items: start;
+      }
+      @media (max-width: 900px) {
+        .eligibility-split {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+      }
+      .eligibility-card {
+        margin-bottom: 1.5rem;
+        padding: 1.8rem 2.2rem;
+        background: rgba(16, 25, 45, 0.65);
+        border: 1px solid var(--border-museum);
+        border-radius: 16px;
+        transition: all 0.3s ease;
+      }
+      .eligibility-card:hover {
+        border-color: var(--accent-heritage-gold);
+        transform: translateX(6px);
+      }
+      .eligibility-level {
+        font-family: "JetBrains Mono", monospace;
+        color: var(--accent-heritage-gold);
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 0.4rem;
+        display: block;
+        letter-spacing: 0.05em;
+      }
+
+      /* Checklist Cards Grid */
+      .checklist-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.8rem;
+      }
+      .checklist-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.2rem;
+        padding: 1.8rem;
+        background: rgba(16, 25, 45, 0.65);
+        border: 1px solid var(--border-museum);
+        border-radius: 16px;
+        transition: all 0.3s ease;
+      }
+      .checklist-card:hover {
+        border-color: var(--accent-heritage-gold);
+        transform: translateY(-4px);
+      }
+
+      /* FAQ Accordion Styling */
+      .faq-list {
+        max-width: 850px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+      .faq-item {
+        background: rgba(16, 25, 45, 0.75);
+        backdrop-filter: blur(16px);
+        border: 1px solid var(--border-museum);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .faq-item[open] {
+        border-color: var(--accent-heritage-gold);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(245, 158, 11, 0.1);
+      }
+      .faq-summary {
+        padding: 1.6rem 2rem;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "Outfit", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-parchment);
+        outline: none;
+      }
+      .faq-summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq-icon {
+        color: var(--accent-heritage-gold);
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 1;
+        transition: transform 0.3s ease;
+      }
+      .faq-item[open] .faq-icon {
+        transform: rotate(45deg);
+      }
+      .faq-body {
+        padding: 0 2rem 1.6rem;
+        color: var(--text-warm-silver);
+        line-height: 1.7;
+        font-size: 1.02rem;
+        border-top: 1px solid rgba(245, 158, 11, 0.15);
+        margin-top: -0.2rem;
+        padding-top: 1.2rem;
+      }
+    </style>
   </head>
-  <body>
+  <body class="home-page admissions-page">
+    <!-- Sticky Premium Glass Navbar -->
     <header class="site-header">
       <div class="container nav-wrapper">
+        <!-- LEFT: School Logo -->
         <a class="logo" href="index.html">
           <img src="images/log.png" alt="Brahmanbaria Ispahani Ideal School logo" />
-          <div>
+          <div class="logo-text">
             <span class="logo-title">Brahmanbaria Ispahani Ideal School</span>
             <span class="logo-subtitle">Inspiring Future Leaders</span>
           </div>
         </a>
+
         <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
           <span class="nav-toggle-bar"></span>
         </button>
+        
+        <!-- CENTER: Navigation Links -->
         <nav class="site-nav" id="primary-menu">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="academics.html">Academics</a></li>
-            <li><a href="teachers.html">Teachers</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="admissions.html">Admissions</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+            <li><a href="academics.html" class="nav-link" data-i18n="nav.academics">Academics</a></li>
+            <li><a href="teachers.html" class="nav-link" data-i18n="nav.teachers">Teachers</a></li>
+            <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+            <li><a href="admissions.html" class="nav-link active" data-i18n="nav.admissions">Admissions</a></li>
+            <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </nav>
+
+        <!-- RIGHT: Language Switcher & Apply Now Button -->
+        <div class="nav-right">
+          <div class="lang-switcher-wrap">
+            <button class="lang-switcher-btn" id="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+              <span>🌐</span> <span id="current-lang-label">English</span> <span style="font-size: 0.7rem;">▼</span>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown" role="menu">
+              <button class="lang-option active" data-lang="en" role="menuitem">English</button>
+              <button class="lang-option" data-lang="bn" role="menuitem">বাংলা</button>
+            </div>
+          </div>
+          <a class="btn btn-primary nav-apply-btn" href="#admission-process"><span data-i18n="nav.apply">Apply Now</span></a>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="page-hero">
+      <!-- 1. Premium Compact Hero Section -->
+      <section class="section about-hero-section" style="padding: clamp(3rem, 5vw, 4.8rem) 0 2.5rem;">
+        <div class="container about-hero-grid">
+          <div class="about-hero-text" data-aos="fade-right">
+            <span class="heritage-kicker">ADMISSIONS</span>
+            <h1 class="hero-line" style="font-size: clamp(2.8rem, 4.8vw, 4.5rem); margin-bottom: 1.2rem; line-height: 1.08;">Join a Community Where Students Thrive</h1>
+            <p class="hero-line" style="font-size: clamp(1.1rem, 1.3vw, 1.25rem); line-height: 1.7; max-width: 580px; margin-bottom: 2.2rem; color: var(--text-warm-silver);">
+              We are committed to academic excellence, ethical character development, and holistic student growth. Discover a transparent, supportive enrollment journey designed to nurture future leaders from their very first day.
+            </p>
+            <div class="hero-actions hero-line" style="justify-content: flex-start;">
+              <a class="btn btn-primary" href="#admission-process"><span>Apply Now</span></a>
+              <a class="btn btn-light" href="contact.html"><span>Contact Admissions</span></a>
+            </div>
+          </div>
+          <div class="about-hero-image" data-aos="fade-left" data-aos-delay="150">
+            <img src="images/all_2.JPG" alt="Students learning and thriving at Brahmanbaria Ispahani Ideal School" loading="lazy" />
+            <div class="museum-caption">
+              <span class="caption-dot"></span>
+              <span>SESSION ENROLLMENT OPEN</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Admission Process -->
+      <section id="admission-process" class="section" style="padding: 4.5rem 0;">
         <div class="container">
-          <h1>Admissions</h1>
-          <p>
-            Join Brahmanbaria Ispahani Ideal School through a transparent and supportive admission process designed for families.
-          </p>
-          <p class="breadcrumb">Home / Admissions</p>
+          <div class="section-heading text-center" data-aos="fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem;">
+            <p class="kicker heritage-kicker">HOW TO APPLY</p>
+            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1rem;">Admission Process</h2>
+            <p style="font-size: 1.1rem; color: var(--text-warm-silver);">Follow our structured, four-step journey to join our prestigious educational institution.</p>
+          </div>
+
+          <div class="process-grid">
+            <!-- Step 1 -->
+            <article class="card heritage-card process-step-card" data-aos="fade-up" data-aos-delay="0">
+              <div style="margin-bottom: 1.2rem;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-heritage-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/>
+                </svg>
+              </div>
+              <span class="process-step-num">STEP 1</span>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--text-parchment);">Submit Application</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">Complete the official online inquiry form or obtain an application package directly from our campus admissions desk.</p>
+            </article>
+
+            <!-- Step 2 -->
+            <article class="card heritage-card process-step-card" data-aos="fade-up" data-aos-delay="100">
+              <div style="margin-bottom: 1.2rem;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-heritage-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                </svg>
+              </div>
+              <span class="process-step-num">STEP 2</span>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--text-parchment);">Document Verification</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">Submit required identification, academic report cards, and photographs for prompt administrative verification.</p>
+            </article>
+
+            <!-- Step 3 -->
+            <article class="card heritage-card process-step-card" data-aos="fade-up" data-aos-delay="200">
+              <div style="margin-bottom: 1.2rem;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-heritage-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <span class="process-step-num">STEP 3</span>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--text-parchment);">Student Assessment / Interview</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">Applicants attend a friendly grade-level evaluation while parents engage in a supportive faculty consultation.</p>
+            </article>
+
+            <!-- Step 4 -->
+            <article class="card heritage-card process-step-card" data-aos="fade-up" data-aos-delay="300">
+              <div style="margin-bottom: 1.2rem;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-heritage-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                </svg>
+              </div>
+              <span class="process-step-num">STEP 4</span>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--text-parchment);">Confirmation & Enrollment</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">Receive your official acceptance offer, campus orientation guide, and finalize enrollment fee submission.</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <!-- Admission Process -->
-      <section class="section">
+      <!-- 3. Eligibility (Premium Two-Column Section) -->
+      <section class="section" style="padding: 4.5rem 0;">
+        <div class="container eligibility-split">
+          <div data-aos="fade-right">
+            <span class="heritage-kicker">ELIGIBILITY CRITERIA</span>
+            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1.2rem; color: var(--text-parchment); line-height: 1.15;">Age & Grade Level Placements</h2>
+            <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-warm-silver); margin-bottom: 2rem;">
+              Our placement criteria ensure every child enters a learning environment perfectly tailored to their emotional maturity and cognitive readiness. Age thresholds are calculated as of January 1st of the intake year.
+            </p>
+            <a class="btn btn-light" href="contact.html"><span>Consult Grade Placement</span></a>
+          </div>
+
+          <div data-aos="fade-left" data-aos-delay="150">
+            <!-- Play Group -->
+            <div class="eligibility-card">
+              <span class="eligibility-level">Early Years Intake</span>
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-parchment);">Play Group & Nursery</h3>
+              <p style="font-size: 0.98rem; color: var(--text-warm-silver); line-height: 1.65;">
+                Children aged 3+ to 4+ years. Focuses on foundational social interaction, sensory discovery, motor skills development, and joyful play-based learning.
+              </p>
+            </div>
+
+            <!-- Primary -->
+            <div class="eligibility-card">
+              <span class="eligibility-level">Elementary Progression</span>
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-parchment);">Primary School (Grades 1 to 5)</h3>
+              <p style="font-size: 0.98rem; color: var(--text-warm-silver); line-height: 1.65;">
+                Children aged 6+ years for Grade 1. Requires successful completion of pre-primary competencies or satisfactory evaluation in literacy and foundational numeracy.
+              </p>
+            </div>
+
+            <!-- Secondary -->
+            <div class="eligibility-card">
+              <span class="eligibility-level">Advanced Preparation</span>
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-parchment);">Secondary School (Grades 6 to 10)</h3>
+              <p style="font-size: 0.98rem; color: var(--text-warm-silver); line-height: 1.65;">
+                Students seeking entry into middle and senior years. Admission requires formal academic transcripts from their previous accredited institution and merit assessment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Required Documents -->
+      <section class="section" style="padding: 4.5rem 0;">
         <div class="container">
-          <div class="section-heading">
-            <p class="kicker">How to Apply</p>
-            <h2>Admission Process</h2>
-            <p>Complete these steps to apply for the upcoming academic session.</p>
+          <div class="section-heading text-center" data-aos="fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem;">
+            <p class="kicker heritage-kicker">DOCUMENTATION</p>
+            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1rem;">Required Documents</h2>
+            <p style="font-size: 1.1rem; color: var(--text-warm-silver);">Please prepare clear copies of the following checklist items prior to submitting your formal application.</p>
           </div>
 
-          <div class="process-steps">
-            <article class="card process-step">
-              <h3>Submit Inquiry</h3>
-              <p>Contact our admission desk or complete the online inquiry form.</p>
+          <div class="checklist-grid">
+            <!-- Doc 1 -->
+            <div class="checklist-card" data-aos="fade-up" data-aos-delay="0">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-heritage-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.4rem; color: var(--text-parchment);">Birth Certificate</h3>
+                <p style="font-size: 0.95rem; color: var(--text-warm-silver); line-height: 1.6;">Official government-issued computerized birth registration copy for age verification.</p>
+              </div>
+            </div>
+
+            <!-- Doc 2 -->
+            <div class="checklist-card" data-aos="fade-up" data-aos-delay="100">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-heritage-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.4rem; color: var(--text-parchment);">Passport-size Photographs</h3>
+                <p style="font-size: 0.95rem; color: var(--text-warm-silver); line-height: 1.6;">Two recent color passport-size photographs of the student and one of each parent.</p>
+              </div>
+            </div>
+
+            <!-- Doc 3 -->
+            <div class="checklist-card" data-aos="fade-up" data-aos-delay="200">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-heritage-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.4rem; color: var(--text-parchment);">Previous Academic Records</h3>
+                <p style="font-size: 0.95rem; color: var(--text-warm-silver); line-height: 1.6;">Certified progress cards or annual transcripts from the applicant's prior school year.</p>
+              </div>
+            </div>
+
+            <!-- Doc 4 -->
+            <div class="checklist-card" data-aos="fade-up" data-aos-delay="300">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-heritage-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.4rem; color: var(--text-parchment);">Guardian NID (or equivalent)</h3>
+                <p style="font-size: 0.95rem; color: var(--text-warm-silver); line-height: 1.6;">Photocopy of National Identity Card or valid passport of father, mother, or legal guardian.</p>
+              </div>
+            </div>
+
+            <!-- Doc 5 -->
+            <div class="checklist-card" data-aos="fade-up" data-aos-delay="400">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-heritage-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.4rem; color: var(--text-parchment);">Transfer Certificate</h3>
+                <p style="font-size: 0.95rem; color: var(--text-warm-silver); line-height: 1.6;">Original School Leaving or Transfer Certificate (applicable for Grade 2 and above intake).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Why Choose Our School (3x2 Premium Grid) -->
+      <section class="section" style="padding: 4.5rem 0;">
+        <div class="container">
+          <div class="section-heading text-center" data-aos="fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem;">
+            <p class="kicker heritage-kicker">THE ISPAHANI ADVANTAGE</p>
+            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1rem;">Why Choose Our School</h2>
+            <p style="font-size: 1.1rem; color: var(--text-warm-silver);">Discover the pillars that distinguish our institution as the premier choice for educational excellence.</p>
+          </div>
+
+          <div class="why-choose-grid">
+            <!-- Card 1 -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="0" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div style="margin-bottom: 1.2rem;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-heritage-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--text-parchment);">Academic Excellence</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">Rigorous national curriculum enhanced with modern STEAM modules and consistent top board examination achievements.</p>
             </article>
-            <article class="card process-step">
-              <h3>Provide Documents</h3>
-              <p>Upload previous transcripts, ID documents, and student photograph.</p>
+
+            <!-- Card 2 -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="100" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div style="margin-bottom: 1.2rem;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-heritage-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--text-parchment);">Experienced Teachers</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">Highly qualified subject specialists dedicated to individualized student mentorship and caring academic guidance.</p>
             </article>
-            <article class="card process-step">
-              <h3>Assessment &amp; Interview</h3>
-              <p>Applicants attend grade-level assessments and parent consultation.</p>
+
+            <!-- Card 3 -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="200" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div style="margin-bottom: 1.2rem;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-heritage-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--text-parchment);">Modern Campus</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">Advanced science and IT laboratories, interactive digital smartboards, and extensive multimedia learning libraries.</p>
             </article>
-            <article class="card process-step">
-              <h3>Final Confirmation</h3>
-              <p>Selected students receive offer letters and enrollment instructions.</p>
+
+            <!-- Card 4 -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="300" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div style="margin-bottom: 1.2rem;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-heritage-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--text-parchment);">Safe Environment</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">24/7 CCTV surveillance, vigilant campus security monitoring, and strict zero-tolerance policies for peace of mind.</p>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="400" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div style="margin-bottom: 1.2rem;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-heritage-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--text-parchment);">Character Development</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">Deep emphasis on ethical discipline, community responsibility, empathy, and strong moral leadership formation.</p>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="500" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div style="margin-bottom: 1.2rem;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-heritage-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--text-parchment);">Co-Curricular Activities</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">Vibrant clubs including robotics, competitive debates, athletics tournaments, and cultural arts exploration.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- Requirements -->
-      <section class="section bg-soft">
-        <div class="container split-layout">
-          <div>
-            <p class="kicker">Requirements</p>
-            <h2>Required Documents</h2>
-            <ul class="requirements-list">
-              <li>Completed admission form</li>
-              <li>Birth certificate copy</li>
-              <li>Two recent passport-size photographs</li>
-              <li>Previous school academic records</li>
-              <li>Parent or guardian identification</li>
-              <li>Transfer certificate (if applicable)</li>
-            </ul>
+      <!-- 6. Frequently Asked Questions (Premium Accordion) -->
+      <section class="section" style="padding: 4.5rem 0;">
+        <div class="container">
+          <div class="section-heading text-center" data-aos="fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem;">
+            <p class="kicker heritage-kicker">GOT QUESTIONS?</p>
+            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1rem;">Frequently Asked Questions</h2>
+            <p style="font-size: 1.1rem; color: var(--text-warm-silver);">Find quick answers to the most common inquiries regarding our enrollment timeline and process.</p>
           </div>
-          <div>
-            <img src="images/book.JPG" alt="Parent and student submitting admission documents" loading="lazy" />
+
+          <div class="faq-list">
+            <!-- FAQ 1 -->
+            <details class="faq-item" data-aos="fade-up" data-aos-delay="0">
+              <summary class="faq-summary">
+                <span>How do I apply?</span>
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-body">
+                You can submit an application inquiry online through our website or visit our main campus administration desk during school hours to collect an official physical application form.
+              </div>
+            </details>
+
+            <!-- FAQ 2 -->
+            <details class="faq-item" data-aos="fade-up" data-aos-delay="100">
+              <summary class="faq-summary">
+                <span>What documents are required?</span>
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-body">
+                Key documents include the student's computerized birth certificate copy, passport-size photographs of the child and parents, academic progress cards from previous school years, and guardian NID copies.
+              </div>
+            </details>
+
+            <!-- FAQ 3 -->
+            <details class="faq-item" data-aos="fade-up" data-aos-delay="200">
+              <summary class="faq-summary">
+                <span>When does admission begin?</span>
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-body">
+                Formal session intake typically begins in November for the upcoming academic year starting in January. However, families are encouraged to submit early inquiries as seats fill rapidly.
+              </div>
+            </details>
+
+            <!-- FAQ 4 -->
+            <details class="faq-item" data-aos="fade-up" data-aos-delay="300">
+              <summary class="faq-summary">
+                <span>Is there an admission test?</span>
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-body">
+                For Early Years (Play Group & Nursery), applicants participate in an informal, friendly play-based evaluation. For Grades 1 and above, students sit for a foundational literacy and numeracy evaluation.
+              </div>
+            </details>
+
+            <!-- FAQ 5 -->
+            <details class="faq-item" data-aos="fade-up" data-aos-delay="400">
+              <summary class="faq-summary">
+                <span>How can parents contact the school?</span>
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-body">
+                Parents can call our admissions desk directly at 01911-652338, email us at info@ispahaniidealschool.edu, or visit our main campus located at College para, Brahmanbaria.
+              </div>
+            </details>
           </div>
         </div>
       </section>
 
-      <!-- CTA -->
-      <section class="section">
-        <div class="container text-center">
-          <p class="kicker">Ready to Begin?</p>
-          <h2>Apply for Admission Today</h2>
-          <p style="margin: 0.7rem auto 1.2rem; max-width: 65ch">
-            Our admission team is here to support you throughout the process. Contact us for guidance on grade-level
-            placements and timelines.
-          </p>
-          <a class="btn btn-primary" href="contact.html#contact-form">Apply Now</a>
+      <!-- 7. Final Call To Action -->
+      <section class="section" style="padding: 4rem 0 5rem;">
+        <div class="container">
+          <div style="padding: clamp(3rem, 5vw, 4.5rem); text-align: center; background: linear-gradient(135deg, rgba(23, 35, 62, 0.85) 0%, rgba(16, 25, 45, 0.98) 100%); border: 1px solid var(--border-museum); border-radius: 24px; position: relative; overflow: hidden;" data-aos="fade-up">
+            <span class="heritage-kicker">TAKE THE NEXT STEP</span>
+            <h2 style="font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 1rem; color: var(--text-parchment);">Begin Your Child's Educational Journey Today</h2>
+            <p style="font-size: 1.15rem; color: var(--text-warm-silver); max-width: 620px; margin: 0 auto 2.5rem; line-height: 1.7;">
+              Give your child the lifelong foundation of academic rigor, character development, and inspiring mentorship.
+            </p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+              <a class="btn btn-primary" href="#admission-process"><span>Apply Now</span></a>
+              <a class="btn btn-light" href="contact.html"><span>Contact Admissions</span></a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -214,6 +704,9 @@
       </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

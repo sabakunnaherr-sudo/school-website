@@ -69,108 +69,268 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.9/dist/lenis.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="home-page about-page">
+    <!-- Sticky Premium Glass Navbar -->
     <header class="site-header">
       <div class="container nav-wrapper">
+        <!-- LEFT: School Logo -->
         <a class="logo" href="index.html">
           <img src="images/log.png" alt="Brahmanbaria Ispahani Ideal School logo" />
-          <div>
+          <div class="logo-text">
             <span class="logo-title">Brahmanbaria Ispahani Ideal School</span>
             <span class="logo-subtitle">Inspiring Future Leaders</span>
           </div>
         </a>
+
         <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
           <span class="nav-toggle-bar"></span>
         </button>
+        
+        <!-- CENTER: Navigation Links -->
         <nav class="site-nav" id="primary-menu">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="academics.html">Academics</a></li>
-            <li><a href="teachers.html">Teachers</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="admissions.html">Admissions</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" class="nav-link active" data-i18n="nav.about">About</a></li>
+            <li><a href="academics.html" class="nav-link" data-i18n="nav.academics">Academics</a></li>
+            <li><a href="teachers.html" class="nav-link" data-i18n="nav.teachers">Teachers</a></li>
+            <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+            <li><a href="admissions.html" class="nav-link" data-i18n="nav.admissions">Admissions</a></li>
+            <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </nav>
+
+        <!-- RIGHT: Language Switcher & Apply Now Button -->
+        <div class="nav-right">
+          <div class="lang-switcher-wrap">
+            <button class="lang-switcher-btn" id="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+              <span>🌐</span> <span id="current-lang-label">English</span> <span style="font-size: 0.7rem;">▼</span>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown" role="menu">
+              <button class="lang-option active" data-lang="en" role="menuitem">English</button>
+              <button class="lang-option" data-lang="bn" role="menuitem">বাংলা</button>
+            </div>
+          </div>
+          <a class="btn btn-primary nav-apply-btn" href="admissions.html"><span data-i18n="nav.apply">Apply Now</span></a>
+        </div>
       </div>
     </header>
 
     <main>
-      <!-- Page Hero -->
-      <section class="page-hero">
-        <div class="container">
-          <h1>About Brahmanbaria Ispahani Ideal School</h1>
-          <p>
-            Discover our journey, values, and commitment to developing responsible, capable, and compassionate
-            learners.
-          </p>
-          <p class="breadcrumb">Home / About</p>
-        </div>
-      </section>
-
-      <!-- School History -->
-      <section class="section">
-        <div class="container split-layout">
-          <div>
-            <p class="kicker">School History</p>
-            <h2>Building Excellence Through Every Generation</h2>
-            <p>
-              Founded in 2012, Brahmanbaria Ispahani Ideal School was established with the vision of providing high-quality, student-focused education. Over the years, the institution has grown into a vibrant academic community known for strong teaching standards and holistic student development.</p><br>
-
-<p>In 2021, the school expanded by opening its first branch in Bijeswar, marking an important milestone in its growth. From early childhood learning to higher secondary preparation, the school follows a progressive curriculum designed to support both academic achievement and personal development.
-            </p><br>
-            <p>
-              From early childhood learning to higher secondary preparation, we maintain a progressive curriculum
-              that supports both academic performance and personal growth.
+      <!-- Premium About Hero -->
+      <section class="section about-hero-section" style="padding: clamp(3.5rem, 6vw, 5.5rem) 0 2.5rem;">
+        <div class="container about-hero-grid">
+          <div class="about-hero-text" data-aos="fade-right">
+            <span class="heritage-kicker">ABOUT OUR SCHOOL</span>
+            <h1 class="hero-line" style="font-size: clamp(2.8rem, 4.8vw, 4.5rem); margin-bottom: 1.2rem; line-height: 1.08;">Building Excellence Since 2012</h1>
+            <p class="hero-line" style="font-size: clamp(1.1rem, 1.3vw, 1.25rem); line-height: 1.7; max-width: 580px; margin-bottom: 2.2rem; color: var(--text-warm-silver);">
+              Discover our journey, values, and commitment to developing responsible, capable, and compassionate learners. We combine academic rigor, moral integrity, and modern facilities to prepare the youth of Brahmanbaria to lead tomorrow.
             </p>
+            <div class="hero-actions hero-line" style="justify-content: flex-start;">
+              <a class="btn btn-primary" href="admissions.html"><span>Apply Now</span></a>
+              <a class="btn btn-light" href="contact.html"><span>Explore Campus</span></a>
+            </div>
           </div>
-          <div>
-            <img src="images/school.JPG" alt="Historical photo of Brahmanbaria Ispahani Ideal School campus" />
+          <div class="about-hero-image museum-frame" data-aos="fade-left" data-aos-delay="150">
+            <img src="images/school.JPG" alt="Historical photo of Brahmanbaria Ispahani Ideal School campus" loading="lazy" />
+            <div class="museum-caption">
+              <span class="caption-dot"></span>
+              <span>ESTABLISHED 2012 • BRAHMANBARIA</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Mission and Vision -->
-      <section class="section bg-soft">
-        <div class="container">
-          <div class="section-heading">
-            <p class="kicker">Purpose</p>
-            <h2>Mission and Vision</h2>
-            <p>Our direction is guided by clear values that place students at the center of everything we do.</p>
+      <!-- Premium Institutional Statistics Section -->
+      <section class="section stats-strip-section" aria-label="Institutional Credibility">
+        <div class="container stats-strip-grid">
+          <div class="stat-box">
+            <span class="stat-num trust-num" data-count="14" data-suffix="+">14+</span>
+            <span class="stat-lbl">Years of Excellence</span>
           </div>
-          <div class="card-grid">
-            <article class="card">
-              <h3>Our Mission</h3>
-              <p>
-                To empower students with knowledge, integrity, and practical skills through engaging instruction,
-                character education, and meaningful collaboration with families.
+          <div class="stat-divider"></div>
+          <div class="stat-box">
+            <span class="stat-num trust-num" data-count="2" data-suffix="">2</span>
+            <span class="stat-lbl">Campus Branches</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-box">
+            <span class="stat-num trust-num" data-count="100" data-suffix="%">100%</span>
+            <span class="stat-lbl">Student Focus</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-box">
+            <span class="stat-num trust-num" data-count="20" data-suffix="+">20+</span>
+            <span class="stat-lbl">Expert Faculty</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Editorial Split Layout: Our Story & Timeline -->
+      <section class="section" style="padding: 5rem 0;">
+        <div class="container split-layout" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 4rem; align-items: start;">
+          <div data-aos="fade-up">
+            <p class="kicker heritage-kicker">SCHOOL HISTORY</p>
+            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1.5rem; line-height: 1.2;">Building Excellence Through Every Generation</h2>
+            <p style="font-size: 1.05rem; line-height: 1.75; margin-bottom: 1.4rem; color: var(--text-warm-silver);">
+              Founded in 2012, Brahmanbaria Ispahani Ideal School was established with the vision of providing high-quality, student-focused education. Over the years, the institution has grown into a vibrant academic community known for strong teaching standards and holistic student development.
+            </p>
+            <p style="font-size: 1.05rem; line-height: 1.75; margin-bottom: 2rem; color: var(--text-warm-silver);">
+              In 2021, the school expanded by opening its first branch in Bijeswar, marking an important milestone in its growth. From early childhood learning to higher secondary preparation, we maintain a progressive curriculum designed to support both academic performance and personal growth.
+            </p>
+
+            <!-- Vertical Timeline -->
+            <div class="about-timeline">
+              <div class="timeline-node">
+                <span class="timeline-year">2012</span>
+                <h3 class="timeline-title">Foundation &amp; Vision</h3>
+                <p style="font-size: 0.95rem; color: var(--text-muted);">Established with the objective of fostering academic excellence and moral integrity in College para, Brahmanbaria.</p>
+              </div>
+              <div class="timeline-node">
+                <span class="timeline-year">2021</span>
+                <h3 class="timeline-title">Bijeswar Branch Expansion</h3>
+                <p style="font-size: 0.95rem; color: var(--text-muted);">Opened our second dedicated campus branch to extend accessible, modern learning facilities across the region.</p>
+              </div>
+              <div class="timeline-node">
+                <span class="timeline-year">Present Day</span>
+                <h3 class="timeline-title">Holistic Student Development</h3>
+                <p style="font-size: 0.95rem; color: var(--text-muted);">Serving learners from early childhood through higher secondary preparation with progressive educational standards.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="museum-frame" data-aos="fade-left" data-aos-delay="200" style="position: sticky; top: 7rem;">
+            <img src="images/book.JPG" alt="Academic learning environment at Brahmanbaria Ispahani Ideal School" loading="lazy" style="border-radius: 20px; width: 100%; object-fit: cover;" />
+            <div class="museum-caption">
+              <span class="caption-dot"></span>
+              <span>PROGRESSIVE ACADEMIC CURRICULUM</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission and Vision (Guiding Purpose) -->
+      <section class="section programs-section" style="padding: 4.5rem 0; background: rgba(16, 25, 45, 0.4); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+        <div class="container">
+          <div class="section-heading text-center" data-aos="fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem;">
+            <p class="kicker heritage-kicker">GUIDING PURPOSE</p>
+            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1rem;">Mission and Vision</h2>
+            <p style="font-size: 1.1rem; color: var(--text-warm-silver);">Our direction is guided by clear institutional values that place students at the center of everything we do.</p>
+          </div>
+          <div class="card-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.2rem; align-items: stretch;">
+            <!-- Mission Card -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="100" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.8rem;">
+                  <span class="discipline-tag" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-heritage-gold); padding: 0.35rem 0.9rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">Core Purpose</span>
+                  <div class="icon-badge" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-heritage-gold); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px;">
+                    <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px;height:24px;"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                  </div>
+                </div>
+                <h3 style="font-size: 1.7rem; margin-bottom: 1.2rem; color: var(--text-parchment);">Our Mission</h3>
+                <p style="font-size: 1.05rem; line-height: 1.75; color: var(--text-warm-silver);">
+                  To empower students with knowledge, integrity, and practical skills through engaging instruction, character education, and meaningful collaboration with families.
+                </p>
+              </div>
+            </article>
+
+            <!-- Vision Card -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="200" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div class="card-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.8rem;">
+                  <span class="discipline-tag" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-heritage-gold); padding: 0.35rem 0.9rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">Future Horizon</span>
+                  <div class="icon-badge" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-heritage-gold); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px;">
+                    <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px;height:24px;"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </div>
+                </div>
+                <h3 style="font-size: 1.7rem; margin-bottom: 1.2rem; color: var(--text-parchment);">Our Vision</h3>
+                <p style="font-size: 1.05rem; line-height: 1.75; color: var(--text-warm-silver);">
+                  To be a leading school that nurtures confident global citizens prepared for higher education, innovation, and lifelong contribution to society.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us / Institutional Pillars -->
+      <section class="section" style="padding: 5rem 0;">
+        <div class="container">
+          <div class="section-heading text-center" data-aos="fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem;">
+            <p class="kicker heritage-kicker">WHY CHOOSE US</p>
+            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1rem;">Institutional Excellence</h2>
+            <p style="font-size: 1.1rem; color: var(--text-warm-silver);">We combine high academic standards with foundational moral guidance across every grade.</p>
+          </div>
+          <div class="card-grid why-choose-grid">
+            <!-- Card 1: Core Values -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="0" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Core Values</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                Respect, responsibility, excellence, inclusion, and continuous improvement remain central to our school culture and daily practice.
               </p>
             </article>
-            <article class="card">
-              <h3>Our Vision</h3>
-              <p>
-                To be a leading school that nurtures confident global citizens prepared for higher education,
-                innovation, and lifelong contribution to society.
+
+            <!-- Card 2: Learning Philosophy -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="100" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-0.5-5.5Z"/><path d="M6 17h14"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Learning Philosophy</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                We combine academic rigor with creativity and reflection so students can think critically, communicate clearly, and lead confidently.
               </p>
             </article>
-            <article class="card">
-              <h3>Core Values</h3>
-              <p>
-                Respect, responsibility, excellence, inclusion, and continuous improvement remain central to
-                our school culture and daily practice.
+
+            <!-- Card 3: Holistic Growth -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="200" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Holistic Growth</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                From early childhood learning to higher secondary preparation, our progressive curriculum nurtures both intellect and character.
               </p>
             </article>
-            <article class="card">
-              <h3>Learning Philosophy</h3>
-              <p>
-                We combine academic rigor with creativity and reflection so students can think critically,
-                communicate clearly, and lead confidently.
+
+            <!-- Card 4: Dual Campuses -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="300" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Dual Campuses</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                With vibrant campuses in College para and Bijeswar, we provide modern facilities accessible across Brahmanbaria.
+              </p>
+            </article>
+
+            <!-- Card 5: Experienced Faculty -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="400" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Experienced Faculty</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                Our dedicated teachers combine experience, innovation, and compassion to guide every student toward academic and personal success.
+              </p>
+            </article>
+
+            <!-- Card 6: Safe & Modern Campus -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="500" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Safe &amp; Modern Campus</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                Our campuses provide a secure, welcoming, and technology-enabled environment where students can learn with confidence.
               </p>
             </article>
           </div>
@@ -198,8 +358,8 @@
         <div>
           <h3 class="footer-title">Quick Links</h3>
           <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
             <li><a href="academics.html">Academics</a></li>
-            <li><a href="teachers.html">Teachers</a></li>
             <li><a href="admissions.html">Admissions</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -215,6 +375,18 @@
       </div>
     </footer>
 
+    <!-- Gallery Lightbox Modal -->
+    <dialog id="gallery-lightbox" class="lightbox-modal" aria-label="Image preview">
+      <div class="lightbox-content">
+        <button class="lightbox-close" aria-label="Close preview">&times;</button>
+        <img id="lightbox-img" src="" alt="Gallery preview" />
+        <p id="lightbox-caption"></p>
+      </div>
+    </dialog>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

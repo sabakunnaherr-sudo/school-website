@@ -69,59 +69,141 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.9/dist/lenis.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Premium Apple/Linear/Stripe soft-edge image fade */
+      .about-hero-image {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .about-hero-image img {
+        border-radius: 20px;
+        width: 100%;
+        height: auto;
+        display: block;
+        -webkit-mask-image: linear-gradient(to right, transparent 0px, black 20px, black calc(100% - 20px), transparent 100%), linear-gradient(to bottom, transparent 0px, black 20px, black calc(100% - 20px), transparent 100%);
+        -webkit-mask-composite: destination-in;
+        mask-image: linear-gradient(to right, transparent 0px, black 20px, black calc(100% - 20px), transparent 100%), linear-gradient(to bottom, transparent 0px, black 20px, black calc(100% - 20px), transparent 100%);
+        mask-composite: intersect;
+      }
+      .museum-caption {
+        position: absolute;
+        bottom: 1.2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        padding: 0.45rem 1.3rem;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        color: #F3F4F6;
+        letter-spacing: 0.08em;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        white-space: nowrap;
+      }
+      .caption-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #F59E0B;
+        box-shadow: 0 0 8px #F59E0B;
+      }
+    </style>
   </head>
-  <body>
+  <body class="home-page teachers-page">
+    <!-- Sticky Premium Glass Navbar -->
     <header class="site-header">
       <div class="container nav-wrapper">
+        <!-- LEFT: School Logo -->
         <a class="logo" href="index.html">
           <img src="images/log.png" alt="Brahmanbaria Ispahani Ideal School logo" />
-          <div>
+          <div class="logo-text">
             <span class="logo-title">Brahmanbaria Ispahani Ideal School</span>
             <span class="logo-subtitle">Inspiring Future Leaders</span>
           </div>
         </a>
+
         <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
           <span class="nav-toggle-bar"></span>
         </button>
+        
+        <!-- CENTER: Navigation Links -->
         <nav class="site-nav" id="primary-menu">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="academics.html">Academics</a></li>
-            <li><a href="teachers.html">Teachers</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="admissions.html">Admissions</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+            <li><a href="academics.html" class="nav-link" data-i18n="nav.academics">Academics</a></li>
+            <li><a href="teachers.html" class="nav-link active" data-i18n="nav.teachers">Teachers</a></li>
+            <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+            <li><a href="admissions.html" class="nav-link" data-i18n="nav.admissions">Admissions</a></li>
+            <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </nav>
+
+        <!-- RIGHT: Language Switcher & Apply Now Button -->
+        <div class="nav-right">
+          <div class="lang-switcher-wrap">
+            <button class="lang-switcher-btn" id="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+              <span>🌐</span> <span id="current-lang-label">English</span> <span style="font-size: 0.7rem;">▼</span>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown" role="menu">
+              <button class="lang-option active" data-lang="en" role="menuitem">English</button>
+              <button class="lang-option" data-lang="bn" role="menuitem">বাংলা</button>
+            </div>
+          </div>
+          <a class="btn btn-primary nav-apply-btn" href="admissions.html"><span data-i18n="nav.apply">Apply Now</span></a>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="page-hero">
-        <div class="container">
-          <h1>Our Teachers</h1>
-          <p>
-            Our faculty members are passionate educators who combine subject expertise with mentorship and student care.
-          </p>
-          <p class="breadcrumb">Home / Teachers</p>
+      <!-- 1. Premium Hero Section -->
+      <section class="section about-hero-section" style="padding: clamp(3.5rem, 6vw, 5.5rem) 0 2.5rem;">
+        <div class="container about-hero-grid">
+          <div class="about-hero-text" data-aos="fade-right">
+            <span class="heritage-kicker">OUR FACULTY</span>
+            <h1 class="hero-line" style="font-size: clamp(2.8rem, 4.8vw, 4.5rem); margin-bottom: 1.2rem; line-height: 1.08;">Guiding Students with Knowledge and Care</h1>
+            <p class="hero-line" style="font-size: clamp(1.1rem, 1.3vw, 1.25rem); line-height: 1.7; max-width: 580px; margin-bottom: 2.2rem; color: var(--text-warm-silver);">
+              Our faculty members are passionate educators who combine deep subject expertise with unwavering mentorship and student care. They inspire intellectual curiosity and uphold strong moral standards every day.
+            </p>
+            <div class="hero-actions hero-line" style="justify-content: flex-start;">
+              <a class="btn btn-primary" href="admissions.html"><span>Apply Now</span></a>
+              <a class="btn btn-light" href="contact.html"><span>Contact Us</span></a>
+            </div>
+          </div>
+          <div class="about-hero-image museum-frame" data-aos="fade-left" data-aos-delay="150">
+            <img src="images/school.JPG" alt="Brahmanbaria Ispahani Ideal School Campus and Faculty Environment" loading="lazy" />
+            <div class="museum-caption">
+              <span class="caption-dot"></span>
+              <span>DEDICATED ACADEMIC MENTORSHIP</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- Teachers Grid -->
-      <section class="section">
+      <!-- 2. Teachers Grid & Branch Switcher -->
+      <section class="section" style="padding: 4.5rem 0;">
         <div class="container">
-          <div class="section-heading">
-            <p class="kicker">Faculty Team</p>
-            <h2>Guiding Students with Knowledge and Care</h2>
-            <p>Select a branch to view its teaching team, including the head teacher's message.</p>
+          <div class="section-heading text-center" data-aos="fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 2.5rem;">
+            <p class="kicker heritage-kicker">FACULTY TEAM</p>
+            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1rem;">Dedicated Teaching Staff</h2>
+            <p style="font-size: 1.1rem; color: var(--text-warm-silver);">Select a campus branch to view its teaching leadership and subject specialists.</p>
           </div>
 
-          <div class="faculty-switch" role="tablist" aria-label="Choose branch faculty">
+          <div class="faculty-switch" role="tablist" aria-label="Choose branch faculty" data-aos="fade-up" data-aos-delay="100">
             <button class="faculty-option active" type="button" data-faculty-target="main-branch-faculty" aria-pressed="true">
               Main Branch
             </button>
@@ -130,81 +212,108 @@
             </button>
           </div>
 
+          <!-- Main Branch Faculty Panel -->
           <div id="main-branch-faculty" class="faculty-panel active">
-            <article class="card head-teacher-card">
-              <img src="images/h1.png" alt="Portrait of Head Teacher Md Kamrul Islam" />
+            <!-- Head Teacher Card -->
+            <article class="card heritage-card head-teacher-card" data-aos="fade-up">
+              <img src="images/h1.png" alt="Portrait of Head Teacher Md Kamrul Islam" loading="lazy" />
               <div>
-                <p class="kicker">Head Teacher · Main Branch</p>
-                <h3>Md Kamrul Islam</h3>
+                <span class="discipline-tag" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-heritage-gold); padding: 0.35rem 0.9rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; display: inline-block; margin-bottom: 1rem;">Head Teacher · Main Branch</span>
+                <h3 style="font-size: clamp(1.8rem, 3vw, 2.3rem); margin-bottom: 0.3rem; color: var(--text-parchment);">Md Kamrul Islam</h3>
                 <p class="teacher-degree">M.Sc. (Mathematics), M.A. (English)</p>
-                <p class="teacher-role">Head Teacher, Main Branch</p>
+                <p class="teacher-role" style="margin-bottom: 1.2rem;">Head Teacher, Main Branch</p>
                 <p class="head-teacher-speech">
                   "At our main campus, we guide each learner with discipline, curiosity, and compassion so every student can grow into a confident and responsible citizen."
                 </p>
               </div>
             </article>
 
-            <div class="card-grid">
-              <article class="card teacher-card">
+            <!-- Teachers Grid -->
+            <div class="card-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 2.2rem; align-items: stretch;">
+              <article class="card heritage-card teacher-card" data-aos="fade-up" data-aos-delay="0" style="justify-content: flex-start;">
                 <img src="images/faceless.svg" alt="Portrait of Mst. Ferdusi Begum" loading="lazy" />
-                <h3>Mst. Ferdusi Begum</h3>
+                <h3 style="font-size: 1.4rem; margin-bottom: 0.3rem; color: var(--text-parchment);">Mst. Ferdusi Begum</h3>
                 <p class="teacher-degree">B.A. (Bangla)</p>
                 <p class="teacher-role">Bangla</p>
-                <p>Specializes in inquiry-based labs and higher secondary exam preparation.</p>
+                <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">Specializes in inquiry-based labs and higher secondary exam preparation.</p>
               </article>
-              <article class="card teacher-card">
+
+              <article class="card heritage-card teacher-card" data-aos="fade-up" data-aos-delay="150" style="justify-content: flex-start;">
                 <img src="images/faceless.svg" alt="Portrait of Ms. Sumi Akhter" loading="lazy" />
-                <h3>Ms. Sumi Akhter</h3>
+                <h3 style="font-size: 1.4rem; margin-bottom: 0.3rem; color: var(--text-parchment);">Ms. Sumi Akhter</h3>
                 <p class="teacher-degree">B.Com (Accounting)</p>
                 <p class="teacher-role">Accounting</p>
-                <p>Leads reading and writing workshops focused on communication skills.</p>
+                <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">Leads reading and writing workshops focused on communication skills.</p>
               </article>
-              <article class="card teacher-card">
+
+              <article class="card heritage-card teacher-card" data-aos="fade-up" data-aos-delay="300" style="justify-content: flex-start;">
                 <img src="images/faceless.svg" alt="Portrait of Sabakunnaher" loading="lazy" />
-                <h3>Sabakunnaher</h3>
+                <h3 style="font-size: 1.4rem; margin-bottom: 0.3rem; color: var(--text-parchment);">Sabakunnaher</h3>
                 <p class="teacher-degree">M.A. (Sociology)</p>
                 <p class="teacher-role">Sociology</p>
-                <p>Combines theory with practical demonstrations and safety-based lab training.</p>
+                <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">Combines theory with practical demonstrations and safety-based lab training.</p>
               </article>
             </div>
           </div>
 
+          <!-- Bijeswar Branch Faculty Panel -->
           <div id="bijeswar-branch-faculty" class="faculty-panel" aria-hidden="true">
-            <article class="card head-teacher-card">
+            <!-- Head Teacher Card -->
+            <article class="card heritage-card head-teacher-card">
               <img src="images/h2.png" alt="Portrait of Head Teacher Sabakunnaher" loading="lazy" />
               <div>
-                <p class="kicker">Head Teacher · Bijeswar Branch</p>
-                <h3>Sabakunnaher</h3>
+                <span class="discipline-tag" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-heritage-gold); padding: 0.35rem 0.9rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; display: inline-block; margin-bottom: 1rem;">Head Teacher · Bijeswar Branch</span>
+                <h3 style="font-size: clamp(1.8rem, 3vw, 2.3rem); margin-bottom: 0.3rem; color: var(--text-parchment);">Sabakunnaher</h3>
                 <p class="teacher-degree">M.A. (Sociology)</p>
-                <p class="teacher-role">Head Teacher, Bijeswar Branch</p>
+                <p class="teacher-role" style="margin-bottom: 1.2rem;">Head Teacher, Bijeswar Branch</p>
                 <p class="head-teacher-speech">
                   "Our Bijeswar branch is built on strong values, personal care, and academic consistency so students feel supported in every step of their journey."
                 </p>
               </div>
             </article>
 
-            <div class="card-grid">
-              <article class="card teacher-card">
+            <!-- Teachers Grid -->
+            <div class="card-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 2.2rem; align-items: stretch;">
+              <article class="card heritage-card teacher-card" style="justify-content: flex-start;">
                 <img src="images/faceless.svg" alt="Portrait of Ms. Kohenur Begum" loading="lazy" />
-                <h3>Ms. Kohenur Begum</h3>
+                <h3 style="font-size: 1.4rem; margin-bottom: 0.3rem; color: var(--text-parchment);">Ms. Kohenur Begum</h3>
                 <p class="teacher-degree">M.A. (English)</p>
                 <p class="teacher-role">English</p>
-                <p>Connects historical events to modern civic understanding and debate.</p>
+                <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">Connects historical events to modern civic understanding and debate.</p>
               </article>
-              <article class="card teacher-card">
+
+              <article class="card heritage-card teacher-card" style="justify-content: flex-start;">
                 <img src="images/faceless.svg" alt="Portrait of Liza Akther" loading="lazy" />
-                <h3>Liza Akther</h3>
+                <h3 style="font-size: 1.4rem; margin-bottom: 0.3rem; color: var(--text-parchment);">Liza Akther</h3>
                 <p class="teacher-degree">B.A. (Bangla)</p>
                 <p class="teacher-role">Bangla</p>
-                <p>Develops athletic skills, discipline, and teamwork through inclusive coaching.</p>
+                <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">Develops athletic skills, discipline, and teamwork through inclusive coaching.</p>
               </article>
-              <article class="card teacher-card">
+
+              <article class="card heritage-card teacher-card" style="justify-content: flex-start;">
                 <img src="images/faceless.svg" alt="Portrait of Ms. Marin Farhana" loading="lazy" />
-                <h3>Ms. Marin Farhana</h3>
+                <h3 style="font-size: 1.4rem; margin-bottom: 0.3rem; color: var(--text-parchment);">Ms. Marin Farhana</h3>
                 <p class="teacher-degree">B.Sc. (Mathematics)</p>
                 <p class="teacher-role">Mathematics</p>
-                <p>Encourages scientific curiosity with project work and classroom discussion.</p>
+                <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">Encourages scientific curiosity with project work and classroom discussion.</p>
               </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Final Institutional Banner -->
+      <section class="section" style="padding: 4rem 0 5rem;">
+        <div class="container">
+          <div class="museum-frame" style="padding: clamp(3rem, 5vw, 4.5rem); text-align: center; background: linear-gradient(135deg, rgba(23, 35, 62, 0.85) 0%, rgba(16, 25, 45, 0.98) 100%); border: 1px solid var(--border-museum); border-radius: 24px; position: relative; overflow: hidden;" data-aos="fade-up">
+            <span class="heritage-kicker">JOIN OUR COMMUNITY</span>
+            <h2 style="font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 1rem; color: var(--text-parchment);">Inspiring Excellence Under Expert Guidance</h2>
+            <p style="font-size: 1.15rem; color: var(--text-warm-silver); max-width: 620px; margin: 0 auto 2.5rem; line-height: 1.7;">
+              Discover how our experienced educators can unlock your child's full academic and leadership potential.
+            </p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+              <a class="btn btn-primary" href="admissions.html"><span>Apply Now</span></a>
+              <a class="btn btn-light" href="contact.html"><span>Contact Us</span></a>
             </div>
           </div>
         </div>
@@ -233,8 +342,8 @@
           <ul class="footer-links">
             <li><a href="about.html">About Us</a></li>
             <li><a href="academics.html">Academics</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
           <div class="social-links" aria-label="Social media links">
             <a href="#" aria-label="Facebook">Fb</a>
@@ -248,6 +357,18 @@
       </div>
     </footer>
 
+    <!-- Gallery Lightbox Modal -->
+    <dialog id="gallery-lightbox" class="lightbox-modal" aria-label="Image preview">
+      <div class="lightbox-content">
+        <button class="lightbox-close" aria-label="Close preview">&times;</button>
+        <img id="lightbox-img" src="" alt="Gallery preview" />
+        <p id="lightbox-caption"></p>
+      </div>
+    </dialog>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

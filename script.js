@@ -472,3 +472,138 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+/* ==========================================================================
+   PHASE 10 — PROFESSIONAL MULTILINGUAL ARCHITECTURE ENGINE
+   ========================================================================== */
+const i18nCache = {};
+
+async function loadLanguage(lang) {
+  if (i18nCache[lang]) return i18nCache[lang];
+  try {
+    const response = await fetch(`locales/${lang}.json`);
+    if (!response.ok) throw new Error(`Could not load ${lang}.json`);
+    const data = await response.json();
+    i18nCache[lang] = data;
+    return data;
+  } catch (error) {
+    console.error("i18n load error:", error);
+    return null;
+  }
+}
+
+function translatePage(translations) {
+  if (!translations) return;
+  
+  // Translate text elements
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const keyPath = el.getAttribute("data-i18n");
+    const keys = keyPath.split(".");
+    let val = translations;
+    for (const k of keys) {
+      if (val && val[k] !== undefined) val = val[k];
+      else { val = null; break; }
+    }
+    if (val !== null && typeof val === "string") {
+      const spanChild = el.querySelector("span:not(.icon)");
+      if (spanChild) spanChild.textContent = val;
+      else el.textContent = val;
+    }
+  });
+
+  // Translate placeholders
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    const keyPath = el.getAttribute("data-i18n-placeholder");
+    const keys = keyPath.split(".");
+    let val = translations;
+    for (const k of keys) {
+      if (val && val[k] !== undefined) val = val[k];
+      else { val = null; break; }
+    }
+    if (val !== null && typeof val === "string") {
+      el.setAttribute("placeholder", val);
+    }
+  });
+}
+
+async function switchLanguage(lang) {
+  localStorage.setItem("preferredLang", lang);
+  document.documentElement.lang = lang;
+
+  // Update SEO locale tags dynamically
+  const ogLocale = document.querySelector('meta[property="og:locale"]');
+  if (ogLocale) ogLocale.setAttribute("content", lang === "bn" ? "bn_BD" : "en_US");
+
+  // Update dropdown button label
+  const langLabel = document.getElementById("current-lang-label");
+  if (langLabel) langLabel.textContent = lang === "bn" ? "বাংলা" : "English";
+
+  // Update dropdown options active state
+  document.querySelectorAll(".lang-option").forEach((opt) => {
+    if (opt.getAttribute("data-lang") === lang) opt.classList.add("active");
+    else opt.classList.remove("active");
+  });
+
+  const translations = await loadLanguage(lang);
+  if (!translations) return;
+
+  // Premium GSAP fade transition
+  const translatableElements = document.querySelectorAll("[data-i18n], [data-i18n-placeholder]");
+  if (typeof gsap !== "undefined" && translatableElements.length > 0) {
+    gsap.to(translatableElements, {
+      opacity: 0.15,
+      duration: 0.14,
+      ease: "power2.inOut",
+      onComplete: () => {
+        translatePage(translations);
+        gsap.to(translatableElements, {
+          opacity: 1,
+          duration: 0.18,
+          ease: "power2.out"
+        });
+      }
+    });
+  } else {
+    translatePage(translations);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const langToggleBtn = document.getElementById("lang-toggle");
+  const langDropdown = document.getElementById("lang-dropdown");
+
+  if (langToggleBtn && langDropdown) {
+    langToggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isShow = langDropdown.classList.toggle("show");
+      langToggleBtn.setAttribute("aria-expanded", isShow ? "true" : "false");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!langToggleBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+        langDropdown.classList.remove("show");
+        langToggleBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.querySelectorAll(".lang-option").forEach((opt) => {
+      opt.addEventListener("click", () => {
+        const selectedLang = opt.getAttribute("data-lang");
+        switchLanguage(selectedLang);
+        langDropdown.classList.remove("show");
+        langToggleBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  // Auto detection & initialization
+  const savedLang = localStorage.getItem("preferredLang");
+  let initialLang = "en";
+  if (savedLang && (savedLang === "en" || savedLang === "bn")) {
+    initialLang = savedLang;
+  } else if (navigator.language && navigator.language.toLowerCase().startsWith("bn")) {
+    initialLang = "bn";
+  }
+  switchLanguage(initialLang);
+});
+

@@ -30,6 +30,10 @@
     />
     <meta property="og:url" content="https://ispahaniidealschool.com/" />
     <meta property="og:image" content="https://ispahaniidealschool.com/images/log.png" />
+    <meta property="og:locale" content="en_US" />
+    <link rel="alternate" hreflang="en" href="https://ispahaniidealschool.com/" />
+    <link rel="alternate" hreflang="bn" href="https://ispahaniidealschool.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://ispahaniidealschool.com/" />
     <link rel="canonical" href="https://ispahaniidealschool.com/" />
     <script type="application/ld+json">
       {
@@ -96,19 +100,28 @@
         <!-- CENTER: Navigation Links -->
         <nav class="site-nav" id="primary-menu">
           <ul>
-            <li><a href="index.html" class="nav-link active">Home</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="academics.html" class="nav-link">Academics</a></li>
-            <li><a href="teachers.html" class="nav-link">Teachers</a></li>
-            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-            <li><a href="admissions.html" class="nav-link">Admissions</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li><a href="index.html" class="nav-link active" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+            <li><a href="academics.html" class="nav-link" data-i18n="nav.academics">Academics</a></li>
+            <li><a href="teachers.html" class="nav-link" data-i18n="nav.teachers">Teachers</a></li>
+            <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+            <li><a href="admissions.html" class="nav-link" data-i18n="nav.admissions">Admissions</a></li>
+            <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </nav>
 
-        <!-- RIGHT: Premium Apply Now Button -->
+        <!-- RIGHT: Language Switcher & Apply Now Button -->
         <div class="nav-right">
-          <a class="btn btn-primary nav-apply-btn" href="admissions.html"><span>Apply Now</span></a>
+          <div class="lang-switcher-wrap">
+            <button class="lang-switcher-btn" id="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+              <span>🌐</span> <span id="current-lang-label">English</span> <span style="font-size: 0.7rem;">▼</span>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown" role="menu">
+              <button class="lang-option active" data-lang="en" role="menuitem">English</button>
+              <button class="lang-option" data-lang="bn" role="menuitem">বাংলা</button>
+            </div>
+          </div>
+          <a class="btn btn-primary nav-apply-btn" href="admissions.html"><span data-i18n="nav.apply">Apply Now</span></a>
         </div>
       </div>
     </header>
@@ -121,14 +134,14 @@
 
         <div class="container hero-content-wrapper">
           <div class="hero-text-composition">
-            <p class="kicker heritage-kicker">ESTABLISHED 2012 • BRAHMANBARIA</p>
-            <h1 class="hero-title">Where Knowledge Meets Character</h1>
-            <p class="hero-desc">
+            <p class="kicker heritage-kicker" data-i18n="home.kicker">ESTABLISHED 2012 • BRAHMANBARIA</p>
+            <h1 class="hero-title" data-i18n="home.heroTitle">Where Knowledge Meets Character</h1>
+            <p class="hero-desc" data-i18n="home.heroSubtitle">
               Welcome to the official website of Brahmanbaria Ispahani Ideal School. We combine academic rigor, moral integrity, and modern facilities to prepare the youth of Brahmanbaria to lead tomorrow.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="admissions.html"><span>Apply Now</span></a>
-              <a class="btn btn-light" href="#about"><span>Explore Campus</span></a>
+              <a class="btn btn-primary" href="admissions.html"><span data-i18n="home.exploreBtn">Apply Now</span></a>
+              <a class="btn btn-light" href="#about"><span data-i18n="home.campusBtn">Explore Campus</span></a>
             </div>
           </div>
         </div>
@@ -302,29 +315,29 @@
     <footer class="site-footer" id="contact" data-aos="fade-up">
       <div class="container footer-grid">
         <div>
-          <h3 class="footer-title">Brahmanbaria Ispahani Ideal School</h3>
-          <p class="footer-text">
+          <h3 class="footer-title" data-i18n="footer.title">Brahmanbaria Ispahani Ideal School</h3>
+          <p class="footer-text" data-i18n="footer.tagline">
             A progressive school community committed to strong academics, values-based learning, and student success.
           </p>
         </div>
 
         <div>
-          <h3 class="footer-title">Contact</h3>
+          <h3 class="footer-title" data-i18n="footer.contactHeading">Contact</h3>
           <ul class="footer-links">
-            <li><strong>Main Campus:</strong> College para, Brahmanbaria</li>
-            <li><strong>Bijeswar Branch:</strong> Bijeswar, Ulchapara, Brahmanbaria</li>
+            <li><strong data-i18n="footer.mainCampus">Main Campus:</strong> College para, Brahmanbaria</li>
+            <li><strong data-i18n="footer.bijeswarBranch">Bijeswar Branch:</strong> Bijeswar, Ulchapara, Brahmanbaria</li>
             <li><a href="tel:+8801911652338">01911-652338</a></li>
             <li><a href="mailto:info@ispahaniidealschool.edu">info@ispahaniidealschool.edu</a></li>
           </ul>
         </div>
 
         <div>
-          <h3 class="footer-title">Quick Links</h3>
+          <h3 class="footer-title" data-i18n="footer.quickLinks">Quick Links</h3>
           <ul class="footer-links">
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="academics.html">Academics</a></li>
-            <li><a href="admissions.html">Admissions</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+            <li><a href="academics.html" data-i18n="nav.academics">Academics</a></li>
+            <li><a href="admissions.html" data-i18n="nav.admissions">Admissions</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
           </ul>
           <div class="social-links" aria-label="Social media links">
             <a href="#" aria-label="Facebook">Fb</a>
@@ -334,7 +347,7 @@
         </div>
       </div>
       <div class="container footer-bottom">
-        <p>&copy; <span id="current-year"></span> Brahmanbaria Ispahani Ideal School. All rights reserved.</p>
+        <p>&copy; <span id="current-year"></span> <span data-i18n="footer.title">Brahmanbaria Ispahani Ideal School</span>. <span data-i18n="footer.rights">All rights reserved.</span></p>
       </div>
     </footer>
 

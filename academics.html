@@ -69,129 +69,346 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.9/dist/lenis.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="home-page academics-page">
+    <!-- Sticky Premium Glass Navbar -->
     <header class="site-header">
       <div class="container nav-wrapper">
+        <!-- LEFT: School Logo -->
         <a class="logo" href="index.html">
           <img src="images/log.png" alt="Brahmanbaria Ispahani Ideal School logo" />
-          <div>
+          <div class="logo-text">
             <span class="logo-title">Brahmanbaria Ispahani Ideal School</span>
             <span class="logo-subtitle">Inspiring Future Leaders</span>
           </div>
         </a>
+
         <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
           <span class="nav-toggle-bar"></span>
         </button>
+        
+        <!-- CENTER: Navigation Links -->
         <nav class="site-nav" id="primary-menu">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="academics.html">Academics</a></li>
-            <li><a href="teachers.html">Teachers</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="admissions.html">Admissions</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+            <li><a href="academics.html" class="nav-link active" data-i18n="nav.academics">Academics</a></li>
+            <li><a href="teachers.html" class="nav-link" data-i18n="nav.teachers">Teachers</a></li>
+            <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+            <li><a href="admissions.html" class="nav-link" data-i18n="nav.admissions">Admissions</a></li>
+            <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </nav>
+
+        <!-- RIGHT: Language Switcher & Apply Now Button -->
+        <div class="nav-right">
+          <div class="lang-switcher-wrap">
+            <button class="lang-switcher-btn" id="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+              <span>🌐</span> <span id="current-lang-label">English</span> <span style="font-size: 0.7rem;">▼</span>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown" role="menu">
+              <button class="lang-option active" data-lang="en" role="menuitem">English</button>
+              <button class="lang-option" data-lang="bn" role="menuitem">বাংলা</button>
+            </div>
+          </div>
+          <a class="btn btn-primary nav-apply-btn" href="admissions.html"><span data-i18n="nav.apply">Apply Now</span></a>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="page-hero">
-        <div class="container">
-          <h1>Academics</h1>
-          <p>
-            Our curriculum combines foundational knowledge, analytical thinking, and applied learning to prepare
-            students for university and real-world success.
-          </p>
-          <p class="breadcrumb">Home / Academics</p>
-        </div>
-      </section>
-
-      <!-- Academic Levels -->
-      <section class="section">
-        <div class="container">
-          <div class="section-heading">
-            <p class="kicker">Academic Structure</p>
-            <h2>Learning Across Every Stage</h2>
-            <p>Students receive age-appropriate instruction with clear progression from early grades to higher levels.</p>
-          </div>
-          <div class="info-grid">
-            <article class="card">
-              <h3>Primary School</h3>
-              <p>
-                Foundational literacy, numeracy, and social development through interactive and guided learning.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Middle School</h3>
-              <p>
-                Deeper conceptual understanding, project-based tasks, and independent study habits.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Senior School</h3>
-              <p>
-                Advanced coursework, exam preparation, leadership opportunities, and career guidance support.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Program Streams -->
-      <section class="section bg-soft">
-        <div class="container">
-          <div class="section-heading">
-            <p class="kicker">Program Streams</p>
-            <h2>Pathways for Diverse Interests</h2>
-            <p>Our students can explore focused pathways while maintaining a strong core curriculum.</p>
-          </div>
-          <div class="card-grid">
-            <article class="card">
-              <h3>STEM Pathway</h3>
-              <p>Mathematics, computing, engineering principles, and practical innovation projects.</p>
-            </article>
-            <article class="card">
-              <h3>Humanities Pathway</h3>
-              <p>History, literature, social sciences, and debate-based critical analysis.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Creative Arts</h3>
-              <p>Music, visual design, drama, and media communication for expressive growth.</p>
-            </article>
-            <article class="card">
-              <h3>Leadership &amp; Service</h3>
-              <p>Student council, community outreach, and character education initiatives.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Learning Approach -->
-      <section class="section">
-        <div class="container split-layout">
-          <div>
-            <p class="kicker">How We Teach</p>
-            <h2>Student-Centered, Data-Informed Instruction</h2>
-            <p>
-              Our teachers apply active learning, regular feedback cycles, and outcome tracking to help each student
-              progress confidently.
+      <!-- 1. Premium Hero -->
+      <section class="section about-hero-section" style="padding: clamp(3.5rem, 6vw, 5.5rem) 0 2.5rem;">
+        <div class="container about-hero-grid">
+          <div class="about-hero-text" data-aos="fade-right">
+            <span class="heritage-kicker">ACADEMICS</span>
+            <h1 class="hero-line" style="font-size: clamp(2.8rem, 4.8vw, 4.5rem); margin-bottom: 1.2rem; line-height: 1.08;">Learning Across Every Stage</h1>
+            <p class="hero-line" style="font-size: clamp(1.1rem, 1.3vw, 1.25rem); line-height: 1.7; max-width: 580px; margin-bottom: 2.2rem; color: var(--text-warm-silver);">
+              Our curriculum combines foundational knowledge, analytical thinking, and applied learning to prepare students for university and real-world success. We provide age-appropriate instruction with a clear progression from early childhood to higher levels.
             </p>
-            <ul>
-              <li>Continuous formative assessments and targeted intervention plans.</li>
-              <li>Digital tools integrated into daily learning and research activities.</li>
-              <li>Academic counseling and mentorship for personalized progress.</li>
+            <div class="hero-actions hero-line" style="justify-content: flex-start;">
+              <a class="btn btn-primary" href="admissions.html"><span>Apply Now</span></a>
+              <a class="btn btn-light" href="contact.html"><span>Contact Us</span></a>
+            </div>
+          </div>
+          <div class="about-hero-image museum-frame" data-aos="fade-left" data-aos-delay="150">
+            <img src="images/book.JPG" alt="Academic Excellence and Library at Brahmanbaria Ispahani Ideal School" loading="lazy" />
+            <div class="museum-caption">
+              <span class="caption-dot"></span>
+              <span>PROGRESSIVE ACADEMIC STANDARDS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Academic Programs -->
+      <section class="section programs-section" style="padding: 4.5rem 0; background: rgba(16, 25, 45, 0.4); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+        <div class="container">
+          <div class="section-heading text-center" data-aos="fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem;">
+            <p class="kicker heritage-kicker">ACADEMIC STRUCTURE</p>
+            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1rem;">Educational Progression</h2>
+            <p style="font-size: 1.1rem; color: var(--text-warm-silver);">Students receive tailored, structured instruction designed to foster intellectual maturity and character across three core levels.</p>
+          </div>
+          <div class="card-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 2.2rem; align-items: stretch;">
+            <!-- Primary School -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="0" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-0.5-5.5Z"/><path d="M6 17h14"/><path d="m12 6 2 2 4-4"/></svg>
+              </div>
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Primary School</h3>
+              <p style="font-size: 1rem; line-height: 1.65; color: var(--text-warm-silver);">
+                Foundational literacy, numeracy, and social development delivered through interactive, guided, and joyous classroom learning.
+              </p>
+            </article>
+
+            <!-- Middle School -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="150" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+              </div>
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Middle School</h3>
+              <p style="font-size: 1rem; line-height: 1.65; color: var(--text-warm-silver);">
+                Deeper conceptual understanding, interdisciplinary project-based tasks, analytical problem solving, and independent study habits.
+              </p>
+            </article>
+
+            <!-- Senior School -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="300" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Senior School</h3>
+              <p style="font-size: 1rem; line-height: 1.65; color: var(--text-warm-silver);">
+                Advanced academic coursework, comprehensive board exam preparation, leadership development, and dedicated university career guidance.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Learning Philosophy (Editorial Split Layout) -->
+      <section class="section" style="padding: 5.5rem 0;">
+        <div class="container split-layout" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 4rem; align-items: center;">
+          <div class="museum-frame" data-aos="fade-right">
+            <img src="images/cul_3.dat.JPG" alt="Students engaging in modern digital and practical learning" loading="lazy" style="border-radius: 20px; width: 100%; object-fit: cover;" />
+            <div class="museum-caption">
+              <span class="caption-dot"></span>
+              <span>DATA-INFORMED INSTRUCTION</span>
+            </div>
+          </div>
+
+          <div data-aos="fade-left">
+            <p class="kicker heritage-kicker">HOW WE TEACH</p>
+            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1.5rem; line-height: 1.2;">Student-Centered, Data-Informed Instruction</h2>
+            <p style="font-size: 1.05rem; line-height: 1.75; margin-bottom: 1.8rem; color: var(--text-warm-silver);">
+              Our experienced faculty apply active learning methodologies, regular feedback cycles, and individual outcome tracking to ensure every student progresses with confidence and mastery.
+            </p>
+            
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1.2rem;">
+              <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                <span style="color: var(--accent-heritage-gold); font-weight: bold; font-size: 1.2rem;">✓</span>
+                <span style="font-size: 1rem; color: var(--text-warm-silver); line-height: 1.6;">Continuous formative assessments paired with targeted intervention plans for individual academic growth.</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                <span style="color: var(--accent-heritage-gold); font-weight: bold; font-size: 1.2rem;">✓</span>
+                <span style="font-size: 1rem; color: var(--text-warm-silver); line-height: 1.6;">Modern digital tools integrated directly into daily learning, research activities, and assignments.</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                <span style="color: var(--accent-heritage-gold); font-weight: bold; font-size: 1.2rem;">✓</span>
+                <span style="font-size: 1rem; color: var(--text-warm-silver); line-height: 1.6;">Dedicated academic counseling and mentorship programs to guide student aspirations and wellbeing.</span>
+              </li>
             </ul>
           </div>
-          <div>
-            <img src="images/cul_3.dat.JPG" alt="Students using technology in an academic setting" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- 4. Curriculum Highlights (Program Streams) -->
+      <section class="section" style="padding: 5rem 0; background: rgba(16, 25, 45, 0.4); border-top: 1px solid var(--border-subtle);">
+        <div class="container">
+          <div class="section-heading text-center" data-aos="fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem;">
+            <p class="kicker heritage-kicker">PROGRAM STREAMS</p>
+            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1rem;">Pathways for Diverse Interests</h2>
+            <p style="font-size: 1.1rem; color: var(--text-warm-silver);">Students explore specialized disciplines while anchoring themselves in a rigorous core curriculum.</p>
+          </div>
+          <div class="card-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; align-items: stretch;">
+            <!-- STEM Pathway -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="0" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">STEM Pathway</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                Advanced mathematics, computing sciences, engineering concepts, and collaborative practical innovation projects.
+              </p>
+            </article>
+
+            <!-- Humanities Pathway -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="100" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Humanities Pathway</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                World history, rich literature, social sciences, ethics, and structured debate-based critical analysis.
+              </p>
+            </article>
+
+            <!-- Creative Arts -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="200" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Creative Arts</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                Vibrant music, visual arts design, dramatic performances, and modern media communication for expressive growth.
+              </p>
+            </article>
+
+            <!-- Leadership & Service -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="300" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Leadership &amp; Service</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                Active student council governance, community outreach programs, and foundational moral leadership initiatives.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Co-Curricular Activities -->
+      <section class="section" style="padding: 5rem 0;">
+        <div class="container">
+          <div class="section-heading text-center" data-aos="fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem;">
+            <p class="kicker heritage-kicker">HOLISTIC DEVELOPMENT</p>
+            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1rem;">Co-Curricular Activities</h2>
+            <p style="font-size: 1.1rem; color: var(--text-warm-silver);">True education extends beyond books. We encourage active participation in vibrant clubs and athletics.</p>
+          </div>
+          <div class="card-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; align-items: stretch;">
+            <!-- Science & Innovation -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="0" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Science &amp; Robotics</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                Hands-on robotics workshops, annual science fairs, coding olympiads, and experimental inquiry clubs.
+              </p>
+            </article>
+
+            <!-- Debate & Oratory -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="100" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Debate &amp; Oratory</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                Competitive parliamentary debate societies, public speaking forums, poetry recitation, and model UN conferences.
+              </p>
+            </article>
+
+            <!-- Athletics & Sports -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="200" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Athletics &amp; Sports</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                Inter-school football, cricket tournaments, indoor games, and structured fitness programs building teamwork and discipline.
+              </p>
+            </article>
+
+            <!-- Scouting & Service -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="300" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Scouting &amp; Service</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                Boy Scouts, Girl Guides, environmental conservation drives, and community welfare initiatives instilling civic responsibility.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Facilities -->
+      <section class="section" style="padding: 5rem 0; background: rgba(16, 25, 45, 0.4); border-top: 1px solid var(--border-subtle);">
+        <div class="container">
+          <div class="section-heading text-center" data-aos="fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem;">
+            <p class="kicker heritage-kicker">CAMPUS INFRASTRUCTURE</p>
+            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1rem;">Modern Learning Facilities</h2>
+            <p style="font-size: 1.1rem; color: var(--text-warm-silver);">Our campuses in College para and Bijeswar provide purpose-built environments designed to inspire curiosity.</p>
+          </div>
+          <div class="card-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; align-items: stretch;">
+            <!-- Advanced Labs -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="0" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M10 2v7.31"/><path d="M14 2v7.31"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/><path d="M5.52 16h12.96"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Science Laboratories</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                Fully equipped physics, chemistry, and biology laboratories enabling rigorous empirical experimentation and safety.
+              </p>
+            </article>
+
+            <!-- IT Centers -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="100" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Digital IT Centers</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                High-speed computer suites providing access to modern programming languages, digital research tools, and media design software.
+              </p>
+            </article>
+
+            <!-- Extensive Library -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="200" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-0.5-5.5Z"/><path d="M6 17h14"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Extensive Library</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                A quiet repository of thousands of academic volumes, reference encyclopedias, journals, and comfortable study spaces.
+              </p>
+            </article>
+
+            <!-- Smart Classrooms -->
+            <article class="card heritage-card" data-aos="fade-up" data-aos-delay="300" style="display: flex; flex-direction: column; justify-content: flex-start;">
+              <div class="feature-icon" style="color: var(--accent-heritage-gold); margin-bottom: 1.4rem;">
+                <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; color: var(--text-parchment);">Smart Classrooms</h3>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver);">
+                Interactive audio-visual learning environments designed to enhance student engagement and dynamic instructional delivery.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Final CTA -->
+      <section class="section" style="padding: 5rem 0;">
+        <div class="container">
+          <div class="museum-frame" style="padding: clamp(3rem, 5vw, 4.5rem); text-align: center; background: linear-gradient(135deg, rgba(23, 35, 62, 0.85) 0%, rgba(16, 25, 45, 0.98) 100%); border: 1px solid var(--border-museum); border-radius: 24px; position: relative; overflow: hidden;" data-aos="fade-up">
+            <span class="heritage-kicker">BEGIN YOUR JOURNEY</span>
+            <h2 style="font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 1rem; color: var(--text-parchment);">Empowering Tomorrow's Leaders Today</h2>
+            <p style="font-size: 1.15rem; color: var(--text-warm-silver); max-width: 620px; margin: 0 auto 2.5rem; line-height: 1.7;">
+              Take the next step toward providing your child with a prestigious, balanced, and values-driven academic foundation at Brahmanbaria Ispahani Ideal School.
+            </p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+              <a class="btn btn-primary" href="admissions.html"><span>Apply Now</span></a>
+              <a class="btn btn-light" href="contact.html"><span>Contact Us</span></a>
+            </div>
           </div>
         </div>
       </section>
@@ -218,7 +435,7 @@
           <h3 class="footer-title">Quick Links</h3>
           <ul class="footer-links">
             <li><a href="about.html">About Us</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="academics.html">Academics</a></li>
             <li><a href="admissions.html">Admissions</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -234,6 +451,18 @@
       </div>
     </footer>
 
+    <!-- Gallery Lightbox Modal -->
+    <dialog id="gallery-lightbox" class="lightbox-modal" aria-label="Image preview">
+      <div class="lightbox-content">
+        <button class="lightbox-close" aria-label="Close preview">&times;</button>
+        <img id="lightbox-img" src="" alt="Gallery preview" />
+        <p id="lightbox-caption"></p>
+      </div>
+    </dialog>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
