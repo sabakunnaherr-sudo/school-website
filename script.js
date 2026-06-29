@@ -341,63 +341,45 @@ document.addEventListener("DOMContentLoaded", () => {
       if (typeof ScrollTrigger !== "undefined") {
         gsap.registerPlugin(ScrollTrigger);
 
-        // Living Constellation Drifting & Magnetic Proximity
-        const bubbles = document.querySelectorAll(".constellation-bubble");
-        if (bubbles.length) {
-          bubbles.forEach((bubble, i) => {
+        // Premium Floating Navbar Links (Organic Drift & Hover Reactivity)
+        const navLinks = document.querySelectorAll(".home-page .site-nav a");
+        if (navLinks.length) {
+          navLinks.forEach((link, i) => {
             let driftTween = null;
             if (!prefersReducedMotion) {
-              driftTween = gsap.to(bubble, {
-                x: () => gsap.utils.random(-14, 14),
-                y: () => gsap.utils.random(-14, 14),
-                duration: () => gsap.utils.random(3.2, 4.8),
+              driftTween = gsap.to(link, {
+                x: () => gsap.utils.random(-2.5, 2.5),
+                y: () => gsap.utils.random(-2.5, 2.5),
+                duration: () => gsap.utils.random(3.5, 5.0),
                 ease: "sine.inOut",
                 repeat: -1,
                 yoyo: true,
-                delay: i * 0.25
+                delay: i * 0.35
               });
             }
 
-            bubble.addEventListener("mousemove", (e) => {
-              const rect = bubble.getBoundingClientRect();
-              const x = e.clientX - rect.left - rect.width / 2;
-              const y = e.clientY - rect.top - rect.height / 2;
-              
+            link.addEventListener("mouseenter", () => {
               if (driftTween) driftTween.pause();
-              gsap.to(bubble, {
-                x: x * 0.22,
-                y: y * 0.22,
-                scale: 1.05,
-                duration: 0.35,
+              gsap.to(link, {
+                y: -3,
+                scale: 1.03,
+                duration: 0.25,
                 ease: "power2.out",
                 overwrite: "auto"
               });
             });
 
-            bubble.addEventListener("mouseleave", () => {
-              gsap.to(bubble, {
+            link.addEventListener("mouseleave", () => {
+              gsap.to(link, {
                 x: 0,
                 y: 0,
                 scale: 1,
-                duration: 0.7,
-                ease: "elastic.out(1, 0.6)",
+                duration: 0.45,
+                ease: "power2.out",
                 onComplete: () => {
                   if (driftTween) driftTween.restart();
                 }
               });
-            });
-
-            bubble.addEventListener("click", (e) => {
-              gsap.to(bubble, { scale: 0.94, duration: 0.15, yoyo: true, repeat: 1 });
-              const targetHref = bubble.getAttribute("href");
-              if (targetHref && targetHref.startsWith("#")) {
-                e.preventDefault();
-                const targetEl = document.querySelector(targetHref);
-                if (targetEl) {
-                  const targetTop = targetEl.getBoundingClientRect().top + window.pageYOffset - 80;
-                  window.scrollTo({ top: targetTop, behavior: "smooth" });
-                }
-              }
             });
           });
         }

@@ -77,12 +77,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="home-page">
-    <!-- Sticky Header -->
+    <!-- Sticky Premium Glass Navbar -->
     <header class="site-header">
       <div class="container nav-wrapper">
+        <!-- LEFT: School Logo -->
         <a class="logo" href="index.html">
           <img src="images/log.png" alt="Brahmanbaria Ispahani Ideal School logo" />
-          <div>
+          <div class="logo-text">
             <span class="logo-title">Brahmanbaria Ispahani Ideal School</span>
             <span class="logo-subtitle">Inspiring Future Leaders</span>
           </div>
@@ -92,151 +93,69 @@
           <span class="nav-toggle-bar"></span>
         </button>
 
+        <!-- CENTER: Navigation Links -->
         <nav class="site-nav" id="primary-menu">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="academics.html">Academics</a></li>
-            <li><a href="teachers.html">Teachers</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="admissions.html">Admissions</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="academics.html" class="nav-link">Academics</a></li>
+            <li><a href="teachers.html" class="nav-link">Teachers</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
           </ul>
         </nav>
+
+        <!-- RIGHT: Premium Apply Now Button -->
+        <div class="nav-right">
+          <a class="btn btn-primary nav-apply-btn" href="admissions.html"><span>Apply Now</span></a>
+        </div>
       </div>
     </header>
 
     <main>
-      <!-- Hero Section & Integrated Trust Foundation -->
-      <!-- Hero Section: Living Constellation Interactive Navigation -->
-      <section class="hero constellation-hero">
-        <!-- Slow animated mesh-gradient background & subtle particles -->
-        <div class="animated-mesh-background" aria-hidden="true"></div>
-        <div class="constellation-particles" aria-hidden="true">
-          <span class="c-particle p1"></span>
-          <span class="c-particle p2"></span>
-          <span class="c-particle p3"></span>
-          <span class="c-particle p4"></span>
-          <span class="c-particle p5"></span>
-        </div>
+      <!-- Hero Section: Official Educational Composition & Visible Campus -->
+      <section class="hero educational-hero">
+        <div class="hero-campus-background" aria-hidden="true"></div>
+        <div class="hero-lighting-overlay" aria-hidden="true"></div>
 
-        <div class="container constellation-wrapper">
-          <div class="constellation-header">
+        <div class="container hero-content-wrapper">
+          <div class="hero-text-composition">
             <p class="kicker heritage-kicker">ESTABLISHED 2012 • BRAHMANBARIA</p>
-            <h1 class="hero-title constellation-title">
-              Where Knowledge Flows
-            </h1>
-            <p class="hero-desc constellation-desc">
-              Explore our continuous currents of learning through our living constellation navigation. Each floating pathway connects you to the heart of our institution.
+            <h1 class="hero-title">Where Knowledge Meets Character</h1>
+            <p class="hero-desc">
+              Welcome to the official website of Brahmanbaria Ispahani Ideal School. We combine academic rigor, moral integrity, and modern facilities to prepare the youth of Brahmanbaria to lead tomorrow.
             </p>
-          </div>
-
-          <!-- Bounded Arena preventing overlap while allowing organic GSAP drift -->
-          <div class="constellation-arena" role="navigation" aria-label="Living Constellation Navigation">
-            
-            <!-- Bubble 1: Admissions -->
-            <div class="constellation-zone">
-              <a class="constellation-bubble" href="admissions.html" aria-label="Navigate to Admissions">
-                <div class="bubble-ambient-light"></div>
-                <div class="bubble-icon-wrapper">✦</div>
-                <div class="bubble-content">
-                  <span class="bubble-title">Admissions</span>
-                  <span class="bubble-subtitle">Begin Application</span>
-                </div>
-              </a>
-            </div>
-
-            <!-- Bubble 2: Academics -->
-            <div class="constellation-zone">
-              <a class="constellation-bubble" href="#programs" aria-label="Navigate to Academics">
-                <div class="bubble-ambient-light"></div>
-                <div class="bubble-icon-wrapper">📚</div>
-                <div class="bubble-content">
-                  <span class="bubble-title">Academics</span>
-                  <span class="bubble-subtitle">Explore Disciplines</span>
-                </div>
-              </a>
-            </div>
-
-            <!-- Bubble 3: About -->
-            <div class="constellation-zone">
-              <a class="constellation-bubble" href="#about" aria-label="Navigate to About Philosophy">
-                <div class="bubble-ambient-light"></div>
-                <div class="bubble-icon-wrapper">🏛️</div>
-                <div class="bubble-content">
-                  <span class="bubble-title">About</span>
-                  <span class="bubble-subtitle">Our Philosophy</span>
-                </div>
-              </a>
-            </div>
-
-            <!-- Bubble 4: Gallery -->
-            <div class="constellation-zone">
-              <a class="constellation-bubble" href="#gallery" aria-label="Navigate to Campus Gallery">
-                <div class="bubble-ambient-light"></div>
-                <div class="bubble-icon-wrapper">🖼️</div>
-                <div class="bubble-content">
-                  <span class="bubble-title">Gallery</span>
-                  <span class="bubble-subtitle">Life Windows</span>
-                </div>
-              </a>
-            </div>
-
-            <!-- Bubble 5: Teachers -->
-            <div class="constellation-zone">
-              <a class="constellation-bubble" href="teachers.html" aria-label="Navigate to Teachers Faculty">
-                <div class="bubble-ambient-light"></div>
-                <div class="bubble-icon-wrapper">👨‍🏫</div>
-                <div class="bubble-content">
-                  <span class="bubble-title">Teachers</span>
-                  <span class="bubble-subtitle">Expert Faculty</span>
-                </div>
-              </a>
-            </div>
-
-            <!-- Bubble 6: Contact -->
-            <div class="constellation-zone">
-              <a class="constellation-bubble" href="contact.html" aria-label="Navigate to Contact Page">
-                <div class="bubble-ambient-light"></div>
-                <div class="bubble-icon-wrapper">✉️</div>
-                <div class="bubble-content">
-                  <span class="bubble-title">Contact</span>
-                  <span class="bubble-subtitle">Get in Touch</span>
-                </div>
-              </a>
-            </div>
-
-          </div>
-
-          <!-- Trust Strip Preserved Below Constellation Arena -->
-          <div class="hero-trust-strip constellation-trust">
-            <div class="trust-item">
-              <span class="trust-num" data-count="14" data-suffix="+">14+</span>
-              <span class="trust-lbl">Years of Heritage</span>
-            </div>
-            <div class="trust-divider"></div>
-            <div class="trust-item">
-              <span class="trust-num" data-count="2" data-suffix="">2</span>
-              <span class="trust-lbl">Brahmanbaria Campuses</span>
-            </div>
-            <div class="trust-divider"></div>
-            <div class="trust-item">
-              <span class="trust-num" data-count="100" data-suffix="%">100%</span>
-              <span class="trust-lbl">Success Dedication</span>
-            </div>
-            <div class="trust-divider"></div>
-            <div class="trust-item">
-              <span class="trust-num" data-count="20" data-suffix="+">20+</span>
-              <span class="trust-lbl">Expert Faculty</span>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="admissions.html"><span>Apply Now</span></a>
+              <a class="btn btn-light" href="#about"><span>Explore Campus</span></a>
             </div>
           </div>
         </div>
-        
-        <!-- Flowing Current Connector -->
-        <div class="flowing-current-connector" aria-hidden="true">
-          <svg viewBox="0 0 100 120" preserveAspectRatio="none">
-            <path d="M50,0 C50,60 50,60 50,120" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" fill="none" opacity="0.3" />
-          </svg>
+      </section>
+
+      <!-- Premium Institutional Statistics Section -->
+      <section class="section stats-strip-section" aria-label="Institutional Credibility">
+        <div class="container stats-strip-grid">
+          <div class="stat-box">
+            <span class="stat-num trust-num" data-count="14" data-suffix="+">14+</span>
+            <span class="stat-lbl">Years of Excellence</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-box">
+            <span class="stat-num trust-num" data-count="2" data-suffix="">2</span>
+            <span class="stat-lbl">Campus Branches</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-box">
+            <span class="stat-num trust-num" data-count="100" data-suffix="%">100%</span>
+            <span class="stat-lbl">Student Focus</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-box">
+            <span class="stat-num trust-num" data-count="20" data-suffix="+">20+</span>
+            <span class="stat-lbl">Expert Faculty</span>
+          </div>
         </div>
       </section>
 
@@ -282,13 +201,6 @@
             </div>
           </div>
         </div>
-        
-        <!-- Flowing Current Connector -->
-        <div class="flowing-current-connector" aria-hidden="true">
-          <svg viewBox="0 0 100 120" preserveAspectRatio="none">
-            <path d="M50,0 C50,60 50,60 50,120" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" fill="none" opacity="0.3" />
-          </svg>
-        </div>
       </section>
 
       <!-- Disciplines of Inquiry -->
@@ -333,13 +245,6 @@
               <p>Digital intelligence, computational thinking, and modern software applications for tomorrow's world.</p>
             </article>
           </div>
-        </div>
-        
-        <!-- Flowing Current Connector -->
-        <div class="flowing-current-connector" aria-hidden="true">
-          <svg viewBox="0 0 100 120" preserveAspectRatio="none">
-            <path d="M50,0 C50,60 50,60 50,120" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" fill="none" opacity="0.3" />
-          </svg>
         </div>
       </section>
 
