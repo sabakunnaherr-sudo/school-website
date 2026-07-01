@@ -13,13 +13,28 @@ document.addEventListener("DOMContentLoaded", () => {
     siteNav.classList.remove("open");
     navToggle.classList.remove("active");
     navToggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
   };
 
   if (navToggle && siteNav) {
-    navToggle.addEventListener("click", () => {
+    navToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
       const isOpen = siteNav.classList.toggle("open");
       navToggle.classList.toggle("active", isOpen);
       navToggle.setAttribute("aria-expanded", String(isOpen));
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    });
+
+    document.addEventListener("click", (e) => {
+      if (siteNav.classList.contains("open") && !siteNav.contains(e.target) && !navToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && siteNav.classList.contains("open")) {
+        closeMenu();
+      }
     });
   }
 
