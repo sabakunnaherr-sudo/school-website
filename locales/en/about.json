@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "title": "Brahmanbaria Ispahani Ideal School | About",
+    "description": "Learn about Brahmanbaria Ispahani Ideal School's history, mission, vision, and campus facilities."
+  },
+  "nav": {
+    "logoAlt": "Brahmanbaria Ispahani Ideal School logo",
+    "logoTitle": "Brahmanbaria Ispahani Ideal School",
+    "logoSubtitle": "Inspiring Future Leaders",
+    "toggleMenu": "Toggle menu",
+    "home": "Home",
+    "about": "About",
+    "academics": "Academics",
+    "teachers": "Teachers",
+    "gallery": "Gallery",
+    "admissions": "Admissions",
+    "contact": "Contact",
+    "apply": "Apply Now",
+    "selectLanguage": "Select Language"
+  },
+  "home": {
+    "kicker": "ESTABLISHED 2012 • BRAHMANBARIA",
+    "campusBtn": "Explore Campus",
+    "statsValue1": "100%",
+    "statsLabel1": "Passing Rate",
+    "statsValue2": "50+",
+    "statsLabel2": "Expert Faculty",
+    "statsValue3": "1,200+",
+    "statsLabel3": "Students",
+    "statsValue4": "2",
+    "statsLabel4": "Campus Branches"
+  },
+  "stats": {
+    "ariaLabel": "Institutional Credibility"
+  },
+  "about": {
+    "kicker": "ABOUT OUR SCHOOL",
+    "title": "Building Excellence Since 2012",
+    "subtitle": "Discover our journey, values, and commitment to developing responsible, capable, and compassionate learners. We combine academic rigor, moral integrity, and modern facilities to prepare the youth of Brahmanbaria to lead tomorrow.",
+    "imageAlt": "Historical photo of Brahmanbaria Ispahani Ideal School campus",
+    "storyKicker": "OUR JOURNEY",
+    "storyTitle": "Shaping the Future Through Purposeful Education",
+    "storyText1": "Brahmanbaria Ispahani Ideal School was established with a singular vision: to create an educational institution where uncompromising moral standards meet rigorous academic benchmarks.",
+    "storyText2": "Located in our vibrant campuses at College Para and Bijeswar, we provide an atmosphere where curiosity is celebrated and character is forged.",
+    "node1Year": "2012",
+    "node1Title": "Foundation & Vision",
+    "node1Text": "Established with the objective of fostering academic excellence and moral integrity in College para, Brahmanbaria.",
+    "node2Year": "2021",
+    "node2Title": "Bijeswar Branch Expansion",
+    "node2Text": "Opened our second dedicated campus branch to extend accessible, modern learning facilities across the region.",
+    "node3Year": "Present Day",
+    "node3Title": "Holistic Student Development",
+    "node3Text": "Serving learners from early childhood through higher secondary preparation with progressive educational standards.",
+    "storyImageAlt": "Academic learning environment at Brahmanbaria Ispahani Ideal School",
+    "storyImageCaption": "PROGRESSIVE ACADEMIC CURRICULUM",
+    "valuesKicker": "CORE PRINCIPLES",
+    "valuesTitle": "The Pillars of Our Institution",
+    "valuesSubtitle": "Our daily interactions and pedagogical philosophy are guided by timeless institutional values.",
+    "missionTag": "Core Purpose",
+    "missionTitle": "Our Mission",
+    "missionText": "To cultivate a safe, stimulating, and technologically advanced environment where dedicated educators nurture each student's unique potential.",
+    "visionTag": "Future Horizon",
+    "visionTitle": "Our Vision",
+    "visionText": "To be a premier center of learning that inspires critical thinking, ethical leadership, and a lifelong passion for knowledge."
+  },
+  "whyChoose": {
+    "kicker": "WHY CHOOSE US",
+    "title": "Institutional Excellence",
+    "subtitle": "We combine high academic standards with foundational moral guidance across every grade.",
+    "card1Title": "Core Values",
+    "card1Text": "Respect, responsibility, excellence, inclusion, and continuous improvement remain central to our school culture and daily practice.",
+    "card2Title": "Learning Philosophy",
+    "card2Text": "We combine academic rigor with creativity and reflection so students can think critically, communicate clearly, and lead confidently.",
+    "card3Title": "Holistic Growth",
+    "card3Text": "From early childhood learning to higher secondary preparation, our progressive curriculum nurtures both intellect and character.",
+    "card4Title": "Dual Campuses",
+    "card4Text": "With vibrant campuses in College para and Bijeswar, we provide modern facilities accessible across Brahmanbaria.",
+    "card5Title": "Experienced Faculty",
+    "card5Text": "Our dedicated teachers combine experience, innovation, and compassion to guide every student toward academic and personal success.",
+    "card6Title": "Safe & Modern Campus",
+    "card6Text": "Our campuses provide a secure, welcoming, and technology-enabled environment where students can learn with confidence."
+  },
+  "footer": {
+    "title": "Brahmanbaria Ispahani Ideal School",
+    "tagline": "A progressive school community committed to strong academics, values-based learning, and student success.",
+    "contactHeading": "Contact",
+    "mainCampusLabel": "Main Campus:",
+    "mainAddress": "College para, Brahmanbaria",
+    "bijeswarBranchLabel": "Bijeswar Branch:",
+    "bijeswarAddress": "Bijeswar, Ulchapara, Brahmanbaria",
+    "quickLinksHeading": "Quick Links",
+    "ariaFacebook": "Facebook",
+    "ariaInstagram": "Instagram",
+    "ariaLinkedIn": "LinkedIn",
+    "rights": "All rights reserved."
+  },
+  "lightbox": {
+    "ariaLabel": "Image preview",
+    "closeLabel": "Close preview"
+  }
+}

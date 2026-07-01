@@ -491,7 +491,7 @@ const i18nCache = {};
 
 function getPageLocalePath(lang) {
   let page = window.location.pathname.split("/").pop();
-  if (!page || page === "" || page === "index.html" || (document.body && document.body.classList.contains("home-page"))) {
+  if (!page || page === "" || page === "index.html") {
     return `locales/${lang}/home.json`;
   }
   const name = page.replace(/\.html$/, "");
