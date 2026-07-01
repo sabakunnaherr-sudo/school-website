@@ -283,6 +283,7 @@
     </style>
   </head>
   <body class="home-page admissions-page">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Sticky Premium Glass Navbar -->
     <header class="site-header">
       <div class="site-header-container">
@@ -296,7 +297,7 @@
             </div>
           </a>
 
-          <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
+          <button class="nav-toggle" data-i18n-aria-label="nav.toggleMenu" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
             <span class="nav-toggle-bar"></span>
           </button>
           
@@ -321,7 +322,7 @@
 
         <!-- OUTSIDE NAVIGATION: Floating Language Switcher -->
         <div class="lang-switcher-wrap floating-lang-control">
-          <button class="lang-switcher-btn" id="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+          <button class="lang-switcher-btn" id="lang-toggle" data-i18n-aria-label="nav.selectLanguage" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
             <span>🌐</span> <span id="current-lang-label">English</span> <span style="font-size: 0.7rem;">▼</span>
           </button>
           <div class="lang-dropdown" id="lang-dropdown" role="menu">
@@ -332,7 +333,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <!-- 1. Premium Compact Hero Section -->
       <section class="section about-hero-section" style="padding: clamp(3rem, 5vw, 4.8rem) 0 2.5rem;">
         <div class="container about-hero-grid">
@@ -712,6 +713,6 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="script.js?v=2.1"></script>
+    <script src="script.js?v=2.2"></script>
   </body>
 </html>

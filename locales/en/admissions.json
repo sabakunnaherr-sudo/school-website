@@ -106,10 +106,16 @@
     "tagline": "A progressive school community committed to strong academics, values-based learning, and student success.",
     "contactHeading": "Contact",
     "mainCampus": "Main Campus:",
+    "mainCampusLabel": "Main Campus:",
     "mainAddress": "College para, Brahmanbaria",
     "bijeswarBranch": "Bijeswar Branch:",
+    "bijeswarBranchLabel": "Bijeswar Branch:",
     "bijeswarAddress": "Bijeswar, Ulchapara, Brahmanbaria",
     "quickLinks": "Quick Links",
+    "quickLinksHeading": "Quick Links",
+    "ariaFacebook": "Facebook",
+    "ariaInstagram": "Instagram",
+    "ariaLinkedIn": "LinkedIn",
     "rights": "All rights reserved."
   }
 }

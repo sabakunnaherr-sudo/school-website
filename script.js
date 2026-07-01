@@ -31,11 +31,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > mobileBreakpoint) {
-      closeMenu();
-    }
-  });
+  let resizeRaf = null;
+  window.addEventListener(
+    "resize",
+    () => {
+      if (resizeRaf) return;
+      resizeRaf = requestAnimationFrame(() => {
+        resizeRaf = null;
+        if (window.innerWidth > mobileBreakpoint) {
+          closeMenu();
+        }
+      });
+    },
+    { passive: true }
+  );
 
   const setHeaderState = () => {
     if (!header) {

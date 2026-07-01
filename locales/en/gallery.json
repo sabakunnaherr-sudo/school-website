@@ -79,16 +79,21 @@
     "c16Full": "The serene Brahmanbaria Ispahani Ideal School campus at dusk.",
     "ctaKicker": "BE PART OF OUR STORY",
     "ctaTitle": "Experience Our Vibrant Campus",
-    "ctaSubtitle": "We welcome prospective families to explore our secure classrooms, modern labs, and expansive grounds."
+    "ctaSubtitle": "We welcome prospective families to explore our secure classrooms, modern labs, and expansive grounds.",
+    "ctaBtn1": "Apply Online",
+    "ctaBtn2": "Book a Campus Tour"
   },
   "footer": {
     "title": "Brahmanbaria Ispahani Ideal School",
     "tagline": "A progressive school community committed to strong academics, values-based learning, and student success.",
     "contactHeading": "Contact",
+    "mainCampus": "Main Campus:",
     "mainCampusLabel": "Main Campus:",
     "mainAddress": "College para, Brahmanbaria",
+    "bijeswarBranch": "Bijeswar Branch:",
     "bijeswarBranchLabel": "Bijeswar Branch:",
     "bijeswarAddress": "Bijeswar, Ulchapara, Brahmanbaria",
+    "quickLinks": "Quick Links",
     "quickLinksHeading": "Quick Links",
     "ariaFacebook": "Facebook",
     "ariaInstagram": "Instagram",
