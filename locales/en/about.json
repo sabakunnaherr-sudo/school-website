@@ -31,7 +31,19 @@
     "statsLabel4": "Campus Branches"
   },
   "stats": {
-    "ariaLabel": "Institutional Credibility"
+    "ariaLabel": "Institutional Credibility",
+    "years": {
+      "label": "Years of Excellence"
+    },
+    "branches": {
+      "label": "Campus Branches"
+    },
+    "focus": {
+      "label": "Student Focus"
+    },
+    "faculty": {
+      "label": "Expert Faculty"
+    }
   },
   "about": {
     "kicker": "ABOUT OUR SCHOOL",
