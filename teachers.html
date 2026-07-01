@@ -126,45 +126,49 @@
   <body class="home-page teachers-page">
     <!-- Sticky Premium Glass Navbar -->
     <header class="site-header">
-      <div class="container nav-wrapper">
-        <!-- LEFT: School Logo -->
-        <a class="logo" href="index.html">
-          <img src="images/log.png" alt="Brahmanbaria Ispahani Ideal School logo" />
-          <div class="logo-text">
-            <span class="logo-title">Brahmanbaria Ispahani Ideal School</span>
-            <span class="logo-subtitle">Inspiring Future Leaders</span>
-          </div>
-        </a>
-
-        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
-          <span class="nav-toggle-bar"></span>
-        </button>
-        
-        <!-- CENTER: Navigation Links -->
-        <nav class="site-nav" id="primary-menu">
-          <ul>
-            <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
-            <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
-            <li><a href="academics.html" class="nav-link" data-i18n="nav.academics">Academics</a></li>
-            <li><a href="teachers.html" class="nav-link active" data-i18n="nav.teachers">Teachers</a></li>
-            <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
-            <li><a href="admissions.html" class="nav-link" data-i18n="nav.admissions">Admissions</a></li>
-            <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
-          </ul>
-        </nav>
-
-        <!-- RIGHT: Language Switcher & Apply Now Button -->
-        <div class="nav-right">
-          <div class="lang-switcher-wrap">
-            <button class="lang-switcher-btn" id="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
-              <span>🌐</span> <span id="current-lang-label">English</span> <span style="font-size: 0.7rem;">▼</span>
-            </button>
-            <div class="lang-dropdown" id="lang-dropdown" role="menu">
-              <button class="lang-option active" data-lang="en" role="menuitem">English</button>
-              <button class="lang-option" data-lang="bn" role="menuitem">বাংলা</button>
+      <div class="site-header-container">
+        <div class="nav-wrapper">
+          <!-- LEFT: School Logo -->
+          <a class="logo" href="index.html">
+            <img src="images/log.png" alt="Brahmanbaria Ispahani Ideal School logo" />
+            <div class="logo-text">
+              <span class="logo-title">Brahmanbaria Ispahani Ideal School</span>
+              <span class="logo-subtitle">Inspiring Future Leaders</span>
             </div>
+          </a>
+
+          <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
+            <span class="nav-toggle-bar"></span>
+          </button>
+          
+          <!-- CENTER: Navigation Links -->
+          <nav class="site-nav" id="primary-menu">
+            <ul>
+              <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+              <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+              <li><a href="academics.html" class="nav-link" data-i18n="nav.academics">Academics</a></li>
+              <li><a href="teachers.html" class="nav-link active" data-i18n="nav.teachers">Teachers</a></li>
+              <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+              <li><a href="admissions.html" class="nav-link" data-i18n="nav.admissions">Admissions</a></li>
+              <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <!-- RIGHT: Apply Now Button -->
+          <div class="nav-right">
+            <a class="btn btn-primary nav-apply-btn" href="admissions.html"><span data-i18n="nav.apply">Apply Now</span></a>
           </div>
-          <a class="btn btn-primary nav-apply-btn" href="admissions.html"><span data-i18n="nav.apply">Apply Now</span></a>
+        </div>
+
+        <!-- OUTSIDE NAVIGATION: Floating Language Switcher -->
+        <div class="lang-switcher-wrap floating-lang-control">
+          <button class="lang-switcher-btn" id="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span>🌐</span> <span id="current-lang-label">English</span> <span style="font-size: 0.7rem;">▼</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown" role="menu">
+            <button class="lang-option active" data-lang="en" role="menuitem">English</button>
+            <button class="lang-option" data-lang="bn" role="menuitem">বাংলা</button>
+          </div>
         </div>
       </div>
     </header>
@@ -194,65 +198,6 @@
         </div>
       </section>
 
-      <!-- 1.5 Administrative Leadership Section -->
-      <section class="section" style="padding: 4.5rem 0; background: rgba(16, 25, 45, 0.4); border-top: 1px solid var(--border-subtle);">
-        <div class="container">
-          <div class="section-heading text-center" data-aos="fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem;">
-            <p class="kicker heritage-kicker" data-i18n="teachers.leadKicker">ADMINISTRATIVE LEADERSHIP</p>
-            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1rem;" data-i18n="teachers.leadTitle">Guiding Our Institutional Vision</h2>
-            <p style="font-size: 1.1rem; color: var(--text-warm-silver);" data-i18n="teachers.leadSubtitle">Our leadership team brings decades of educational expertise to drive student success.</p>
-          </div>
-          <div class="card-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; align-items: stretch;">
-            <!-- Principal -->
-            <article class="card heritage-card teacher-card" data-aos="fade-up" data-aos-delay="0" style="justify-content: flex-start;">
-              <img src="images/faceless.svg" alt="Principal" loading="lazy" style="width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 1.2rem; background: rgba(245, 158, 11, 0.1); border: 2px solid var(--accent-heritage-gold); padding: 0.5rem;" />
-              <h3 style="font-size: 1.4rem; margin-bottom: 0.3rem; color: var(--text-parchment); text-align: center;" data-i18n="teachers.prinName">Md. Abdul Hannan</h3>
-              <p class="teacher-role" style="text-align: center; margin-bottom: 1rem;" data-i18n="teachers.prinTitle">Principal, Brahmanbaria Ispahani Ideal School</p>
-              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver); text-align: center;" data-i18n="teachers.prinBio">With over 25 years of distinguished academic leadership, Principal Hannan champions progressive teaching methodologies.</p>
-            </article>
-
-            <!-- Vice Principal -->
-            <article class="card heritage-card teacher-card" data-aos="fade-up" data-aos-delay="100" style="justify-content: flex-start;">
-              <img src="images/faceless.svg" alt="Vice Principal" loading="lazy" style="width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 1.2rem; background: rgba(245, 158, 11, 0.1); border: 2px solid var(--accent-heritage-gold); padding: 0.5rem;" />
-              <h3 style="font-size: 1.4rem; margin-bottom: 0.3rem; color: var(--text-parchment); text-align: center;" data-i18n="teachers.vpName">Prof. Nurul Islam</h3>
-              <p class="teacher-role" style="text-align: center; margin-bottom: 1rem;" data-i18n="teachers.vpTitle">Vice Principal &amp; Head of Academics</p>
-              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver); text-align: center;" data-i18n="teachers.vpBio">Prof. Islam oversees curriculum innovation, faculty professional development, and rigorous evaluation standards.</p>
-            </article>
-
-            <!-- Dir 1 -->
-            <article class="card heritage-card teacher-card" data-aos="fade-up" data-aos-delay="200" style="justify-content: flex-start;">
-              <img src="images/faceless.svg" alt="Director" loading="lazy" style="width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 1.2rem; background: rgba(245, 158, 11, 0.1); border: 2px solid var(--accent-heritage-gold); padding: 0.5rem;" />
-              <h3 style="font-size: 1.4rem; margin-bottom: 0.3rem; color: var(--text-parchment); text-align: center;" data-i18n="teachers.dirName">Fahmida Rahman</h3>
-              <p class="teacher-role" style="text-align: center; margin-bottom: 1rem;" data-i18n="teachers.dirTitle">Director of Student Counseling &amp; Guidance</p>
-              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver); text-align: center;" data-i18n="teachers.dirBio">Fahmida Rahman spearheads holistic student well-being initiatives and parent-teacher coordination.</p>
-            </article>
-
-            <!-- Dir 2 -->
-            <article class="card heritage-card teacher-card" data-aos="fade-up" data-aos-delay="0" style="justify-content: flex-start;">
-              <img src="images/faceless.svg" alt="Director" loading="lazy" style="width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 1.2rem; background: rgba(245, 158, 11, 0.1); border: 2px solid var(--accent-heritage-gold); padding: 0.5rem;" />
-              <h3 style="font-size: 1.4rem; margin-bottom: 0.3rem; color: var(--text-parchment); text-align: center;" data-i18n="teachers.dir2Name">Engr. Kamrul Hasan</h3>
-              <p class="teacher-role" style="text-align: center; margin-bottom: 1rem;" data-i18n="teachers.dirTitle2">Director of IT &amp; Infrastructure</p>
-              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver); text-align: center;" data-i18n="teachers.dirBio2">Leading our STEM labs, smart classroom integration, and modern campus expansions.</p>
-            </article>
-
-            <!-- Dir 3 -->
-            <article class="card heritage-card teacher-card" data-aos="fade-up" data-aos-delay="100" style="justify-content: flex-start;">
-              <img src="images/faceless.svg" alt="Director" loading="lazy" style="width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 1.2rem; background: rgba(245, 158, 11, 0.1); border: 2px solid var(--accent-heritage-gold); padding: 0.5rem;" />
-              <h3 style="font-size: 1.4rem; margin-bottom: 0.3rem; color: var(--text-parchment); text-align: center;" data-i18n="teachers.dir3Name">Dr. Shamima Akhter</h3>
-              <p class="teacher-role" style="text-align: center; margin-bottom: 1rem;" data-i18n="teachers.dirTitle3">Head of Primary Education</p>
-              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver); text-align: center;" data-i18n="teachers.dirBio3">Dedicated to building a nurturing, curiosity-driven primary educational foundation.</p>
-            </article>
-
-            <!-- Dir 4 -->
-            <article class="card heritage-card teacher-card" data-aos="fade-up" data-aos-delay="200" style="justify-content: flex-start;">
-              <img src="images/faceless.svg" alt="Director" loading="lazy" style="width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 1.2rem; background: rgba(245, 158, 11, 0.1); border: 2px solid var(--accent-heritage-gold); padding: 0.5rem;" />
-              <h3 style="font-size: 1.4rem; margin-bottom: 0.3rem; color: var(--text-parchment); text-align: center;" data-i18n="teachers.dir4Name">Tarequl Islam Chowdhury</h3>
-              <p class="teacher-role" style="text-align: center; margin-bottom: 1rem;" data-i18n="teachers.dirTitle4">Coordinator of Sports &amp; Co-Curriculars</p>
-              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-warm-silver); text-align: center;" data-i18n="teachers.dirBio4">Organizing national-level athletic tournaments, cultural festivals, and scouting camps.</p>
-            </article>
-          </div>
-        </div>
-      </section>
 
       <!-- 2. Teachers Grid & Branch Switcher -->
       <section class="section" style="padding: 4.5rem 0;">

@@ -489,13 +489,23 @@ document.addEventListener("DOMContentLoaded", () => {
    ========================================================================== */
 const i18nCache = {};
 
+function getPageLocalePath(lang) {
+  let page = window.location.pathname.split("/").pop();
+  if (!page || page === "" || page === "index.html" || (document.body && document.body.classList.contains("home-page"))) {
+    return `locales/${lang}/home.json`;
+  }
+  const name = page.replace(/\.html$/, "");
+  return `locales/${lang}/${name}.json`;
+}
+
 async function loadLanguage(lang) {
-  if (i18nCache[lang]) return i18nCache[lang];
+  const filePath = getPageLocalePath(lang);
+  if (i18nCache[filePath]) return i18nCache[filePath];
   try {
-    const response = await fetch(`locales/${lang}.json`);
-    if (!response.ok) throw new Error(`Could not load ${lang}.json`);
+    const response = await fetch(`${filePath}?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Could not load translation file from ${filePath}`);
     const data = await response.json();
-    i18nCache[lang] = data;
+    i18nCache[filePath] = data;
     return data;
   } catch (error) {
     console.error("i18n load error:", error);
@@ -504,7 +514,7 @@ async function loadLanguage(lang) {
 }
 
 function getNestedValue(obj, path) {
-  if (!obj) return null;
+  if (!obj || !path) return null;
   const keys = path.split(".");
   let val = obj;
   for (const k of keys) {
@@ -519,21 +529,28 @@ function translatePage(translations, fallbackTranslations) {
   
   const resolveVal = (keyPath) => {
     let val = getNestedValue(translations, keyPath);
-    if (val === null) {
+    if (val === null && fallbackTranslations) {
       console.warn(`[i18n] Missing translation key: "${keyPath}". Falling back to English.`);
       val = getNestedValue(fallbackTranslations, keyPath);
     }
     return val;
   };
 
-  // Translate text elements
+  // Translate text elements & document.title
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const keyPath = el.getAttribute("data-i18n");
     const val = resolveVal(keyPath);
     if (val !== null) {
-      const spanChild = el.querySelector("span:not(.icon)");
-      if (spanChild) spanChild.textContent = val;
-      else el.textContent = val;
+      if (el.tagName === "TITLE") {
+        if (document.title !== val) document.title = val;
+      } else {
+        const spanChild = el.querySelector("span:not(.icon)");
+        if (spanChild) {
+          if (spanChild.textContent !== val) spanChild.textContent = val;
+        } else {
+          if (el.textContent !== val) el.textContent = val;
+        }
+      }
     }
   });
 
@@ -541,7 +558,7 @@ function translatePage(translations, fallbackTranslations) {
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
     const keyPath = el.getAttribute("data-i18n-placeholder");
     const val = resolveVal(keyPath);
-    if (val !== null) {
+    if (val !== null && el.getAttribute("placeholder") !== val) {
       el.setAttribute("placeholder", val);
     }
   });
@@ -550,7 +567,7 @@ function translatePage(translations, fallbackTranslations) {
   document.querySelectorAll("[data-i18n-title]").forEach((el) => {
     const keyPath = el.getAttribute("data-i18n-title");
     const val = resolveVal(keyPath);
-    if (val !== null) {
+    if (val !== null && el.getAttribute("title") !== val) {
       el.setAttribute("title", val);
     }
   });
@@ -559,9 +576,57 @@ function translatePage(translations, fallbackTranslations) {
   document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
     const keyPath = el.getAttribute("data-i18n-alt");
     const val = resolveVal(keyPath);
-    if (val !== null) {
+    if (val !== null && el.getAttribute("alt") !== val) {
       el.setAttribute("alt", val);
     }
+  });
+
+  // Translate aria-label
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+    const keyPath = el.getAttribute("data-i18n-aria-label");
+    const val = resolveVal(keyPath);
+    if (val !== null && el.getAttribute("aria-label") !== val) {
+      el.setAttribute("aria-label", val);
+    }
+  });
+
+  // Translate aria-description
+  document.querySelectorAll("[data-i18n-aria-description], [data-i18n-aria-desc]").forEach((el) => {
+    const keyPath = el.getAttribute("data-i18n-aria-description") || el.getAttribute("data-i18n-aria-desc");
+    const val = resolveVal(keyPath);
+    if (val !== null && el.getAttribute("aria-description") !== val) {
+      el.setAttribute("aria-description", val);
+    }
+  });
+
+  // Translate meta content attribute
+  document.querySelectorAll("[data-i18n-content]").forEach((el) => {
+    const keyPath = el.getAttribute("data-i18n-content");
+    const val = resolveVal(keyPath);
+    if (val !== null && el.getAttribute("content") !== val) {
+      el.setAttribute("content", val);
+    }
+  });
+
+  // Translate caption attribute
+  document.querySelectorAll("[data-i18n-caption]").forEach((el) => {
+    const keyPath = el.getAttribute("data-i18n-caption");
+    const val = resolveVal(keyPath);
+    if (val !== null && el.getAttribute("data-caption") !== val) {
+      el.setAttribute("data-caption", val);
+    }
+  });
+
+  // Update animated stat numbers if language changed
+  document.querySelectorAll(".trust-num[data-count]").forEach((el) => {
+    const targetCount = el.getAttribute("data-count") || "";
+    const suffix = el.getAttribute("data-suffix") || "";
+    let text = targetCount + suffix;
+    if (document.documentElement.lang === "bn") {
+      const bnDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+      text = text.replace(/[0-9]/g, (w) => bnDigits[+w]);
+    }
+    if (el.textContent !== text) el.textContent = text;
   });
 }
 
@@ -588,7 +653,8 @@ async function switchLanguage(lang) {
   if (!translations) return;
 
   // Premium GSAP fade transition
-  const translatableElements = document.querySelectorAll("[data-i18n], [data-i18n-placeholder], [data-i18n-title], [data-i18n-alt]");
+  const translatableSelector = "[data-i18n], [data-i18n-placeholder], [data-i18n-title], [data-i18n-alt], [data-i18n-aria-label], [data-i18n-aria-description], [data-i18n-aria-desc], [data-i18n-content], [data-i18n-caption]";
+  const translatableElements = document.querySelectorAll(translatableSelector);
   if (typeof gsap !== "undefined" && translatableElements.length > 0) {
     gsap.to(translatableElements, {
       opacity: 0.15,

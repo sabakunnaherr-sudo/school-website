@@ -392,43 +392,47 @@
 
     <!-- Sticky Premium Glass Navbar -->
     <header class="site-header">
-      <div class="container nav-wrapper">
-        <a class="logo" href="index.html">
-          <img src="images/log.png" alt="Brahmanbaria Ispahani Ideal School logo" />
-          <div class="logo-text">
-            <span class="logo-title">Brahmanbaria Ispahani Ideal School</span>
-            <span class="logo-subtitle">Inspiring Future Leaders</span>
-          </div>
-        </a>
-
-        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
-          <span class="nav-toggle-bar"></span>
-        </button>
-        
-        <nav class="site-nav" id="primary-menu">
-          <ul>
-            <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
-            <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
-            <li><a href="academics.html" class="nav-link" data-i18n="nav.academics">Academics</a></li>
-            <li><a href="teachers.html" class="nav-link" data-i18n="nav.teachers">Teachers</a></li>
-            <li><a href="gallery.html" class="nav-link active" data-i18n="nav.gallery">Gallery</a></li>
-            <li><a href="admissions.html" class="nav-link" data-i18n="nav.admissions">Admissions</a></li>
-            <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
-          </ul>
-        </nav>
-
-        <!-- RIGHT: Language Switcher & Apply Now Button -->
-        <div class="nav-right">
-          <div class="lang-switcher-wrap">
-            <button class="lang-switcher-btn" id="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
-              <span>🌐</span> <span id="current-lang-label">English</span> <span style="font-size: 0.7rem;">▼</span>
-            </button>
-            <div class="lang-dropdown" id="lang-dropdown" role="menu">
-              <button class="lang-option active" data-lang="en" role="menuitem">English</button>
-              <button class="lang-option" data-lang="bn" role="menuitem">বাংলা</button>
+      <div class="site-header-container">
+        <div class="nav-wrapper">
+          <a class="logo" href="index.html">
+            <img src="images/log.png" alt="Brahmanbaria Ispahani Ideal School logo" />
+            <div class="logo-text">
+              <span class="logo-title">Brahmanbaria Ispahani Ideal School</span>
+              <span class="logo-subtitle">Inspiring Future Leaders</span>
             </div>
+          </a>
+
+          <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
+            <span class="nav-toggle-bar"></span>
+          </button>
+          
+          <nav class="site-nav" id="primary-menu">
+            <ul>
+              <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+              <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+              <li><a href="academics.html" class="nav-link" data-i18n="nav.academics">Academics</a></li>
+              <li><a href="teachers.html" class="nav-link" data-i18n="nav.teachers">Teachers</a></li>
+              <li><a href="gallery.html" class="nav-link active" data-i18n="nav.gallery">Gallery</a></li>
+              <li><a href="admissions.html" class="nav-link" data-i18n="nav.admissions">Admissions</a></li>
+              <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <!-- RIGHT: Apply Now Button -->
+          <div class="nav-right">
+            <a class="btn btn-primary nav-apply-btn" href="admissions.html"><span data-i18n="nav.apply">Apply Now</span></a>
           </div>
-          <a class="btn btn-primary nav-apply-btn" href="admissions.html"><span data-i18n="nav.apply">Apply Now</span></a>
+        </div>
+
+        <!-- OUTSIDE NAVIGATION: Floating Language Switcher -->
+        <div class="lang-switcher-wrap floating-lang-control">
+          <button class="lang-switcher-btn" id="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span>🌐</span> <span id="current-lang-label">English</span> <span style="font-size: 0.7rem;">▼</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown" role="menu">
+            <button class="lang-option active" data-lang="en" role="menuitem">English</button>
+            <button class="lang-option" data-lang="bn" role="menuitem">বাংলা</button>
+          </div>
         </div>
       </div>
     </header>

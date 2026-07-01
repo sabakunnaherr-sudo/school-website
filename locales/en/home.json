@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "title": "Brahmanbaria Ispahani Ideal School | Home",
+    "description": "Ispahani Ideal School in Brahmanbaria provides quality education, experienced teachers, and modern facilities to help students succeed academically and personally."
+  },
+  "nav": {
+    "logoAlt": "Brahmanbaria Ispahani Ideal School logo",
+    "logoTitle": "Brahmanbaria Ispahani Ideal School",
+    "logoSubtitle": "Inspiring Future Leaders",
+    "toggleMenu": "Toggle menu",
+    "home": "Home",
+    "about": "About",
+    "academics": "Academics",
+    "teachers": "Teachers",
+    "gallery": "Gallery",
+    "admissions": "Admissions",
+    "contact": "Contact",
+    "apply": "Apply Now",
+    "selectLanguage": "Select Language"
+  },
+  "hero": {
+    "kicker": "ESTABLISHED 2012 • BRAHMANBARIA",
+    "title": "Where Knowledge Meets Character",
+    "subtitle": "Welcome to the official website of Brahmanbaria Ispahani Ideal School. We combine academic rigor, moral integrity, and modern facilities to prepare the youth of Brahmanbaria to lead tomorrow.",
+    "primaryButton": "Apply Now",
+    "secondaryButton": "Explore Campus"
+  },
+  "stats": {
+    "ariaLabel": "Institutional Credibility",
+    "years": {
+      "label": "Years of Excellence"
+    },
+    "branches": {
+      "label": "Campus Branches"
+    },
+    "focus": {
+      "label": "Student Focus"
+    },
+    "faculty": {
+      "label": "Expert Faculty"
+    }
+  },
+  "aboutPreview": {
+    "kicker": "Welcome to Ispahani Ideal School",
+    "title": "A Tradition of Academic Rigor & Moral Integrity",
+    "description": "At Brahmanbaria Ispahani Ideal School, we believe education goes beyond textbooks. Our holistic approach integrates rigorous academic drills with leadership training, cultural appreciation, and moral grounding.",
+    "pillar1Title": "Sparking Curiosity",
+    "pillar1Desc": "Awakening an unquenchable wonder for scientific inquiry, literature, and mathematics.",
+    "pillar2Title": "Building Character",
+    "pillar2Desc": "Nurturing moral courage, empathy, discipline, and profound respect for our shared heritage.",
+    "pillar3Title": "Achieving Excellence",
+    "pillar3Desc": "Culminating in distinguished academic mastery and the confidence to shape the future.",
+    "readStoryBtn": "Read Our Full Story",
+    "imageAlt": "Students and Architecture at Brahmanbaria Ispahani Ideal School",
+    "imageCaption": "BIJESWAR BRANCH ARCHIVE"
+  },
+  "advantages": {
+    "kicker": "The Ispahani Advantage",
+    "title": "Why Parents Choose Our School",
+    "subtitle": "We provide an enriching educational environment designed to nurture confident, capable, and compassionate young minds.",
+    "card1Tag": "Excellence",
+    "card1Title": "Academic Excellence",
+    "card1Text": "Consistent board examination successes through structured curricula and dedicated tutoring.",
+    "card2Tag": "Ethics",
+    "card2Title": "Values-Based Learning",
+    "card2Text": "Instilling strong moral ethics, discipline, empathy, and respect for community heritage.",
+    "card3Tag": "Campus",
+    "card3Title": "Modern Facilities",
+    "card3Text": "Equipped with advanced science labs, digital classrooms, secure campus, and rich libraries.",
+    "card4Tag": "Holistic",
+    "card4Title": "Holistic Development",
+    "card4Text": "Active encouragement in athletics, debating, robotics, and arts alongside academic studies.",
+    "card5Tag": "Mentorship",
+    "card5Title": "Experienced Faculty",
+    "card5Text": "Our dedicated educators bring years of classroom expertise, pedagogical innovation, and mentorship to guide every student toward success.",
+    "card6Tag": "Security",
+    "card6Title": "Safe & Secure Campus",
+    "card6Text": "Our campuses provide a secure, monitored, and welcoming environment where students can learn, collaborate, and thrive with peace of mind."
+  },
+  "galleryPreview": {
+    "kicker": "CHRONICLES OF CAMPUS LIFE",
+    "title": "Living Campus Mosaic",
+    "subtitle": "An authentic window into daily discovery, cultural vibrancy, and academic companionship.",
+    "item1Alt": "School Cultural Celebration",
+    "item1Caption": "School Cultural Celebration",
+    "item2Alt": "Interactive Technology Lab",
+    "item2Caption": "Interactive Technology Lab",
+    "item3Alt": "Collaborative Student Workshop",
+    "item3Caption": "Collaborative Student Workshop",
+    "item4Alt": "Academic Campus Assembly",
+    "item4Caption": "Academic Campus Assembly",
+    "inspectBtn": "Inspect Photo",
+    "viewArchivesBtn": "View Complete Archives"
+  },
+  "cta": {
+    "kicker": "Begin Your Journey",
+    "title": "Give Your Child the Foundation They Deserve",
+    "subtitle": "Admissions are currently open for the upcoming academic session across both Main and Bijeswar campuses.",
+    "primaryButton": "Apply Online Now",
+    "secondaryButton": "Contact"
+  },
+  "footer": {
+    "title": "Brahmanbaria Ispahani Ideal School",
+    "tagline": "A progressive school community committed to strong academics, values-based learning, and student success.",
+    "contactHeading": "Contact",
+    "mainCampusLabel": "Main Campus:",
+    "mainAddress": "College para, Brahmanbaria",
+    "bijeswarBranchLabel": "Bijeswar Branch:",
+    "bijeswarAddress": "Bijeswar, Ulchapara, Brahmanbaria",
+    "quickLinksHeading": "Quick Links",
+    "ariaFacebook": "Facebook",
+    "ariaInstagram": "Instagram",
+    "ariaLinkedIn": "LinkedIn",
+    "rights": "All rights reserved."
+  },
+  "lightbox": {
+    "ariaLabel": "Image preview",
+    "closeLabel": "Close preview"
+  }
+}

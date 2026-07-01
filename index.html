@@ -13,24 +13,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
+      data-i18n-content="meta.description"
       content="Ispahani Ideal School in Brahmanbaria provides quality education, experienced teachers, and modern facilities to help students succeed academically and personally."
     />
     <meta
       name="keywords"
       content="Ispahani Ideal School, Brahmanbaria school, school admission, Bangladesh school, education"
     />
-    <title>Brahmanbaria Ispahani Ideal School | Home</title>
+    <title data-i18n="meta.title">Brahmanbaria Ispahani Ideal School | Home</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Brahmanbaria Ispahani Ideal School" />
-    <meta property="og:title" content="Brahmanbaria Ispahani Ideal School | Home" />
+    <meta property="og:title" data-i18n-content="meta.title" content="Brahmanbaria Ispahani Ideal School | Home" />
     <meta
       property="og:description"
+      data-i18n-content="meta.description"
       content="Ispahani Ideal School in Brahmanbaria provides quality education, experienced teachers, and modern facilities to help students succeed academically and personally."
     />
     <meta property="og:url" content="https://ispahaniidealschool.com/" />
     <meta property="og:image" content="https://ispahaniidealschool.com/images/log.png" />
     <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" data-i18n-content="meta.title" content="Brahmanbaria Ispahani Ideal School | Home" />
+    <meta
+      name="twitter:description"
+      data-i18n-content="meta.description"
+      content="Ispahani Ideal School in Brahmanbaria provides quality education, experienced teachers, and modern facilities to help students succeed academically and personally."
+    />
     <link rel="alternate" hreflang="en" href="https://ispahaniidealschool.com/" />
     <link rel="alternate" hreflang="bn" href="https://ispahaniidealschool.com/" />
     <link rel="alternate" hreflang="x-default" href="https://ispahaniidealschool.com/" />
@@ -83,45 +92,49 @@
   <body class="home-page">
     <!-- Sticky Premium Glass Navbar -->
     <header class="site-header">
-      <div class="container nav-wrapper">
-        <!-- LEFT: School Logo -->
-        <a class="logo" href="index.html">
-          <img src="images/log.png" alt="Brahmanbaria Ispahani Ideal School logo" />
-          <div class="logo-text">
-            <span class="logo-title">Brahmanbaria Ispahani Ideal School</span>
-            <span class="logo-subtitle">Inspiring Future Leaders</span>
-          </div>
-        </a>
-
-        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
-          <span class="nav-toggle-bar"></span>
-        </button>
-
-        <!-- CENTER: Navigation Links -->
-        <nav class="site-nav" id="primary-menu">
-          <ul>
-            <li><a href="index.html" class="nav-link active" data-i18n="nav.home">Home</a></li>
-            <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
-            <li><a href="academics.html" class="nav-link" data-i18n="nav.academics">Academics</a></li>
-            <li><a href="teachers.html" class="nav-link" data-i18n="nav.teachers">Teachers</a></li>
-            <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
-            <li><a href="admissions.html" class="nav-link" data-i18n="nav.admissions">Admissions</a></li>
-            <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
-          </ul>
-        </nav>
-
-        <!-- RIGHT: Language Switcher & Apply Now Button -->
-        <div class="nav-right">
-          <div class="lang-switcher-wrap">
-            <button class="lang-switcher-btn" id="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
-              <span>🌐</span> <span id="current-lang-label">English</span> <span style="font-size: 0.7rem;">▼</span>
-            </button>
-            <div class="lang-dropdown" id="lang-dropdown" role="menu">
-              <button class="lang-option active" data-lang="en" role="menuitem">English</button>
-              <button class="lang-option" data-lang="bn" role="menuitem">বাংলা</button>
+      <div class="site-header-container">
+        <div class="nav-wrapper">
+          <!-- LEFT: School Logo -->
+          <a class="logo" href="index.html">
+            <img src="images/log.png" data-i18n-alt="nav.logoAlt" alt="Brahmanbaria Ispahani Ideal School logo" />
+            <div class="logo-text">
+              <span class="logo-title" data-i18n="nav.logoTitle">Brahmanbaria Ispahani Ideal School</span>
+              <span class="logo-subtitle" data-i18n="nav.logoSubtitle">Inspiring Future Leaders</span>
             </div>
+          </a>
+
+          <button class="nav-toggle" data-i18n-aria-label="nav.toggleMenu" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
+            <span class="nav-toggle-bar"></span>
+          </button>
+
+          <!-- CENTER: Navigation Links -->
+          <nav class="site-nav" id="primary-menu">
+            <ul>
+              <li><a href="index.html" class="nav-link active" data-i18n="nav.home">Home</a></li>
+              <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+              <li><a href="academics.html" class="nav-link" data-i18n="nav.academics">Academics</a></li>
+              <li><a href="teachers.html" class="nav-link" data-i18n="nav.teachers">Teachers</a></li>
+              <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+              <li><a href="admissions.html" class="nav-link" data-i18n="nav.admissions">Admissions</a></li>
+              <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <!-- RIGHT: Apply Now Button -->
+          <div class="nav-right">
+            <a class="btn btn-primary nav-apply-btn" href="admissions.html"><span data-i18n="nav.apply">Apply Now</span></a>
           </div>
-          <a class="btn btn-primary nav-apply-btn" href="admissions.html"><span data-i18n="nav.apply">Apply Now</span></a>
+        </div>
+
+        <!-- OUTSIDE NAVIGATION: Floating Language Switcher -->
+        <div class="lang-switcher-wrap floating-lang-control">
+          <button class="lang-switcher-btn" id="lang-toggle" data-i18n-aria-label="nav.selectLanguage" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span>🌐</span> <span id="current-lang-label">English</span> <span style="font-size: 0.7rem;">▼</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown" role="menu">
+            <button class="lang-option active" data-lang="en" role="menuitem">English</button>
+            <button class="lang-option" data-lang="bn" role="menuitem">বাংলা</button>
+          </div>
         </div>
       </div>
     </header>
@@ -134,40 +147,40 @@
 
         <div class="container hero-content-wrapper">
           <div class="hero-text-composition">
-            <p class="kicker heritage-kicker" data-i18n="home.kicker">ESTABLISHED 2012 • BRAHMANBARIA</p>
-            <h1 class="hero-title" data-i18n="home.heroTitle">Where Knowledge Meets Character</h1>
-            <p class="hero-desc" data-i18n="home.heroSubtitle">
+            <p class="kicker heritage-kicker" data-i18n="hero.kicker">ESTABLISHED 2012 • BRAHMANBARIA</p>
+            <h1 class="hero-title" data-i18n="hero.title">Where Knowledge Meets Character</h1>
+            <p class="hero-desc" data-i18n="hero.subtitle">
               Welcome to the official website of Brahmanbaria Ispahani Ideal School. We combine academic rigor, moral integrity, and modern facilities to prepare the youth of Brahmanbaria to lead tomorrow.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="admissions.html"><span data-i18n="home.exploreBtn">Apply Now</span></a>
-              <a class="btn btn-light" href="#about"><span data-i18n="home.campusBtn">Explore Campus</span></a>
+              <a class="btn btn-primary" href="admissions.html"><span data-i18n="hero.primaryButton">Apply Now</span></a>
+              <a class="btn btn-light" href="#about"><span data-i18n="hero.secondaryButton">Explore Campus</span></a>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Premium Institutional Statistics Section -->
-      <section class="section stats-strip-section" aria-label="Institutional Credibility">
+      <section class="section stats-strip-section" data-i18n-aria-label="stats.ariaLabel" aria-label="Institutional Credibility">
         <div class="container stats-strip-grid">
           <div class="stat-box">
             <span class="stat-num trust-num" data-count="14" data-suffix="+">14+</span>
-            <span class="stat-lbl">Years of Excellence</span>
+            <span class="stat-lbl" data-i18n="stats.years.label">Years of Excellence</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-box">
             <span class="stat-num trust-num" data-count="2" data-suffix="">2</span>
-            <span class="stat-lbl">Campus Branches</span>
+            <span class="stat-lbl" data-i18n="stats.branches.label">Campus Branches</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-box">
             <span class="stat-num trust-num" data-count="100" data-suffix="%">100%</span>
-            <span class="stat-lbl">Student Focus</span>
+            <span class="stat-lbl" data-i18n="stats.focus.label">Student Focus</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-box">
             <span class="stat-num trust-num" data-count="20" data-suffix="+">20+</span>
-            <span class="stat-lbl">Expert Faculty</span>
+            <span class="stat-lbl" data-i18n="stats.faculty.label">Expert Faculty</span>
           </div>
         </div>
       </section>
@@ -176,41 +189,41 @@
       <section class="section pillars-section" id="about">
         <div class="container split-layout">
           <div data-aos="fade-right">
-            <p class="kicker heritage-kicker" data-i18n="home.welcomeKicker">Welcome to Ispahani Ideal School</p>
-            <h2 data-i18n="home.welcomeTitle">A Tradition of Academic Rigor &amp; Moral Integrity</h2>
-            <p class="editorial-text" data-i18n="home.welcomeText">
+            <p class="kicker heritage-kicker" data-i18n="aboutPreview.kicker">Welcome to Ispahani Ideal School</p>
+            <h2 data-i18n="aboutPreview.title">A Tradition of Academic Rigor &amp; Moral Integrity</h2>
+            <p class="editorial-text" data-i18n="aboutPreview.description">
               At Brahmanbaria Ispahani Ideal School, we believe education goes beyond textbooks. Our holistic approach integrates rigorous academic drills with leadership training, cultural appreciation, and moral grounding.
             </p>
             <div class="pillars-accordion">
               <div class="pillar-item active">
                 <div class="pillar-header">
                   <span class="pillar-num">I</span>
-                  <h4>Sparking Curiosity</h4>
+                  <h4 data-i18n="aboutPreview.pillar1Title">Sparking Curiosity</h4>
                 </div>
-                <p>Awakening an unquenchable wonder for scientific inquiry, literature, and mathematics.</p>
+                <p data-i18n="aboutPreview.pillar1Desc">Awakening an unquenchable wonder for scientific inquiry, literature, and mathematics.</p>
               </div>
               <div class="pillar-item">
                 <div class="pillar-header">
                   <span class="pillar-num">II</span>
-                  <h4>Building Character</h4>
+                  <h4 data-i18n="aboutPreview.pillar2Title">Building Character</h4>
                 </div>
-                <p>Nurturing moral courage, empathy, discipline, and profound respect for our shared heritage.</p>
+                <p data-i18n="aboutPreview.pillar2Desc">Nurturing moral courage, empathy, discipline, and profound respect for our shared heritage.</p>
               </div>
               <div class="pillar-item">
                 <div class="pillar-header">
                   <span class="pillar-num">III</span>
-                  <h4>Achieving Excellence</h4>
+                  <h4 data-i18n="aboutPreview.pillar3Title">Achieving Excellence</h4>
                 </div>
-                <p>Culminating in distinguished academic mastery and the confidence to shape the future.</p>
+                <p data-i18n="aboutPreview.pillar3Desc">Culminating in distinguished academic mastery and the confidence to shape the future.</p>
               </div>
             </div>
-            <a class="btn btn-primary" href="about.html" style="margin-top: 1.8rem;"><span>Read Our Full Story</span></a>
+            <a class="btn btn-primary" href="about.html" style="margin-top: 1.8rem;"><span data-i18n="aboutPreview.readStoryBtn">Read Our Full Story</span></a>
           </div>
           <div class="about-image-wrapper museum-frame" data-aos="fade-left" data-aos-delay="150">
-            <img src="images/ok.JPG" alt="Students and Architecture at Brahmanbaria Ispahani Ideal School" loading="lazy" />
+            <img src="images/ok.JPG" data-i18n-alt="aboutPreview.imageAlt" alt="Students and Architecture at Brahmanbaria Ispahani Ideal School" loading="lazy" />
             <div class="museum-caption">
               <span class="caption-dot"></span>
-              <span>BIJESWAR BRANCH ARCHIVE</span>
+              <span data-i18n="aboutPreview.imageCaption">BIJESWAR BRANCH ARCHIVE</span>
             </div>
           </div>
         </div>
@@ -220,58 +233,58 @@
       <section class="section programs-section" id="programs">
         <div class="container">
           <div class="section-heading">
-            <p class="kicker heritage-kicker" data-i18n="home.whyKicker">The Ispahani Advantage</p>
-            <h2 data-i18n="home.whyTitle">Why Parents Choose Our School</h2>
-            <p data-i18n="home.whySubtitle">We provide an enriching educational environment designed to nurture confident, capable, and compassionate young minds.</p>
+            <p class="kicker heritage-kicker" data-i18n="advantages.kicker">The Ispahani Advantage</p>
+            <h2 data-i18n="advantages.title">Why Parents Choose Our School</h2>
+            <p data-i18n="advantages.subtitle">We provide an enriching educational environment designed to nurture confident, capable, and compassionate young minds.</p>
           </div>
           <div class="card-grid">
             <article class="card heritage-card" data-aos="fade-up" data-aos-delay="0">
               <div class="card-top-bar">
-                <span class="discipline-tag">Excellence</span>
+                <span class="discipline-tag" data-i18n="advantages.card1Tag">Excellence</span>
                 <div class="icon-badge">01</div>
               </div>
-              <h3 data-i18n="home.card1Title">Academic Excellence</h3>
-              <p data-i18n="home.card1Text">Consistent board examination successes through structured curricula and dedicated tutoring.</p>
+              <h3 data-i18n="advantages.card1Title">Academic Excellence</h3>
+              <p data-i18n="advantages.card1Text">Consistent board examination successes through structured curricula and dedicated tutoring.</p>
             </article>
             <article class="card heritage-card" data-aos="fade-up" data-aos-delay="100">
               <div class="card-top-bar">
-                <span class="discipline-tag">Ethics</span>
+                <span class="discipline-tag" data-i18n="advantages.card2Tag">Ethics</span>
                 <div class="icon-badge">02</div>
               </div>
-              <h3 data-i18n="home.card2Title">Values-Based Learning</h3>
-              <p data-i18n="home.card2Text">Instilling strong moral ethics, discipline, empathy, and respect for community heritage.</p>
+              <h3 data-i18n="advantages.card2Title">Values-Based Learning</h3>
+              <p data-i18n="advantages.card2Text">Instilling strong moral ethics, discipline, empathy, and respect for community heritage.</p>
             </article>
             <article class="card heritage-card" data-aos="fade-up" data-aos-delay="200">
               <div class="card-top-bar">
-                <span class="discipline-tag">Campus</span>
+                <span class="discipline-tag" data-i18n="advantages.card3Tag">Campus</span>
                 <div class="icon-badge">03</div>
               </div>
-              <h3 data-i18n="home.card3Title">Modern Facilities</h3>
-              <p data-i18n="home.card3Text">Equipped with advanced science labs, digital classrooms, secure campus, and rich libraries.</p>
+              <h3 data-i18n="advantages.card3Title">Modern Facilities</h3>
+              <p data-i18n="advantages.card3Text">Equipped with advanced science labs, digital classrooms, secure campus, and rich libraries.</p>
             </article>
             <article class="card heritage-card" data-aos="fade-up" data-aos-delay="300">
               <div class="card-top-bar">
-                <span class="discipline-tag">Holistic</span>
+                <span class="discipline-tag" data-i18n="advantages.card4Tag">Holistic</span>
                 <div class="icon-badge">04</div>
               </div>
-              <h3 data-i18n="home.card4Title">Holistic Development</h3>
-              <p data-i18n="home.card4Text">Active encouragement in athletics, debating, robotics, and arts alongside academic studies.</p>
+              <h3 data-i18n="advantages.card4Title">Holistic Development</h3>
+              <p data-i18n="advantages.card4Text">Active encouragement in athletics, debating, robotics, and arts alongside academic studies.</p>
             </article>
             <article class="card heritage-card" data-aos="fade-up" data-aos-delay="400">
               <div class="card-top-bar">
-                <span class="discipline-tag">Mentorship</span>
+                <span class="discipline-tag" data-i18n="advantages.card5Tag">Mentorship</span>
                 <div class="icon-badge">05</div>
               </div>
-              <h3 data-i18n="home.card5Title">Experienced Faculty</h3>
-              <p data-i18n="home.card5Text">Our dedicated educators bring years of classroom expertise, pedagogical innovation, and mentorship to guide every student toward success.</p>
+              <h3 data-i18n="advantages.card5Title">Experienced Faculty</h3>
+              <p data-i18n="advantages.card5Text">Our dedicated educators bring years of classroom expertise, pedagogical innovation, and mentorship to guide every student toward success.</p>
             </article>
             <article class="card heritage-card" data-aos="fade-up" data-aos-delay="500">
               <div class="card-top-bar">
-                <span class="discipline-tag">Security</span>
+                <span class="discipline-tag" data-i18n="advantages.card6Tag">Security</span>
                 <div class="icon-badge">06</div>
               </div>
-              <h3 data-i18n="home.card6Title">Safe &amp; Secure Campus</h3>
-              <p data-i18n="home.card6Text">Our campuses provide a secure, monitored, and welcoming environment where students can learn, collaborate, and thrive with peace of mind.</p>
+              <h3 data-i18n="advantages.card6Title">Safe &amp; Secure Campus</h3>
+              <p data-i18n="advantages.card6Text">Our campuses provide a secure, monitored, and welcoming environment where students can learn, collaborate, and thrive with peace of mind.</p>
             </article>
           </div>
         </div>
@@ -281,30 +294,30 @@
       <section class="section gallery-section" id="gallery">
         <div class="container">
           <div class="section-heading">
-            <p class="kicker heritage-kicker">CHRONICLES OF CAMPUS LIFE</p>
-            <h2>Living Campus Mosaic</h2>
-            <p>An authentic window into daily discovery, cultural vibrancy, and academic companionship.</p>
+            <p class="kicker heritage-kicker" data-i18n="galleryPreview.kicker">CHRONICLES OF CAMPUS LIFE</p>
+            <h2 data-i18n="galleryPreview.title">Living Campus Mosaic</h2>
+            <p data-i18n="galleryPreview.subtitle">An authentic window into daily discovery, cultural vibrancy, and academic companionship.</p>
           </div>
           <div class="gallery-grid">
-            <figure class="gallery-item interactive-gallery-item museum-frame" data-aos="zoom-in-up" data-aos-delay="0" data-caption="School Cultural Celebration">
-              <img src="images/culture_1.JPG" alt="School Cultural Celebration" loading="lazy" />
-              <div class="gallery-overlay"><span>Inspect Photo</span></div>
+            <figure class="gallery-item interactive-gallery-item museum-frame" data-aos="zoom-in-up" data-aos-delay="0" data-i18n-caption="galleryPreview.item1Caption" data-caption="School Cultural Celebration">
+              <img src="images/culture_1.JPG" data-i18n-alt="galleryPreview.item1Alt" alt="School Cultural Celebration" loading="lazy" />
+              <div class="gallery-overlay"><span data-i18n="galleryPreview.inspectBtn">Inspect Photo</span></div>
             </figure>
-            <figure class="gallery-item interactive-gallery-item museum-frame" data-aos="zoom-in-up" data-aos-delay="100" data-caption="Interactive Technology Lab">
-              <img src="images/play.JPG" alt="Interactive Technology Lab" loading="lazy" />
-              <div class="gallery-overlay"><span>Inspect Photo</span></div>
+            <figure class="gallery-item interactive-gallery-item museum-frame" data-aos="zoom-in-up" data-aos-delay="100" data-i18n-caption="galleryPreview.item2Caption" data-caption="Interactive Technology Lab">
+              <img src="images/play.JPG" data-i18n-alt="galleryPreview.item2Alt" alt="Interactive Technology Lab" loading="lazy" />
+              <div class="gallery-overlay"><span data-i18n="galleryPreview.inspectBtn">Inspect Photo</span></div>
             </figure>
-            <figure class="gallery-item interactive-gallery-item museum-frame" data-aos="zoom-in-up" data-aos-delay="200" data-caption="Collaborative Student Workshop">
-              <img src="images/all_2.JPG" alt="Collaborative Student Workshop" loading="lazy" />
-              <div class="gallery-overlay"><span>Inspect Photo</span></div>
+            <figure class="gallery-item interactive-gallery-item museum-frame" data-aos="zoom-in-up" data-aos-delay="200" data-i18n-caption="galleryPreview.item3Caption" data-caption="Collaborative Student Workshop">
+              <img src="images/all_2.JPG" data-i18n-alt="galleryPreview.item3Alt" alt="Collaborative Student Workshop" loading="lazy" />
+              <div class="gallery-overlay"><span data-i18n="galleryPreview.inspectBtn">Inspect Photo</span></div>
             </figure>
-            <figure class="gallery-item interactive-gallery-item museum-frame" data-aos="zoom-in-up" data-aos-delay="300" data-caption="Academic Campus Assembly">
-              <img src="images/all_3.JPG" alt="Academic Campus Assembly" loading="lazy" />
-              <div class="gallery-overlay"><span>Inspect Photo</span></div>
+            <figure class="gallery-item interactive-gallery-item museum-frame" data-aos="zoom-in-up" data-aos-delay="300" data-i18n-caption="galleryPreview.item4Caption" data-caption="Academic Campus Assembly">
+              <img src="images/all_3.JPG" data-i18n-alt="galleryPreview.item4Alt" alt="Academic Campus Assembly" loading="lazy" />
+              <div class="gallery-overlay"><span data-i18n="galleryPreview.inspectBtn">Inspect Photo</span></div>
             </figure>
           </div>
           <div style="margin-top: 2.8rem; text-align: center;">
-            <a class="btn btn-light" href="gallery.html"><span>View Complete Archives</span></a>
+            <a class="btn btn-light" href="gallery.html"><span data-i18n="galleryPreview.viewArchivesBtn">View Complete Archives</span></a>
           </div>
         </div>
       </section>
@@ -314,13 +327,13 @@
         <div class="container">
           <div class="cta-banner horizon-banner" data-aos="fade-up">
             <div class="horizon-content">
-              <p class="kicker heritage-kicker" style="color: var(--accent-gold);" data-i18n="home.ctaKicker">Begin Your Journey</p>
-              <h2 data-i18n="home.ctaTitle">Give Your Child the Foundation They Deserve</h2>
-              <p data-i18n="home.ctaSubtitle">Admissions are currently open for the upcoming academic session across both Main and Bijeswar campuses.</p>
+              <p class="kicker heritage-kicker" style="color: var(--accent-gold);" data-i18n="cta.kicker">Begin Your Journey</p>
+              <h2 data-i18n="cta.title">Give Your Child the Foundation They Deserve</h2>
+              <p data-i18n="cta.subtitle">Admissions are currently open for the upcoming academic session across both Main and Bijeswar campuses.</p>
             </div>
             <div class="horizon-actions">
-              <a class="btn btn-primary" href="admissions.html"><span data-i18n="home.ctaBtn">Apply Online Now</span></a>
-              <a class="btn btn-light" href="contact.html"><span data-i18n="nav.contact">Contact</span></a>
+              <a class="btn btn-primary" href="admissions.html"><span data-i18n="cta.primaryButton">Apply Online Now</span></a>
+              <a class="btn btn-light" href="contact.html"><span data-i18n="cta.secondaryButton">Contact</span></a>
             </div>
           </div>
         </div>
@@ -340,15 +353,15 @@
         <div>
           <h3 class="footer-title" data-i18n="footer.contactHeading">Contact</h3>
           <ul class="footer-links">
-            <li><strong data-i18n="footer.mainCampus">Main Campus:</strong> <span data-i18n="footer.mainAddress">College para, Brahmanbaria</span></li>
-            <li><strong data-i18n="footer.bijeswarBranch">Bijeswar Branch:</strong> <span data-i18n="footer.bijeswarAddress">Bijeswar, Ulchapara, Brahmanbaria</span></li>
+            <li><strong data-i18n="footer.mainCampusLabel">Main Campus:</strong> <span data-i18n="footer.mainAddress">College para, Brahmanbaria</span></li>
+            <li><strong data-i18n="footer.bijeswarBranchLabel">Bijeswar Branch:</strong> <span data-i18n="footer.bijeswarAddress">Bijeswar, Ulchapara, Brahmanbaria</span></li>
             <li><a href="tel:+8801911652338">01911-652338</a></li>
             <li><a href="mailto:info@ispahaniidealschool.edu">info@ispahaniidealschool.edu</a></li>
           </ul>
         </div>
 
         <div>
-          <h3 class="footer-title" data-i18n="footer.quickLinks">Quick Links</h3>
+          <h3 class="footer-title" data-i18n="footer.quickLinksHeading">Quick Links</h3>
           <ul class="footer-links">
             <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
             <li><a href="academics.html" data-i18n="nav.academics">Academics</a></li>
@@ -356,9 +369,9 @@
             <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
           </ul>
           <div class="social-links" aria-label="Social media links">
-            <a href="#" aria-label="Facebook">Fb</a>
-            <a href="#" aria-label="Instagram">Ig</a>
-            <a href="#" aria-label="LinkedIn">In</a>
+            <a href="#" data-i18n-aria-label="footer.ariaFacebook" aria-label="Facebook">Fb</a>
+            <a href="#" data-i18n-aria-label="footer.ariaInstagram" aria-label="Instagram">Ig</a>
+            <a href="#" data-i18n-aria-label="footer.ariaLinkedIn" aria-label="LinkedIn">In</a>
           </div>
         </div>
       </div>
@@ -368,9 +381,9 @@
     </footer>
 
     <!-- Gallery Lightbox Modal -->
-    <dialog id="gallery-lightbox" class="lightbox-modal" aria-label="Image preview">
+    <dialog id="gallery-lightbox" class="lightbox-modal" data-i18n-aria-label="lightbox.ariaLabel" aria-label="Image preview">
       <div class="lightbox-content">
-        <button class="lightbox-close" aria-label="Close preview">&times;</button>
+        <button class="lightbox-close" data-i18n-aria-label="lightbox.closeLabel" aria-label="Close preview">&times;</button>
         <img id="lightbox-img" src="" alt="Gallery preview" />
         <p id="lightbox-caption"></p>
       </div>

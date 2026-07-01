@@ -2118,8 +2118,34 @@ button:active,
 .lang-switcher-wrap {
   position: relative;
   display: inline-block;
-  margin-right: 0.6rem;
+  margin-right: 0;
   z-index: 1000;
+}
+
+/* Outer header container separating nav from floating controls */
+.site-header-container {
+  margin-inline: auto;
+  width: min(1380px, 96%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+
+/* Ensure nav-wrapper takes full remaining width without being squeezed */
+.site-header-container .nav-wrapper {
+  flex: 1;
+  min-width: 0;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  position: relative;
+}
+
+/* Floating language switcher positioned outside navigation container */
+.floating-lang-control {
+  flex-shrink: 0;
+  margin-right: 0 !important;
 }
 
 .lang-switcher-btn {
@@ -2204,7 +2230,7 @@ button:active,
   box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
 
-/* Ensure mobile responsiveness for navbar right controls */
+/* Ensure mobile responsiveness for navbar controls */
 @media (max-width: 850px) {
   .home-page .nav-apply-btn,
   .nav-apply-btn {
@@ -2212,12 +2238,14 @@ button:active,
   }
   .home-page .nav-right,
   .nav-right {
-    display: flex !important;
-    margin-left: auto;
-    margin-right: 0.5rem;
+    display: none !important;
+  }
+  .site-header-container {
+    gap: 0.5rem;
+    width: min(1380px, 98%);
   }
   .lang-switcher-btn {
-    padding: 0.4rem 0.85rem;
+    padding: 0.42rem 0.8rem;
     font-size: 0.82rem;
   }
 }
