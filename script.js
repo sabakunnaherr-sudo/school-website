@@ -617,6 +617,16 @@ function translatePage(translations, fallbackTranslations) {
     }
   });
 
+  // Translate data-title attribute
+  document.querySelectorAll("[data-i18n-data-title]").forEach((el) => {
+    const keyPath = el.getAttribute("data-i18n-data-title");
+    const val = resolveVal(keyPath);
+    if (val !== null && el.getAttribute("data-title") !== val) {
+      el.setAttribute("data-title", val);
+    }
+  });
+
+
   // Update animated stat numbers if language changed
   document.querySelectorAll(".trust-num[data-count]").forEach((el) => {
     const targetCount = el.getAttribute("data-count") || "";
