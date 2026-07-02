@@ -1,0 +1,33 @@
+{
+  "notice": {
+    "kicker": "OFFICIAL ANNOUNCEMENTS",
+    "title": "Notice Board",
+    "subtitle": "Stay informed with the latest academic schedules, admission circulars, examination notices, and institutional updates.",
+    "filterAll": "All Notices",
+    "filterGeneral": "General",
+    "filterAdmissions": "Admissions",
+    "filterExams": "Examinations",
+    "filterAcademics": "Academics",
+    "filterEvents": "Events",
+    "pinnedBadge": "PINNED NOTICE",
+    "readMore": "Read Full Notice",
+    "noNotices": "No notices found in this category.",
+    "loading": "Loading official notices..."
+  },
+  "nav": {
+    "logoAlt": "Brahmanbaria Ispahani Ideal School logo",
+    "logoTitle": "Brahmanbaria Ispahani Ideal School",
+    "logoSubtitle": "Inspiring Future Leaders",
+    "toggleMenu": "Toggle menu",
+    "home": "Home",
+    "about": "About",
+    "academics": "Academics",
+    "teachers": "Teachers",
+    "gallery": "Gallery",
+    "notice": "Notice",
+    "admissions": "Admissions",
+    "contact": "Contact",
+    "apply": "Apply Now",
+    "selectLanguage": "Select Language"
+  }
+}
