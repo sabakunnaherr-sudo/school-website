@@ -696,6 +696,8 @@ async function switchLanguage(lang) {
       ease: "power2.inOut",
       onComplete: () => {
         translatePage(translations, fallbackTranslations);
+        if (typeof renderNotices === "function") renderNotices();
+        if (typeof renderGalleryCMS === "function") renderGalleryCMS();
         gsap.to(translatableElements, {
           opacity: 1,
           duration: 0.18,
@@ -705,6 +707,8 @@ async function switchLanguage(lang) {
     });
   } else {
     translatePage(translations, fallbackTranslations);
+    if (typeof renderNotices === "function") renderNotices();
+    if (typeof renderGalleryCMS === "function") renderGalleryCMS();
   }
 }
 
@@ -744,6 +748,184 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (navigator.language && navigator.language.toLowerCase().startsWith("bn")) {
     initialLang = "bn";
   }
+  // Initialize Decap CMS dynamic engines
+  initNoticeBoard();
+  initGalleryCMS();
+
   switchLanguage(initialLang);
 });
+
+/* ==========================================================================
+   PHASE 16: DECAP CMS DYNAMIC CONTENT ENGINE (Notices & Gallery)
+   ========================================================================== */
+let loadedNotices = [];
+let currentNoticeFilter = "All";
+
+async function initNoticeBoard() {
+  const grid = document.getElementById("notice-grid");
+  if (!grid) return;
+
+  // Filter button listeners
+  const filterButtons = document.querySelectorAll("[data-notice-filter]");
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterButtons.forEach((b) => {
+        b.classList.remove("active");
+        b.setAttribute("aria-selected", "false");
+      });
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
+      currentNoticeFilter = btn.getAttribute("data-notice-filter") || "All";
+      renderNotices();
+    });
+  });
+
+  try {
+    const res = await fetch(`content/notices/index.json?v=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) throw new Error("Notice index fetch failed");
+    const files = await res.json();
+
+    const noticesPromises = files.map(async (f) => {
+      try {
+        const r = await fetch(`${f}?v=${Date.now()}`, { cache: "no-store" });
+        if (!r.ok) return null;
+        return await r.json();
+      } catch (e) {
+        return null;
+      }
+    });
+
+    const results = await Promise.all(noticesPromises);
+    loadedNotices = results.filter((n) => n !== null);
+
+    // Sort: Pinned first, then date descending
+    loadedNotices.sort((a, b) => {
+      if (a.pinned !== b.pinned) return a.pinned ? -1 : 1;
+      return new Date(b.date || 0) - new Date(a.date || 0);
+    });
+
+    renderNotices();
+  } catch (err) {
+    console.error("Notice Board CMS load error:", err);
+    if (grid) {
+      grid.innerHTML = `<div class="notice-card" style="text-align:center;"><p style="color:var(--text-warm-silver);">No notices available right now.</p></div>`;
+    }
+  }
+}
+
+function renderNotices() {
+  const grid = document.getElementById("notice-grid");
+  if (!grid || loadedNotices.length === 0) return;
+
+  const isBn = document.documentElement.lang === "bn";
+  const filtered = loadedNotices.filter((n) => {
+    if (currentNoticeFilter === "All" || currentNoticeFilter === "all") return true;
+    return (n.category || "General").toLowerCase() === currentNoticeFilter.toLowerCase();
+  });
+
+  if (filtered.length === 0) {
+    const noMsg = isBn ? "এই বিভাগে কোনো নোটিশ পাওয়া যায়নি।" : "No notices found in this category.";
+    grid.innerHTML = `<div class="notice-card" style="text-align:center;"><p style="color:var(--text-warm-silver);">${noMsg}</p></div>`;
+    return;
+  }
+
+  const bnDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+  const toBnNum = (str) => String(str).replace(/[0-9]/g, (d) => bnDigits[+d]);
+
+  grid.innerHTML = filtered.map((n) => {
+    const title = (isBn ? n.title_bn : n.title_en) || n.title_en || "";
+    const desc = (isBn ? n.description_bn : n.description_en) || n.description_en || "";
+    let dateStr = n.date || "";
+    if (isBn && dateStr) dateStr = toBnNum(dateStr);
+
+    const pinnedBadgeText = isBn ? "গুরুত্বপূর্ণ নোটিশ" : "PINNED NOTICE";
+    const pinnedHtml = n.pinned ? `<span class="notice-pinned-badge">★ ${pinnedBadgeText}</span>` : "";
+    const catHtml = `<span class="notice-category-badge">${n.category || "General"}</span>`;
+
+    const attachmentHtml = n.attachment ? `<div style="margin-top: 1rem;"><a href="${n.attachment}" target="_blank" class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.4rem;">📄 Download Attachment</a></div>` : "";
+    const extLinkHtml = n.external_link ? `<div style="margin-top: 0.5rem;"><a href="${n.external_link}" target="_blank" class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.4rem;">🔗 External Link</a></div>` : "";
+
+    return `
+      <article class="notice-card ${n.pinned ? "pinned" : ""}" data-aos="fade-up">
+        <div class="notice-header">
+          <div class="notice-badges">
+            ${pinnedHtml}
+            ${catHtml}
+          </div>
+          <span class="notice-date">${dateStr}</span>
+        </div>
+        <h2 class="notice-title">${title}</h2>
+        <p class="notice-description">${desc}</p>
+        ${attachmentHtml}
+        ${extLinkHtml}
+      </article>
+    `;
+  }).join("");
+
+  if (typeof AOS !== "undefined" && typeof AOS.refresh === "function") {
+    setTimeout(() => AOS.refresh(), 100);
+  }
+}
+
+let loadedGalleryItems = [];
+
+async function initGalleryCMS() {
+  const masonry = document.getElementById("gallery-masonry");
+  if (!masonry) return;
+
+  try {
+    const res = await fetch(`content/gallery/index.json?v=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) return; // Keep existing static gallery items if fetch fails
+    const files = await res.json();
+    if (!Array.isArray(files) || files.length === 0) return;
+
+    const itemsPromises = files.map(async (f) => {
+      try {
+        const r = await fetch(`${f}?v=${Date.now()}`, { cache: "no-store" });
+        if (!r.ok) return null;
+        return await r.json();
+      } catch (e) {
+        return null;
+      }
+    });
+
+    const results = await Promise.all(itemsPromises);
+    loadedGalleryItems = results.filter((item) => item !== null && item.image);
+    if (loadedGalleryItems.length > 0) {
+      renderGalleryCMS();
+    }
+  } catch (err) {
+    console.log("Using static gallery items");
+  }
+}
+
+function renderGalleryCMS() {
+  const masonry = document.getElementById("gallery-masonry");
+  if (!masonry || loadedGalleryItems.length === 0) return;
+
+  const isBn = document.documentElement.lang === "bn";
+
+  masonry.innerHTML = loadedGalleryItems.map((item) => {
+    const badge = (isBn ? item.badge_bn : item.badge_en) || item.badge_en || item.category || "Photo";
+    const caption = (isBn ? item.caption_bn : item.caption_en) || item.caption_en || "";
+    const alt = item.alt || badge;
+    return `
+      <div class="gallery-card" data-category="${item.category || "all"}" data-title="${badge}" data-caption="${caption}" style="display:inline-block; opacity:1;">
+        <div class="gallery-card-img-wrap">
+          <img src="${item.image}" alt="${alt}" loading="lazy" />
+        </div>
+        <div class="gallery-card-overlay">
+          <span class="overlay-badge">${badge}</span>
+          <p class="overlay-caption">${caption}</p>
+          <div class="overlay-expand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  // Trigger gallery refresh if gallery.html exposed hook or re-attach listeners
+  if (typeof window.initGalleryListeners === "function") {
+    window.initGalleryListeners();
+  }
+}
 

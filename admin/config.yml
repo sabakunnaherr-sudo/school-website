@@ -1,0 +1,49 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/gallery"
+public_folder: "images/gallery"
+
+site_url: "https://ispahaniidealschool.com"
+display_url: "https://ispahaniidealschool.com"
+logo_url: "https://ispahaniidealschool.com/favicon.png"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "notices"
+    label: "Notice Board"
+    folder: "content/notices"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: "json"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title (English)", name: "title_en", widget: "string", required: true }
+      - { label: "Title (Bangla)", name: "title_bn", widget: "string", required: true }
+      - { label: "Publication Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Category", name: "category", widget: "select", options: ["General", "Admissions", "Academics", "Exams", "Events"], default: "General" }
+      - { label: "Pinned Notice? (Shows at top with special badge)", name: "pinned", widget: "boolean", default: false, required: false }
+      - { label: "Description / Content (English)", name: "description_en", widget: "text", required: true }
+      - { label: "Description / Content (Bangla)", name: "description_bn", widget: "text", required: true }
+      - { label: "PDF Attachment (Optional)", name: "attachment", widget: "file", required: false, media_folder: "/files/notices", public_folder: "files/notices" }
+      - { label: "External Link (Optional)", name: "external_link", widget: "string", required: false }
+
+  - name: "gallery"
+    label: "Gallery Management"
+    folder: "content/gallery"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: "json"
+    editor:
+      preview: false
+    fields:
+      - { label: "Badge Title (English)", name: "badge_en", widget: "string", required: true }
+      - { label: "Badge Title (Bangla)", name: "badge_bn", widget: "string", required: true }
+      - { label: "Image File", name: "image", widget: "image", required: true, media_folder: "/images/gallery", public_folder: "images/gallery" }
+      - { label: "Alt Text", name: "alt", widget: "string", required: false }
+      - { label: "Category Filter", name: "category", widget: "select", options: ["science", "sports", "campus", "academics", "celebrations", "teachers"], default: "campus" }
+      - { label: "Full Caption (English)", name: "caption_en", widget: "string", required: false }
+      - { label: "Full Caption (Bangla)", name: "caption_bn", widget: "string", required: false }

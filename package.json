@@ -4,6 +4,7 @@
   "description": "Brahmanbaria Ispahani Ideal School Website",
   "main": "script.js",
   "scripts": {
+    "build": "node scripts/generate-content-index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
